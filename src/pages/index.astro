@@ -17,7 +17,7 @@ const siteName = "RAUFAYAR.NET";
     <script async src="https://googlesyndication.com" crossorigin="anonymous"></script>
 
     <style>
-        /* Sizin orijinal GitHub ve RaufAyar.net ruhuna uygun tam uyumlu karanlık temanız */
+        /* GitHub ve RaufAyar.net ruhuna uygun tam uyumlu karanlık temanız */
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             background: #0d1117; 
@@ -28,7 +28,7 @@ const siteName = "RAUFAYAR.NET";
         .container { 
             max-width: 850px; 
             margin: 0 auto; 
-            position: relative; /* Sol ve Sağ panellerin kilitlenmesi için kritik temel */
+            position: relative; /* Yan panellerin kilitlenmesi için kritik temel */
         }
         h1 { 
             color: #f0f6fc; 
@@ -51,31 +51,20 @@ const siteName = "RAUFAYAR.NET";
             margin-bottom: 2rem;
         }
 
-        /* 📁 TAM SOL BOŞ ALANA SABİTLENMİŞ DİKEY KATEGORİ PANELİ */
-        @media (min-width: 1400px) {
-            .left-categories {
+        /* 📁 TAM SOL BOŞ ALANA SABİTLENMİŞ DİKEY KATEGORİ VE KURUMSAL PANELİ */
+        @media (min-width: 1200px) {
+            .left-sidebar-wrapper {
                 position: absolute;
                 left: -320px;
                 top: 80px;
                 width: 260px;
                 display: flex;
                 flex-direction: column;
-                gap: 12px;
-            }
-        }
-        @media (max-width: 1399px) and (min-width: 1200px) {
-            .left-categories {
-                position: absolute;
-                left: -280px;
-                top: 80px;
-                width: 230px;
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
+                gap: 2rem; /* İki menü arasında net boşluk bırakır */
             }
         }
         @media (max-width: 1199px) {
-            .left-categories {
+            .left-sidebar-wrapper {
                 background: #161b22;
                 border: 1px solid #30363d;
                 border-radius: 6px;
@@ -84,10 +73,22 @@ const siteName = "RAUFAYAR.NET";
                 margin-bottom: 1.5rem;
                 display: flex;
                 flex-direction: column;
-                gap: 10px;
+                gap: 1.5rem;
             }
         }
         
+        .menu-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .menu-title {
+            color: #f0f6fc; 
+            font-size: 1.1rem; 
+            margin: 0 0 4px 0; 
+            padding-bottom: 0.5rem; 
+            border-bottom: 1px solid #30363d;
+        }
         .category-link {
             color: #58a6ff;
             text-decoration: none;
@@ -185,19 +186,20 @@ const siteName = "RAUFAYAR.NET";
     <!-- Sizin Kendi Orijinal Konteyner Alanınız -->
     <div class="container">
         
-   <!-- TAM SOLA YASLANMIŞ DİKEY ETİKETLER (GÜNCEL) -->
-<div class="left-categories">
-    <h2 style="color: #f0f6fc; font-size: 1.1rem; margin: 0 0 4px 0; padding-bottom: 0.5rem; border-bottom: 1px solid #30363d;">📁 Kategoriler</h2>
-    <a href="/blog?etiket=AI" class="category-link">🤖 AI</a>
-    <a href="/blog?etiket=UcretsizUygulamalar" class="category-link">🎁 Ücretsiz Uygulamalar</a>
-    <a href="/blog?etiket=Analizler" class="category-link">📊 Analizler</a>
-    <a href="/blog?etiket=TaktikStrateji" class="category-link">🎯 Taktik ve Strateji</a>
-    <a href="/blog?etiket=Gelecek" class="category-link">🚀 Gelecek</a>
-    <a href="/blog?etiket=KozmozKuantum" class="category-link">🌌 Kozmoz & Kuantum</a>
-</div>
+        <!-- 📦 TAM SOLDAKİ KAPSAYICI KUTU (Üst üste binmeyi engeller) -->
+        <div class="left-sidebar-wrapper">
+            <!-- ÜST BÖLÜM: Kategoriler -->
+            <div class="menu-section">
+                <h2 class="menu-title">📁 Kategoriler</h2>
+                <a href="/blog?etiket=AI" class="category-link">🤖 AI</a>
+                <a href="/blog?etiket=UcretsizUygulamalar" class="category-link">🎁 Ücretsiz Uygulamalar</a>
+                <a href="/blog?etiket=Analizler" class="category-link">📊 Analizler</a>
+                <a href="/blog?etiket=TaktikStrateji" class="category-link">🎯 Taktik ve Strateji</a>
+                <a href="/blog?etiket=Gelecek" class="category-link">🚀 Gelecek</a>
+                <a href="/blog?etiket=KozmozKuantum" class="category-link">🌌 Kozmoz & Kuantum</a>
+            </div>
 
-
-           <!-- ALT BÖLÜM: Kurumsal Yasal Sayfalar -->
+            <!-- ALT BÖLÜM: Kurumsal Yasal Sayfalar -->
             <div class="menu-section">
                 <h2 class="menu-title">📄 Kurumsal</h2>
                 <a href="/hakkimda" class="category-link">👤 Hakkımda</a>
@@ -206,13 +208,6 @@ const siteName = "RAUFAYAR.NET";
                 <a href="/faq" class="category-link">❓ SSS / FAQ</a>
             </div>
         </div>
-
-
-
-
-
-
-
 
         <h1>🌐 Global Open-Web Forum</h1>
         
@@ -224,7 +219,7 @@ const siteName = "RAUFAYAR.NET";
         <div class="giscus"></div>
         
         <!-- Kesinlikle Çalışan Giscus Script Alanı -->
-        <script is:inline src="https://giscus.app/client.js"
+        <script is:inline src="https://giscus.app"
                 data-repo="raufayar/raufayar.github.io"
                 data-repo-id="R_kgDOS43ysQ"
                 data-category="General"
