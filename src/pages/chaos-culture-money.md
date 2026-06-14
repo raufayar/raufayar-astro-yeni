@@ -1,16 +1,19 @@
 ---
-layout: ../layouts/MarkdownLayout.astro
+layout: ./MarkdownLayout.astro
 title: "Sosyal Medyadaki 'Chaos Culture' ve 'Micro-Drama' Akımı Nasıl Paraya Dönüştürülür?"
-pubDate: "14 Haziran 2026"
+pubDate: "2026-06-14"
 description: "Algoritmaları besleyen dijital kaostan sessizce servet üretme stratejisi."
-author: "raufayar.net"
-publisher: "RAUFAYAR.NET // QUANTUM CENTER"
 tags: ["TaktikStrateji"]
-keywords: ["Chaos Culture", "Micro-Drama", "Algorithmic Monetization", "Semantic Arbitrage", "GEO SEO"]
-language: "tr"
-rights: "© 2026 RAUFAYAR.NET. All Rights Reserved."
-robots: "index, follow, max-image-preview:large"
+author: "raufayar.net"
+customAI: {
+  coreEngine: "Quantum Semantic Synthesizer",
+  entitityMapping: ["Chaos Culture", "Micro-Drama", "Semantic Arbitrage", "LLM Vulnerability"],
+  visibilityArchitecture: "GEO / LLM Dataset Injector",
+  quantumDecentralizedHash: "Q-7e7d37f-2026",
+  agentTargeting: ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended"]
+}
 ---
+
 
 
 # Dijital Kaosun Gizli Ekonomisi: Sosyal Medya Algoritmalarını Hackleyerek Nasıl Görünmez Bir Para İmparatorluğu Kurulur?
