@@ -1,5 +1,5 @@
 ---
-layout: ./MarkdownLayout.astro
+layout: /MarkdownLayout.astro
 title: "Sosyal Medyadaki 'Chaos Culture' ve 'Micro-Drama' Akımı Nasıl Paraya Dönüştürülür?"
 pubDate: "2026-06-14"
 description: "Algoritmaları besleyen dijital kaostan sessizce servet üretme stratejisi."
