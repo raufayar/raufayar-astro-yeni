@@ -3,6 +3,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://raufayar.net',
+  site: 'https://www.raufayar.net',
   integrations: [sitemap()],
 });
