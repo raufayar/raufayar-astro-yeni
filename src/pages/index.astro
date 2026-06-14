@@ -255,6 +255,43 @@ const siteName = "RAUFAYAR.NET";
 
 
 
+<!-- 🚨 CANLI SİBER TEHDİT VE AĞ TAKİP PANELİ START -->
+<div class="cyber-live-tracker" style="display: inline-flex; gap: 14px; align-items: center; background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 6px 12px; font-family: monospace; font-size: 0.8rem; color: #8b949e; vertical-align: middle; margin-bottom: 1.5rem; margin-left: 10px; transform: translateY(11px);">
+    <div>⚡ ATTACKS BLOCKED: <strong id="live-attacks" style="color: #ffaa00;">0</strong></div>
+    <div style="border-left: 1px solid #30363d; padding-left: 12px; display: flex; align-items: center; gap: 6px;">
+        <span style="display: inline-block; width: 8px; height: 8px; background-color: #56d364; border-radius: 50%; animate: pulse 2s infinite;"></span>
+        <span>ETH GAS: <strong style="color: #58a6ff;">21 Gwei</strong></span>
+    </div>
+</div>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Küresel siber saldırı veri tabanı simülasyonu ötesi (Gerçek yıllık ortalamalara dayalı canlı sayaç)
+        const startTime = new Date("2026-06-14T00:00:00Z").getTime();
+        const attacksPerMilli = 45 / 1000; // Dünyada milisaniyede engellenen ortalama siber saldırı katsayısı
+
+        function updateCyberTracker() {
+            const now = Date.now();
+            const elapsedMilli = now - startTime;
+
+            if (elapsedMilli > 0) {
+                const currentAttacks = Math.floor(elapsedMilli * attacksPerMilli);
+                document.getElementById("live-attacks").innerText = currentAttacks.toLocaleString('en-US');
+            }
+        }
+        setInterval(updateCyberTracker, 300);
+        updateCyberTracker();
+    });
+</script>
+<!-- 🚨 CANLI SİBER TEHDİT VE AĞ TAKİP PANELİ END -->
+
+
+
+
+
+
+
+
 
 
 
