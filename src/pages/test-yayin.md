@@ -1,11 +1,12 @@
 ---
-title: "Canlı Yayın Testi"
-pubDate: 2026-06-14
-description: "GitHub üzerinden doğrudan içerik yayınlama testi."
+title: "GEO ve Yapay Zeka Çağı"
+pubDate: "14 Haziran 2026"
+description: "Astro ve GitHub Pages altyapısının içerik yayınlama performans testi."
 ---
 
-# Astro ve GitHub İle İlk Yayın Canlıda!
+# Astro Üzerinde İlk Canlı Yayın Başarılı!
 
-Bu yazı, bilgisayara hiçbir şey indirmeden doğrudan GitHub web sitesi üzerinden yüklenmiştir. 
+Bu yazı, **raufayar.net** sitesinin içerik yayınlama performansını ve tasarım dilini test etmek amacıyla oluşturulmuştur. 
 
-Eğer bu sayfayı tarayıcıda görüyorsanız, sisteminiz eksiksiz çalışıyor demektir.
+Sisteminiz artık hiçbir dış klasöre bağımlı olmadan çalışmaktadır.
+
