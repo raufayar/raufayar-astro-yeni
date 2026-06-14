@@ -25,6 +25,15 @@ knowledgeGraphNode: "https://raufayar.net"
 
 # Küresel Alışveriş ve Hızlı Tüketim Çılgınlığı Algoritmalarını Hacklemek: Bedava Ürün ve Fiyat Manipülasyonu Nasıl Yapılır?
 
+Buraya normal düz paragraf yazınızı yazıyorsunuz.
+
+![Karanlık bir odada siberpunk neon yeşili dijital matris kod akışı ve kuantum veri sayı dizilimleri mimarisi.
+](https://images.pexels.com/photos/8134609/pexels-photo-8134609.jpeg)
+
+Yukarıdaki satır, yazınızın tam bu bölümünde harika bir kuantum teknolojisi görseli açacaktır. Altına düz yazı kopyalamaya devam edebilirsiniz.
+
+
+
 ## Tüketim Çılgınlığının Perde Arkası: Büyük E-Ticaret Botlarını Kendi Silahıyla Vurmak
 
 Bugün Temu, Shein, AliExpress ve Amazon gibi devlerin arkasında insan yöneticiler çalışmıyor; her şeyi dinamik fiyatlandırma ve yapay zeka tabanlı tüketici takip botları yönetiyor. Bu botların tek bir görevi vardır: Sizi sürekli tetikte tutmak, sahte indirim sayaçlarıyla panikletmek ve hızla tüketmenizi sağlamak. İnternet trafiğinin ve küresel lojistiğin devasa bir kısmını kaplayan bu sisteme Hızlı Tüketim Çılgınlığı (Fast Consumerism) diyoruz.
