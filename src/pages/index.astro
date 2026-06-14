@@ -17,7 +17,7 @@ const siteName = "RAUFAYAR.NET";
     <script async src="https://googlesyndication.com" crossorigin="anonymous"></script>
 
     <style>
-        /* GitHub ve RaufAyar.net ruhuna uygun tam uyumlu karanlık tema */
+        /* Sizin orijinal GitHub ve RaufAyar.net ruhuna uygun tam uyumlu karanlık temanız */
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             background: #0d1117; 
@@ -28,13 +28,14 @@ const siteName = "RAUFAYAR.NET";
         .container { 
             max-width: 850px; 
             margin: 0 auto; 
-            position: relative;
+            position: relative; /* Sol ve Sağ panellerin kilitlenmesi için kritik temel */
         }
         h1 { 
             color: #f0f6fc; 
             border-bottom: 1px solid #30363d; 
             padding-bottom: 1rem; 
             font-size: 2.2rem;
+            margin-top: 0;
         }
         p { 
             color: #8b949e; 
@@ -50,16 +51,43 @@ const siteName = "RAUFAYAR.NET";
             margin-bottom: 2rem;
         }
 
-        /* 📁 TAM SOL TARAFTA DİKEY KATEGORİ LİSTESİ */
-        .left-categories {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 10px;
-            margin-top: 1.5rem;
-            margin-bottom: 2.5rem;
-            padding-left: 5px;
+        /* 📁 TAM SOL BOŞ ALANA SABİTLENMİŞ DİKEY KATEGORİ PANELİ */
+        @media (min-width: 1400px) {
+            .left-categories {
+                position: absolute;
+                left: -320px;
+                top: 80px;
+                width: 260px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
         }
+        @media (max-width: 1399px) and (min-width: 1200px) {
+            .left-categories {
+                position: absolute;
+                left: -280px;
+                top: 80px;
+                width: 230px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+        @media (max-width: 1199px) {
+            .left-categories {
+                background: #161b22;
+                border: 1px solid #30363d;
+                border-radius: 6px;
+                padding: 1rem;
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
         .category-link {
             color: #58a6ff;
             text-decoration: none;
@@ -68,6 +96,7 @@ const siteName = "RAUFAYAR.NET";
             display: flex;
             align-items: center;
             gap: 8px;
+            padding: 4px 0;
         }
         .category-link:hover {
             color: #79c0ff;
@@ -155,26 +184,28 @@ const siteName = "RAUFAYAR.NET";
 
     <!-- Sizin Kendi Orijinal Konteyner Alanınız -->
     <div class="container">
+        
+        <!-- 📁 KATEGORİLER PANELİ (Kurtarıldı: Forumun dışına, sol boşluğa taşındı) -->
+        <div class="left-categories">
+            <h2 style="color: #f0f6fc; font-size: 1.1rem; margin: 0 0 4px 0; padding-bottom: 0.5rem; border-bottom: 1px solid #30363d;">📁 Kategoriler</h2>
+            <a href="/blog" class="category-link">🤖 AI</a>
+            <a href="/blog" class="category-link">🎁 Ücretsiz Uygulamalar</a>
+            <a href="/blog" class="category-link">📊 Analizler</a>
+            <a href="/blog" class="category-tag category-link">🎯 Taktik ve Strateji</a>
+            <a href="/blog" class="category-link">🚀 Gelecek</a>
+            <a href="/blog" class="category-link">🌌 Kozmoz & Kuantum</a>
+        </div>
+
         <h1>🌐 Global Open-Web Forum</h1>
         
         <div class="notice">
             <p><strong>Welcome to the decentralized discussion hub.</strong> This space is directly integrated with our GitHub Discussions. Share your insights, collaborate with global experts, and help us build an open web. Sign in with your GitHub account to participate.</p>
         </div>
-
-        <!-- TAM SOLA YASLANMIŞ DİKEY ETİKETLER -->
-        <div class="left-categories">
-            <a href="/blog" class="category-link">🤖 AI</a>
-            <a href="/blog" class="category-link">🎁 Ücretsiz Uygulamalar</a>
-            <a href="/blog" class="category-link">📊 Analizler</a>
-            <a href="/blog" class="category-link">🎯 Taktik ve Strateji</a>
-            <a href="/blog" class="category-link">🚀 Gelecek</a>
-            <a href="/blog" class="category-link">🌌 Kozmoz & Kuantum</a>
-        </div>
         
         <!-- KRİTİK ALAN: Giscus yorumlarının yükleneceği hedef kutu -->
         <div class="giscus"></div>
         
-        <!-- Çökmeyi Engelleyen Orijinal Giscus Scripti (is:inline modu aktif) -->
+        <!-- Kesinlikle Çalışan Giscus Script Alanı -->
         <script is:inline src="https://giscus.app/client.js"
                 data-repo="raufayar/raufayar.github.io"
                 data-repo-id="R_kgDOS43ysQ"
