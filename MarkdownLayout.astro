@@ -25,28 +25,37 @@ const { frontmatter } = Astro.props;
         p { font-size: 1.1rem; color: #c9d1d9; margin-bottom: 1.5rem; }
         strong { color: #ff7b72; }
         footer { text-align: center; margin-top: 5rem; padding-top: 2rem; border-top: 1px solid #30363d; font-size: 0.85rem; color: #8b949e; }
-        
-        /* 🖼️ ULTIMATE AUTOMATED IMAGE RESIZER (Aggressive Paragraph Breakout) */
-        img, p img {
-            max-width: 100% !important;
-            width: 100% !important;
-            max-width: 600px !important; /* Forces the image to stay small and elegant */
-            height: auto !important;
-            border-radius: 6px;
-            border: 1px solid #30363d;
-            display: block;
-            margin: 2rem auto !important;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-        }
     </style>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="article-wrapper">
         <a href="/" class="back-btn">📋 Back to Forum</a>
         <div class="meta-data">YAYIN: {frontmatter.pubDate} | OTORİTE: {frontmatter.author}</div>
         <h1>{frontmatter.title}</h1>
         <slot />
         <footer>© 2026 RAUFAYAR.NET — QUANTUM SYSTEMS</footer>
     </div>
+
+    <!-- 🧠 RESİMLERİ OTOMATİK KÜÇÜLTEN VE ORTALAYAN AKILLI MOTOR -->
+    <script is:inline>
+        document.addEventListener("DOMContentLoaded", () => {
+            const wrapper = document.getElementById("article-wrapper");
+            if (wrapper) {
+                // Makale içindeki tüm resimleri bulur
+                const images = wrapper.querySelectorAll("img");
+                images.forEach(img => {
+                    // CSS engellerini aşarak resmi tarayıcı seviyesinde küçük boyuta zorlar
+                    img.style.maxWidth = "100%";
+                    img.style.width = "550px"; // Tam istediğiniz o kibar ve mükemmel genişlik
+                    img.style.height = "auto";
+                    img.style.display = "block";
+                    img.style.margin = "2.5rem auto"; // Tam ortaya hizalar, alt ve üste boşluk bırakır
+                    img.style.borderRadius = "6px";
+                    img.style.border = "1px solid #30363d";
+                    img.style.boxShadow = "0 4px 12px rgba(0,0,0,0.5)";
+                });
+            }
+        });
+    </script>
 </body>
 </html>
