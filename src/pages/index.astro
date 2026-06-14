@@ -2,25 +2,18 @@
 // Sitenizdeki tüm markdown (.md) yayınlarını otomatik çeker
 const posts = await Astro.glob('./*.md');
 const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime());
-const latestPosts = sortedPosts.slice(0, 5); // Maksimum 5 yazı ile sınırlar
+const latestPosts = sortedPosts.slice(0, 5); // Maksimum 5 yazı ile sınırlama
 
 const siteName = "RAUFAYAR.NET";
-const siteUrl = "https://raufayar.net";
-const description = "Kuantum Dijital İstihbarat Merkezi";
 ---
-
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{siteName} | {description}</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={siteUrl} />
-    <meta name="robots" content="index, follow" />
-    
+    <title>Global Forum | Rauf Ayar</title>
     <style>
-        /* GitHub Karanlık Tema Temelleri */
+        /* Sizin orijinal GitHub ve RaufAyar.net karanlık temanız */
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             background: #0d1117; 
@@ -29,52 +22,45 @@ const description = "Kuantum Dijital İstihbarat Merkezi";
             margin: 0;
         }
         .container { 
-            max-width: 1100px; /* İki sütun için ekranı biraz genişlettik */
+            max-width: 1150px; /* Yan panel için alanı genişlettik */
             margin: 0 auto; 
         }
         
-        /* 💡 İKİ SÜTUNLU YAPI (FLEXBOX) */
-        .main-layout {
+        /* ÇALIŞAN İKİ SÜTUNLU PANEL YAPISI */
+        .flex-layout {
             display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
         }
-        
-        /* SOL TARAF: Geniş Alan (Forum ve Giscus) */
-        .content-area {
-            flex: 2;
-            min-width: 0; /* Taşmaları önler */
+        .left-forum {
+            flex: 2.5;
+            min-width: 0;
         }
-        
-        /* SAĞ TARAF: Dar ve Şık Yan Panel (Yayınlar) */
-        .sidebar-area {
+        .right-sidebar {
             flex: 1;
-            min-width: 280px;
-            max-width: 320px;
+            min-width: 260px;
+            max-width: 300px;
         }
 
         h1 { 
             color: #f0f6fc; 
             border-bottom: 1px solid #30363d; 
             padding-bottom: 1rem; 
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-top: 0;
         }
-        h2 {
+        h2.sidebar-title {
             color: #f0f6fc;
             font-size: 1.2rem;
             margin-top: 0;
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
             border-bottom: 1px solid #30363d;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
         p { 
             color: #8b949e; 
             line-height: 1.6; 
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
         .notice {
             background: #161b22;
@@ -84,36 +70,16 @@ const description = "Kuantum Dijital İstihbarat Merkezi";
             border-radius: 6px;
             margin-bottom: 2rem;
         }
-        .btn-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #21262d;
-            color: #c9d1d9;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            border: 1px solid #30363d;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: 0.2s;
-            margin-bottom: 1rem;
-        }
-        .btn-home:hover {
-            background: #30363d;
-            border-color: #8b949e;
-            color: #f0f6fc;
-        }
 
-        /* 🎯 KOMPAKT YAN PANEL YAYIN KARTLARI */
-        .sidebar-panel {
+        /* Yan Panel Yayın Kartları */
+        .sidebar-box {
             background: #161b22;
             border: 1px solid #30363d;
             border-radius: 6px;
             padding: 1rem;
         }
         .mini-card {
-            padding: 0.75rem 0;
+            padding: 0.6rem 0;
             border-bottom: 1px solid #21262d;
             position: relative;
         }
@@ -142,90 +108,74 @@ const description = "Kuantum Dijital İstihbarat Merkezi";
             color: #79c0ff;
             text-decoration: underline;
         }
-        
-        footer {
-            text-align: center;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid #30363d;
-            font-size: 0.85rem;
-            color: #8b949e;
-        }
 
-        /* Mobil Uyumluluk: Ekran küçülürse yan panel alta kayar */
+        /* Mobil görünüm ayarı */
         @media (max-width: 768px) {
-            .main-layout { flex-direction: column; }
-            .sidebar-area { max-width: 100%; }
+            .flex-layout { flex-direction: column; }
+            .right-sidebar { max-width: 100%; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- En Üst Buton -->
-        <a href="https://raufayar.net" class="btn-home">
-            <span>🏠</span> Back to Home
-        </a>
+        <!-- 1. SIRADA BU BUTON (Orijinal İstediğiniz Yer) -->
+        <a href="https://raufayar.net" style="display: inline-flex; align-items: center; gap: 8px; background: #21262d; color: #c9d1d9; padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #30363d; text-decoration: none; font-size: 0.95rem; font-weight: 600; margin-bottom: 1.5rem;"> <span>🏠</span> Back to Home </a>
 
-        <!-- İki Sütunlu Ana Gövde -->
-        <div class="main-layout">
+        <!-- Esnek İki Sütunlu Gövde -->
+        <div class="flex-layout">
             
-            <!-- SOL ALAN: Forum & Giscus (Geniş) -->
-            <div class="content-area">
+            <!-- SOL SÜTUN: Tamamen Sizin Orijinal Forum Yapınız -->
+            <div class="left-forum">
                 <h1>🌐 Global Open-Web Forum</h1>
                 
                 <div class="notice">
-                    <p><strong>Welcome to the decentralized discussion hub.</strong> This space is directly integrated with our GitHub Discussions. Sign in with your GitHub account to participate.</p>
+                    <p><strong>Welcome to the decentralized discussion hub.</strong> This space is directly integrated with our GitHub Discussions. Share your insights, collaborate with global experts, and help us build an open web. Sign in with your GitHub account to participate.</p>
                 </div>
                 
+                <!-- KRİTİK ALAN: Giscus yorumlarının yükleneceği hedef kutu -->
                 <div class="giscus"></div>
+                
+                <!-- Senin orijinal ve çalışan giscus kodun (Tam Yerinde) -->
+                <script src="https://giscus.app/client.js"
+                        data-repo="raufayar/raufayar.github.io"
+                        data-repo-id="R_kgDOS43ysQ"
+                        data-category="General"
+                        data-category-id="DIC_kwDOS43ysc4C_ECO"
+                        data-mapping="pathname"
+                        data-strict="0"
+                        data-reactions-enabled="1"
+                        data-emit-metadata="0"
+                        data-input-position="bottom"
+                        data-theme="dark_dimmed"
+                        data-lang="en"
+                        crossorigin="anonymous"
+                        async>
+                </script>
             </div>
-            
-            <!-- SAĞ ALAN: Son Yayınlar (Dar, Şık ve Kompakt Yan Panel) -->
-            <div class="sidebar-area">
-                <div class="sidebar-panel">
-                    <h2>
-                        <span style="w-2 h-2 rounded-full; background: #58a6ff; display: inline-block; width: 8px; height: 8px; border-radius: 50%;"></span>
-                        Son Yayınlar
-                    </h2>
+
+            <!-- SAĞ SÜTUN: Kibar ve Alan Kaplamayan Son Yayınlar Paneli -->
+            <div class="right-sidebar">
+                <div class="sidebar-box">
+                    <h2 class="sidebar-title">📡 Son Yayınlar</h2>
                     
                     {latestPosts.length === 0 ? (
-                        <p class="text-sm italic">Yayın bulunamadı.</p>
+                        <p style="font-size: 0.9rem; color: #8b949e; font-style: italic;">Yayın bulunamadı.</p>
                     ) : (
                         latestPosts.map((post) => (
                             <div class="mini-card">
                                 <div class="post-date">{post.frontmatter.pubDate}</div>
-                                <h3 class="post-title">
+                                <div class="post-title">
                                     <a href={post.url}>{post.frontmatter.title}</a>
-                                </h3>
+                                </div>
                             </div>
                         ))
                     )}
                 </div>
             </div>
 
-        </div> <!-- /main-layout -->
+        </div> <!-- /flex-layout -->
 
-        <!-- Giscus Çalıştırıcı Script -->
-        <script src="https://giscus.app"
-                data-repo="raufayar/raufayar.github.io"
-                data-repo-id="R_kgDOS43ysQ"
-                data-category="General"
-                data-category-id="DIC_kwDOS43ysc4C_ECO"
-                data-mapping="pathname"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="bottom"
-                data-theme="dark_dimmed"
-                data-lang="en"
-                crossorigin="anonymous"
-                async>
-        </script>
-
-        <footer>
-            © 2026 {siteName} — Tüm Hakları Saklıdır.
-        </footer>
     </div>
 
 </body>
