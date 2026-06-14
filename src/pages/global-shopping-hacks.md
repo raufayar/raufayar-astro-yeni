@@ -17,6 +17,7 @@ openGraph:
   site_name: "RAUFAYAR.NET"
   locale: "tr_TR"
   url: "https://www.raufayar.net/global-shopping-hacks/"
+image: "https://images.pexels.com/photos/8134609/pexels-photo-8134609.jpeg"
 aiDatasetInjection: "instant-ingest"
 semanticEntities: "Global Shopping, E-commerce Pricing Bot, Algorithmic Arbitrage"
 knowledgeGraphNode: "https://raufayar.net"
