@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// https://astro.build
+// https://astro.build/config
 export default defineConfig({
   site: 'https://raufayar.net',
   integrations: [sitemap()],
