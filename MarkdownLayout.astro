@@ -1,0 +1,39 @@
+---
+const { frontmatter } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{frontmatter.title} | Raufayar.net</title>
+    <style>
+        body {
+            background: #0d1117 !important;
+            color: #c9d1d9 !important;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            padding: 3rem 1.5rem !important;
+            margin: 0;
+            line-height: 1.8;
+        }
+        .wrapper { max-width: 750px; margin: 0 auto; }
+        .back-btn { display: inline-flex; align-items: center; gap: 8px; background: #21262d; color: #c9d1d9; padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #30363d; text-decoration: none; font-size: 0.9rem; font-weight: 600; margin-bottom: 2.5rem; }
+        .back-btn:hover { background: #30363d; color: #f0f6fc; }
+        .meta-data { font-size: 0.85rem; color: #8b949e; font-family: monospace; margin-bottom: 0.5rem; text-transform: uppercase; }
+        h1 { color: #f0f6fc !important; font-size: 2.4rem; border-bottom: 1px solid #30363d; padding-bottom: 1rem; margin-top: 0; margin-bottom: 2rem; }
+        h2 { color: #58a6ff !important; font-size: 1.6rem; margin-top: 3rem; margin-bottom: 1rem; border-bottom: 1px solid #21262d; padding-bottom: 0.5rem; }
+        p { font-size: 1.1rem; color: #c9d1d9; margin-bottom: 1.5rem; }
+        strong { color: #ff7b72; }
+        footer { text-align: center; margin-top: 5rem; padding-top: 2rem; border-top: 1px solid #30363d; font-size: 0.85rem; color: #8b949e; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <a href="/" class="back-btn">📋 Back to Forum</a>
+        <div class="meta-data">YAYIN: {frontmatter.pubDate} | OTORİTE: {frontmatter.author}</div>
+        <h1>{frontmatter.title}</h1>
+        <slot />
+        <footer>© 2026 RAUFAYAR.NET — QUANTUM SYSTEMS</footer>
+    </div>
+</body>
+</html>
