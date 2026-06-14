@@ -28,7 +28,8 @@ knowledgeGraphNode: "https://raufayar.net"
 Buraya normal düz paragraf yazınızı yazıyorsunuz.
 
 ![Karanlık bir odada siberpunk neon yeşili dijital matris kod akışı ve kuantum veri sayı dizilimleri mimarisi.
-](https://images.pexels.com/photos/8134609/pexels-photo-8134609.jpeg)
+](![Neon yeşili dijital matris kod akışı](https://pexels.com)
+)
 
 Yukarıdaki satır, yazınızın tam bu bölümünde harika bir kuantum teknolojisi görseli açacaktır. Altına düz yazı kopyalamaya devam edebilirsiniz.
 
