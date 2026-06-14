@@ -329,41 +329,47 @@ const siteName = "RAUFAYAR.NET";
 
 
 
-
-<!-- ⚛️ KUANTUM ATOM SAATİ PANELİ START -->
+<!-- ⚛️ KUANTUM ATOM SAATİ PANELİ START (KESİNTİSİZ MOTOR) -->
 <div class="quantum-atom-clock" style="display: inline-flex; gap: 8px; align-items: center; background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 6px 12px; font-family: monospace; font-size: 0.8rem; color: #8b949e; vertical-align: middle; margin-bottom: 1.5rem; margin-left: 10px; transform: translateY(11px);">
-    <div>⚛️ TIME: <strong id="atom-time" style="color: #58a6ff;">00:00:00</strong><span id="atom-ms" style="color: #ffaa00; font-size: 0.7rem; margin-left: 2px;">.000</span></div>
+    <div>⚛️ TIME: <strong id="atom-time" style="color: #58a6ff;">--:--:--</strong><span id="atom-ms" style="color: #ffaa00; font-size: 0.7rem; margin-left: 2px;">.000</span></div>
 </div>
 
 <script is:inline>
-    document.addEventListener("DOMContentLoaded", () => {
-        const timeElement = document.getElementById("atom-time");
-        const msElement = document.getElementById("atom-ms");
-
+    (function() {
         function updateAtomClock() {
-            const now = new Date();
+            const timeElement = document.getElementById("atom-time");
+            const msElement = document.getElementById("atom-ms");
             
-            // Saat, Dakika ve Saniyeyi iki haneli formatta alır
+            if (!timeElement || !msElement) return;
+
+            const now = new Date();
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
-            
-            // Saliseyi (Milisaniyeyi) üç haneli atomik hızda alır
             const milliseconds = String(now.getMilliseconds()).padStart(3, '0');
 
-            timeElement.innerText = `${hours}:${minutes}:${seconds}`;
-            msElement.innerText = `.${milliseconds}`;
+            timeElement.innerText = hours + ":" + minutes + ":" + seconds;
+            msElement.innerText = "." + milliseconds;
         }
 
-        // Tarayıcının yenileme hızına (FPS) senkronize olarak her 1 milisaniyede bir tetiklenir
-        function animateClock() {
+        // DOMContentLoaded beklemeden doğrudan, anında döngüyü başlatır
+        function startClock() {
             updateAtomClock();
-            requestAnimationFrame(animateClock);
+            window.requestAnimationFrame(startClock);
         }
-        
-        requestAnimationFrame(animateClock);
-    </script>
+
+        // İlk salisede elementlerin yüklenme ihtimaline karşı çift yönlü tetikleyici
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+            startClock();
+        } else {
+            window.addEventListener("load", startClock);
+            // Yedek motor: Her ihtimale karşı milisaniyelik interval ile de zorlar
+            setInterval(updateAtomClock, 16); 
+        }
+    })();
+</script>
 <!-- ⚛️ KUANTUM ATOM SAATİ PANELİ END -->
+
 
 
 
