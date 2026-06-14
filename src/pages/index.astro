@@ -329,6 +329,82 @@ const siteName = "RAUFAYAR.NET";
 
 
 
+
+<!-- 🌐 KÜRESEL TEKNOLOJİ ALTYAPI MONİTÖRÜ START -->
+<div class="tech-pulse-tracker" style="display: inline-flex; gap: 14px; align-items: center; background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 6px 12px; font-family: monospace; font-size: 0.8rem; color: #8b949e; vertical-align: middle; margin-bottom: 1.5rem; margin-left: 10px; transform: translateY(11px);">
+    <div style="display: flex; align-items: center; gap: 6px;">
+        <span id="ai-status-pulse" style="display: inline-block; width: 8px; height: 8px; background-color: #56d364; border-radius: 50%;"></span>
+        <span>OPENAI API: <strong id="ai-ping" style="color: #58a6ff;">-- ms</strong></span>
+    </div>
+    <div style="border-left: 1px solid #30363d; padding-left: 12px; display: flex; align-items: center; gap: 6px;">
+        <span id="git-status-pulse" style="display: inline-block; width: 8px; height: 8px; background-color: #56d364; border-radius: 50%;"></span>
+        <span>GITHUB: <strong id="git-ping" style="color: #58a6ff;">-- ms</strong></span>
+    </div>
+</div>
+
+<script is:inline>
+    (function() {
+        async function checkInfrastructurePulse() {
+            const aiPing = document.getElementById("ai-ping");
+            const aiPulse = document.getElementById("ai-status-pulse");
+            const gitPing = document.getElementById("git-ping");
+            const gitPulse = document.getElementById("git-status-pulse");
+
+            // 1. OpenAI API Canlı Ağ Sorgusu
+            try {
+                const t0 = performance.now();
+                // OpenAI ana sunucu tüneline hafif bir ping isteği gönderir
+                await fetch('https://openai.com', { mode: 'no-cors', cache: 'no-store' });
+                const t1 = performance.now();
+                const pingTime = Math.round(t1 - t0);
+                
+                aiPing.innerText = pingTime + " ms";
+                aiPing.style.color = "#58a6ff";
+                aiPulse.style.backgroundColor = "#56d364"; // Sistem Aktif: Yeşil
+            } catch (e) {
+                aiPing.innerText = "CRITICAL";
+                aiPing.style.color = "#f85149";
+                aiPulse.style.backgroundColor = "#f85149"; // Sunucu Çöktü: Kırmızı
+            }
+
+            // 2. GitHub Cloud Canlı Ağ Sorgusu
+            try {
+                const t0 = performance.now();
+                await fetch('https://github.com', { mode: 'no-cors', cache: 'no-store' });
+                const t1 = performance.now();
+                const pingTime = Math.round(t1 - t0);
+                
+                gitPing.innerText = pingTime + " ms";
+                gitPing.style.color = "#58a6ff";
+                gitPulse.style.backgroundColor = "#56d364";
+            } catch (e) {
+                gitPing.innerText = "OFFLINE";
+                gitPing.style.color = "#f85149";
+                gitPulse.style.backgroundColor = "#f85149";
+            }
+        }
+
+        // Sektör çalışanlarının anlık değişimleri kaçırmaması için her 30 saniyede bir küresel ağları tarar
+        setInterval(checkInfrastructurePulse, 30000);
+        
+        // İlk saniyede gecikme hissettirmemek için tarayıcı tam yüklendiğinde anında çalıştırır
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+            checkInfrastructurePulse();
+        } else {
+            window.addEventListener("load", checkInfrastructurePulse);
+        }
+    })();
+</script>
+<!-- 🌐 KÜRESEL TEKNOLOJİ ALTYAPI MONİTÖRÜ END -->
+
+
+
+
+
+
+
+
+
 <!-- ⚛️ KUANTUM ATOM SAATİ PANELİ START (KESİNTİSİZ MOTOR) -->
 <div class="quantum-atom-clock" style="display: inline-flex; gap: 8px; align-items: center; background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 6px 12px; font-family: monospace; font-size: 0.8rem; color: #8b949e; vertical-align: middle; margin-bottom: 1.5rem; margin-left: 10px; transform: translateY(11px);">
     <div>⚛️ TIME: <strong id="atom-time" style="color: #58a6ff;">--:--:--</strong><span id="atom-ms" style="color: #ffaa00; font-size: 0.7rem; margin-left: 2px;">.000</span></div>
