@@ -1,80 +1,101 @@
 ---
 // Sitenizdeki tüm markdown (.md) yayınlarını otomatik çeker
 const posts = await Astro.glob('./*.md');
-const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime());
 
 const siteName = "RAUFAYAR.NET";
 const siteUrl = "https://raufayar.net";
-const description = "Kuantum Dijital İstihbarat Merkezi"; // Tam 4 kelime
+const description = "Kuantum Dijital İstihbarat Merkezi";
 ---
 
 <!doctype html>
-<html lang="tr" class="dark">
+<html lang="tr">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>Yayınlar | {siteName}</title>
+		<title>Arşiv Yayınları | {siteName}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={siteUrl} />
 		<meta name="robots" content="index, follow" />
 		<link rel="preconnect" href="https://googleapis.com" />
 		<link rel="preconnect" href="https://gstatic.com" crossorigin />
 		<link href="https://googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+		
+		<style>
+			body { 
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+				background: #0d1117; 
+				color: #c9d1d9; 
+				padding: 2rem; 
+				margin: 0;
+			}
+			.container { max-width: 850px; margin: 0 auto; }
+			h1 { color: #f0f6fc; border-bottom: 1px solid #30363d; padding-bottom: 1rem; font-size: 2.2rem; }
+			.btn-home { display: inline-flex; align-items: center; gap: 8px; background: #21262d; color: #c9d1d9; padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #30363d; text-decoration: none; font-size: 0.95rem; font-weight: 600; margin-bottom: 1.5rem; }
+			.btn-home:hover { background: #30363d; }
+			.post-card { background: #161b22; border: 1px solid #30363d; padding: 1.25rem; border-radius: 6px; margin-bottom: 1rem; position: relative; }
+			.post-card:hover { border-color: #58a6ff; }
+			.post-date { font-size: 0.85rem; color: #8b949e; font-family: monospace; }
+			.post-title a { color: #58a6ff; text-decoration: none; font-size: 1.3rem; font-weight: 700; }
+			.post-title a::after { content: ""; position: absolute; inset: 0; }
+			.post-desc { margin: 0.5rem 0 0 0; font-size: 1rem; color: #8b949e; }
+			.filter-info { background: #161b22; border-left: 4px solid #58a6ff; padding: 0.75rem; border-radius: 4px; margin-bottom: 1.5rem; font-size: 1rem; color: #f0f6fc; display: none; }
+		</style>
 	</head>
-	<body class="bg-[#0B0F19] text-[#E2E8F0] font-sans antialiased">
-		<header class="border-b border-[#1E293B] bg-[#0B0F19]/80 backdrop-blur-md sticky top-0 z-50">
-			<div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-				<a href="/" class="text-lg font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#00FF66] to-[#00E5FF]">
-					{siteName}
-				</a>
-				<nav class="flex gap-6 text-sm font-medium">
-					<a href="/" class="text-[#94A3B8] hover:text-[#00FF66] transition-colors">Ana Sayfa</a>
-					<a href="/blog" class="text-[#00FF66] font-semibold">Yayınlar</a>
-				</nav>
-			</div>
-		</header>
+	<body>
 
-		<main class="max-w-4xl mx-auto px-6 py-12">
-			<div class="space-y-4 mb-12">
-				<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#00FF66]/10 text-[#00FF66] border border-[#00FF66]/20">
-					<span class="w-2 h-2 rounded-full bg-[#00FF66] animate-pulse"></span> CANLI VERİ AKIŞI
-				</div>
-				<h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-					Güncel <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00FF66] to-[#00E5FF]">Yayınlar</span>
-				</h1>
-			</div>
+		<div class="container">
+			<a href="/" class="btn-home"><span>🏠</span> Back to Forum</a>
 
-			<div class="grid gap-6 mt-12 border-t border-[#1E293B] pt-12">
-				{sortedPosts.length === 0 ? (
-					<p class="text-[#64748B] italic">Henüz bir yayın bulunamadı.</p>
-				) : (
-					sortedPosts.map((post) => (
-						<article class="group relative flex flex-col items-start p-6 rounded-2xl bg-[#111827]/50 border border-[#1E293B] hover:border-[#00FF66]/30 transition-all duration-300">
-							<div class="text-xs text-[#64748B] mb-2 font-mono">
-								{post.frontmatter.pubDate}
-							</div>
-							<h2 class="text-xl font-bold text-white group-hover:text-[#00FF66] transition-colors">
-								<a href={post.url}>
-									<span class="absolute -inset-y-0 -inset-x-0 z-20 rounded-2xl"></span>
-									{post.frontmatter.title}
-								</a>
-							</h2>
-							<p class="mt-2 text-sm text-[#94A3B8] line-clamp-2">
-								{post.frontmatter.description}
-							</p>
-						</article>
-					))
-				)}
-			</div>
-		</main>
+			<h1 id="page-title">📚 Tüm Arşiv Yayınları</h1>
+			<div id="filter-box" class="filter-info"></div>
 
-		<footer class="border-t border-[#1E293B] mt-24 py-8 text-center text-xs text-[#64748B]">
-			<p>© 2026 {siteName} — Tüm Hakları Saklıdır.</p>
-		</footer>
+			<div class="grid gap-6" id="posts-wrapper">
+				{posts.map((post) => (
+					<article class="post-card" data-tags={post.frontmatter.tags ? post.frontmatter.tags.join(',') : ''}>
+						<div class="post-date">{post.frontmatter.pubDate}</div>
+						<h2 class="post-title">
+							<a href={post.url}>{post.frontmatter.title}</a>
+						</h2>
+						<p class="post-desc">{post.frontmatter.description}</p>
+					</article>
+				))}
+			</div>
+		</div>
+
+		<!-- 🧠 TARAYICI TABANLI AKILLI SÜZGEÇ SCRIPT'İ -->
+		<script is:inline>
+			// URL'deki ?etiket= değerini okur
+			const urlParams = new URLSearchParams(window.location.search);
+			const activeTag = urlParams.get('etiket');
+
+			if (activeTag) {
+				const posts = document.querySelectorAll('.post-card');
+				const filterBox = document.getElementById('filter-box');
+				const pageTitle = document.getElementById('page-title');
+				let foundCount = 0;
+
+				// Sayfa başlığını günceller ve bilgi kutusunu açar
+				pageTitle.innerText = `📁 Kategori Arşivi`;
+				filterBox.style.display = 'block';
+				filterBox.innerHTML = `Şu anda <strong>"${activeTag}"</strong> etiketi ile filtrelenmiş yayınları görüyorsunuz. <a href="/blog" style="color:#58a6ff; margin-left:10px;">Filtreyi Temizle</a>`;
+
+				// Yazıları tek tek kontrol eder, eşleşmeyenleri gizler
+				posts.forEach(post => {
+					const postTags = post.getAttribute('data-tags') || '';
+					if (postTags.includes(activeTag)) {
+						post.style.display = 'block';
+						foundCount++;
+					} else {
+						post.style.display = 'none';
+					}
+				});
+
+				if (foundCount === 0) {
+					document.getElementById('posts-wrapper').innerHTML = `<p style="color:#8b949e; font-style:italic; margin-top:2rem;">Bu kategoriye ait henüz bir yayın bulunamadı.</p>`;
+				}
+			}
+		</script>
 	</body>
 </html>
 
-<style is:global>
-	html { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-</style>
