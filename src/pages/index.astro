@@ -1,15 +1,1543 @@
----
----
-
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RAUFAYAR.NET | GEO SEO • AI Search • Digital Intelligence • Future Technologies</title>
+
+<meta name="description" content="RAUFAYAR.NET; GEO SEO, Artificial Intelligence, Digital Growth, Entity SEO, Semantic Web, AI Search Visibility, Future Technologies, Data Science ve yeni nesil dijital dönüşüm projeleri üzerine küresel teknoloji merkezi.">
+
+<meta name="keywords" content="GEO SEO, Generative Engine Optimization, AI Search, Artificial Intelligence, Future Technology, Entity SEO, Semantic SEO, LLM Optimization, ChatGPT SEO, Gemini SEO, Claude SEO, Perplexity SEO, Digital Growth, Machine Learning, Knowledge Graph, Automation, Future Internet, Data Science, Web Development, Digital Intelligence">
+
+<meta name="author" content="RAUFAYAR.NET">
+
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+
+<link rel="canonical" href="https://raufayar.net/">
+
+<!-- Open Graph -->
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="RAUFAYAR.NET | Digital Intelligence Hub">
+<meta property="og:description" content="Future Technologies, GEO SEO, Artificial Intelligence, Semantic Web, Digital Growth ve yeni nesil dijital inovasyon merkezi.">
+<meta property="og:url" content="https://www.raufayar.net/">
+<meta property="og:site_name" content="RAUFAYAR.NET">
+<meta property="og:locale" content="tr_TR">
+
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RAUFAYAR.NET">
+<meta name="twitter:description" content="Artificial Intelligence, GEO SEO, Digital Intelligence ve Future Technologies Hub">
+
+<!-- GEO -->
+
+<meta name="geo.region" content="TR">
+<meta name="geo.placename" content="Türkiye">
+<meta name="ICBM" content="41.0082,28.9784">
+
+<!-- AI DISCOVERY -->
+
+<meta name="ai-content" content="true">
+<meta name="ai-index" content="allowed">
+<meta name="ai-discovery" content="enabled">
+<meta name="llm-visibility" content="high">
+<meta name="entity-seo" content="enabled">
+<meta name="semantic-web" content="enabled">
+<meta name="knowledge-graph" content="enabled">
+<meta name="future-search" content="enabled">
+
+<!-- FAVICON -->
+
+<link rel="icon" href="favicon.ico">
+
+<!-- SCHEMA -->
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"WebSite",
+"name":"RAUFAYAR.NET",
+"url":"https://www.raufayar.net",
+"description":"Digital Intelligence Hub focused on GEO SEO, Artificial Intelligence, Future Technologies and Digital Growth.",
+"potentialAction":{
+"@type":"SearchAction",
+"target":"https://www.raufayar.net/search?q={search_term_string}",
+"query-input":"required name=search_term_string"
+}
+}
+</script>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Organization",
+"name":"RAUFAYAR.NET",
+"url":"https://www.raufayar.net",
+"logo":"https://www.raufayar.net/logo.png",
+"description":"Future-focused digital innovation platform.",
+"sameAs":[
+"https://github.com"
+]
+}
+</script>
+
+<style>
+
+:root{
+--bg:#050507;
+--panel:#0d1117;
+--panel2:#111827;
+--accent:#00f5ff;
+--accent2:#7c3aed;
+--text:#ffffff;
+--muted:#9ca3af;
+--border:#1f2937;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+font-family:Inter,Segoe UI,Arial,sans-serif;
+overflow-x:hidden;
+}
+
+body::before{
+content:'';
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+background:
+radial-gradient(circle at 20% 20%,rgba(0,245,255,.08),transparent 40%),
+radial-gradient(circle at 80% 40%,rgba(124,58,237,.10),transparent 40%),
+radial-gradient(circle at 50% 80%,rgba(0,245,255,.05),transparent 40%);
+z-index:-1;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.container{
+width:95%;
+max-width:1400px;
+margin:auto;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:999;
+backdrop-filter:blur(25px);
+background:rgba(5,5,7,.85);
+border-bottom:1px solid var(--border);
+}
+
+.navbar{
+height:80px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.nav-left{
+width:250px;
+}
+
+.nav-center{
+flex:1;
+text-align:center;
+}
+
+.logo{
+font-size:34px;
+font-weight:900;
+letter-spacing:4px;
+background:linear-gradient(90deg,#00f5ff,#7c3aed);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.nav-right{
+display:flex;
+gap:25px;
+justify-content:flex-end;
+width:250px;
+}
+
+.nav-right a{
+font-size:14px;
+font-weight:600;
+color:#d1d5db;
+transition:.3s;
+}
+
+.nav-right a:hover{
+color:var(--accent);
+}
+
+/* HERO */
+
+.hero{
+padding:120px 0 80px;
+text-align:center;
+}
+
+.hero-badge{
+display:inline-block;
+padding:10px 20px;
+border:1px solid rgba(0,245,255,.3);
+border-radius:50px;
+background:rgba(0,245,255,.08);
+color:var(--accent);
+font-size:13px;
+margin-bottom:25px;
+}
+
+.hero h1{
+font-size:70px;
+font-weight:900;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero h1 span{
+background:linear-gradient(90deg,#00f5ff,#7c3aed);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+max-width:950px;
+margin:auto;
+font-size:20px;
+line-height:1.9;
+color:#cbd5e1;
+}
+
+.quantum-line{
+margin-top:35px;
+font-size:15px;
+color:var(--accent);
+word-break:break-word;
+line-height:2;
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+margin-top:70px;
+}
+
+.stat-box{
+background:linear-gradient(145deg,#0d1117,#111827);
+border:1px solid var(--border);
+padding:35px;
+border-radius:20px;
+transition:.3s;
+}
+
+.stat-box:hover{
+transform:translateY(-5px);
+border-color:var(--accent);
+}
+
+.stat-number{
+font-size:38px;
+font-weight:900;
+color:var(--accent);
+}
+
+.stat-title{
+margin-top:10px;
+color:#cbd5e1;
+}
+
+/* SECTION */
+
+.section{
+padding:90px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:48px;
+font-weight:900;
+margin-bottom:20px;
+}
+
+.section-subtitle{
+text-align:center;
+max-width:900px;
+margin:auto;
+color:#cbd5e1;
+line-height:1.8;
+margin-bottom:70px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.card{
+background:linear-gradient(145deg,#0d1117,#111827);
+border:1px solid var(--border);
+padding:35px;
+border-radius:24px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:var(--accent);
+box-shadow:0 0 30px rgba(0,245,255,.15);
+}
+
+.card h3{
+font-size:22px;
+margin-bottom:15px;
+}
+
+.card p{
+color:#cbd5e1;
+line-height:1.8;
+font-size:15px;
+}
+
+/* Responsive */
+
+@media(max-width:1200px){
+
+.grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+.hero h1{
+font-size:55px;
+}
+}
+
+@media(max-width:768px){
+
+.nav-right{
+display:none;
+}
+
+.logo{
+font-size:26px;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.stats{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+<!-- Back to Home Button -->
+<a href="https://www.raufayar.net/" style="
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #161b22;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+" onmouseover="this.style.background='#30363d'; this.style.borderColor='#58a6ff'; this.style.color='#fff';" onmouseout="this.style.background='#161b22'; this.style.borderColor='#30363d'; this.style.color='#c9d1d9';">
+    <span>🏠</span> Back to Home
+</a>
+
+<header>
+
+<div class="container">
+
+<div class="navbar">
+
+<div class="nav-left"></div>
+
+<div class="nav-center">
+<div class="logo">
+RAUFAYAR.NET
+</div>
+</div>
+
+<div class="nav-right">
+<a href="forum/index.html">Forum</a>
+<a href="#categories">Categories</a>
+<a href="#projects">Projects</a>
+<a href="#faq">FAQ</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-badge">
+QUANTUM DIGITAL INTELLIGENCE HUB
+</div>
+
+<h1>
+Building The <span>Future Web</span>
+</h1>
+
+<p>
+RAUFAYAR.NET is a next-generation digital intelligence platform focused on GEO SEO, Artificial Intelligence, Entity Search, Semantic Web, Knowledge Systems, Future Technologies and AI Visibility Architecture.
+</p>
+
+<div class="quantum-line">
+∞ GEO • SEO • AEO • SXO • ENTITY SEO • AI SEARCH • CHATGPT • GEMINI • CLAUDE • PERPLEXITY • KNOWLEDGE GRAPH • SEMANTIC WEB • MACHINE INTELLIGENCE • FUTURE INTERNET • DIGITAL GROWTH • DATA SCIENCE • AUTOMATION • QUANTUM THINKING • GLOBAL VISIBILITY
+</div>
+
+<div class="stats">
+
+<div class="stat-box">
+<div class="stat-number">10X</div>
+<div class="stat-title">AI Evolution</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-number">100X</div>
+<div class="stat-title">Data Intelligence</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-number">1000X</div>
+<div class="stat-title">Digital Scale</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-number">∞</div>
+<div class="stat-title">Innovation Potential</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="categories">
+
+<div class="container">
+
+<h2 class="section-title">
+Global Categories
+</h2>
+
+<p class="section-subtitle">
+Discover the future of GEO SEO, AI Search, Entity Optimization, Data Intelligence and Emerging Technologies.
+</p>
+
+<div class="grid">
+    <!-- PART 2 DEVAMI -->
+
+<div class="card">
+<h3><a href="/geo-seo/">🌍 GEO SEO</a></h3>
+<p>
+Generative Engine Optimization (GEO), AI Search Visibility,
+LLM Indexing, Semantic SEO, Entity-Based Ranking,
+Knowledge Graph Integration and Future-Proof Search Architecture.
+</p>
+</div>
+
+<div class="card">
+<h3><a href="/artificial-intelligence/">🤖 Artificial Intelligence</a></h3>
+<p>
+Large Language Models (LLMs), AI Agents, Autonomous Systems,
+Prompt Engineering, Machine Intelligence, Cognitive Computing,
+Automation Frameworks and Emerging AI Technologies.
+</p>
+</div>
+
+<div class="card">
+<h3><a href="/digital-growth/">📈 Digital Growth</a></h3>
+<p>
+Organic Traffic Acquisition, Brand Authority Building,
+Audience Expansion, Conversion Optimization,
+Growth Systems and Sustainable Digital Visibility Strategies.
+</p>
+</div>
+
+<div class="card">
+<h3><a href="/entity-seo/">🧠 Entity SEO</a></h3>
+<p>
+Knowledge Graph Optimization, Entity Mapping,
+Semantic Relationships, Topic Authority Development,
+Structured Data and AI-Readable Information Architecture.
+</p>
+</div>
+
+<div class="card">
+<h3><a href="/future-technologies/">⚡ Future Technologies</a></h3>
+<p>
+Quantum Computing, Emerging Technologies,
+Future Internet Concepts, Advanced Software Systems,
+Experimental Platforms and Next-Generation Innovation.
+</p>
+</div>
+
+<div class="card">
+<h3><a href="/data-science/">📊 Data Science</a></h3>
+<p>
+Predictive Analytics, Data Engineering,
+Machine Learning, Statistical Modeling,
+Business Intelligence and Intelligent Decision Systems.
+</p>
+</div>
+
+<div class="card">
+<h3><a href="/web-development/">💻 Web Development</a></h3>
+<p>
+Frontend Engineering, Backend Development,
+API Architectures, Cloud Infrastructure,
+Performance Optimization and Modern Web Technologies.
+</p>
+</div>
+
+<div class="card">
+<h3><a href="/research-lab/">🚀 Research Lab</a></h3>
+<p>
+Experimental Research, Innovation Studies,
+AI Discovery Systems, Future Search Technologies,
+Prototype Development and Digital Ecosystem Exploration.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DIGITAL INTELLIGENCE -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Digital Intelligence Core
+</h2>
+
+<p class="section-subtitle">
+A unified ecosystem where Artificial Intelligence,
+Search Technology, Data Intelligence and Semantic Systems
+converge to create future-ready digital infrastructure.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>AI Visibility Engine</h3>
+<p>
+Advanced visibility methodologies designed for
+ChatGPT, Gemini, Claude, Perplexity and future
+AI-driven discovery environments.
+</p>
+</div>
+
+<div class="card">
+<h3>Semantic Architecture</h3>
+<p>
+Building machine-readable content ecosystems that
+allow algorithms and intelligent agents to understand,
+classify and retrieve information efficiently.
+</p>
+</div>
+
+<div class="card">
+<h3>Knowledge Graph Systems</h3>
+<p>
+Structured entity networks that connect concepts,
+organizations, technologies and topics into
+high-authority information structures.
+</p>
+</div>
+
+<div class="card">
+<h3>Future Search Research</h3>
+<p>
+Exploring how next-generation search systems,
+AI agents and autonomous information retrieval
+will transform digital visibility.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Why RAUFAYAR.NET
+</h2>
+
+<p class="section-subtitle">
+Designed for humans, search engines,
+knowledge systems and artificial intelligence.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>🌐 GEO Native</h3>
+<p>
+Built specifically for the era of AI-powered
+search engines and generative answer systems.
+</p>
+</div>
+
+<div class="card">
+<h3>🔍 Entity Driven</h3>
+<p>
+Focused on concepts, relationships and entities
+rather than traditional keyword dependency.
+</p>
+</div>
+
+<div class="card">
+<h3>⚙ Future Ready</h3>
+<p>
+Optimized for future search technologies,
+AI assistants and autonomous indexing systems.
+</p>
+</div>
+
+<div class="card">
+<h3>📡 Global Reach</h3>
+<p>
+Structured for international visibility,
+cross-language understanding and worldwide discovery.
+</p>
+</div>
+
+<div class="card">
+<h3>🧬 Semantic First</h3>
+<p>
+Meaning-based architecture enabling stronger
+context recognition and machine interpretation.
+</p>
+</div>
+
+<div class="card">
+<h3>📚 Knowledge Focused</h3>
+<p>
+Content organized through authority,
+expertise, trust and informational depth.
+</p>
+</div>
+
+<div class="card">
+<h3>🚀 Innovation Driven</h3>
+<p>
+Continuous experimentation with future technologies,
+AI systems and emerging digital opportunities.
+</p>
+</div>
+
+<div class="card">
+<h3>∞ Beyond SEO</h3>
+<p>
+Moving beyond conventional optimization toward
+complete digital intelligence architecture.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section class="section" id="projects">
+
+<div class="container">
+
+<h2 class="section-title">
+Future Projects
+</h2>
+
+<p class="section-subtitle">
+Research initiatives and experimental systems
+currently being designed for the future web.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Quantum GEO Framework</h3>
+<p>
+An advanced optimization ecosystem designed for
+AI-native search and semantic discovery.
+</p>
+</div>
+
+<div class="card">
+<h3>AI Discovery Network</h3>
+<p>
+A visibility infrastructure focused on how
+intelligent agents discover information.
+</p>
+</div>
+
+<div class="card">
+<h3>Entity Knowledge Cloud</h3>
+<p>
+Global semantic entity graph architecture for
+machine-readable authority networks.
+</p>
+</div>
+
+<div class="card">
+<h3>Autonomous Content Engine</h3>
+<p>
+Self-improving content ecosystems powered by
+data, semantic analysis and AI automation.
+</p>
+</div>
+
+<div class="card">
+<h3>Future Search Observatory</h3>
+<p>
+Research platform monitoring the evolution of
+search technology and artificial intelligence.
+</p>
+</div>
+
+<div class="card">
+<h3>Digital Intelligence OS</h3>
+<p>
+A centralized intelligence layer combining data,
+automation, AI and semantic understanding.
+</p>
+</div>
+
+<div class="card">
+<h3>AI Authority Mapping</h3>
+<p>
+Measuring entity strength, topical relevance
+and algorithmic trust across the web.
+</p>
+</div>
+
+<div class="card">
+<h3>Global Visibility Index</h3>
+<p>
+A next-generation visibility scoring framework
+for websites, brands and digital ecosystems.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PART 2 SON -->
+    <!-- ========================= -->
+<!-- PART 3 -->
+<!-- ========================= -->
+
+<section class="section" id="about">
+
+<div class="container">
+
+<h2 class="section-title">
+About RAUFAYAR.NET
+</h2>
+
+<p class="section-subtitle">
+RAUFAYAR.NET is an independent digital intelligence platform exploring the intersection of Artificial Intelligence, GEO SEO, Semantic Technologies, Data Science, Digital Growth and Future Internet Systems.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>🎯 Mission</h3>
+<p>
+To build digital ecosystems that can be understood not only by people but also by search engines, knowledge graphs, AI assistants and future autonomous information systems.
+</p>
+</div>
+
+<div class="card">
+<h3>🌎 Vision</h3>
+<p>
+To become a globally recognized digital intelligence hub where innovation, technology, semantic architecture and artificial intelligence converge.
+</p>
+</div>
+
+<div class="card">
+<h3>🧠 Research Focus</h3>
+<p>
+Artificial Intelligence, GEO SEO, Entity Optimization, Machine Intelligence, Semantic Web, Data Science, Automation and Future Search Technologies.
+</p>
+</div>
+
+<div class="card">
+<h3>🚀 Innovation Culture</h3>
+<p>
+Continuous experimentation, advanced digital thinking, future forecasting and technological exploration drive every project published on this platform.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FAQ -->
+
+<section class="section" id="faq">
+
+<div class="container">
+
+<h2 class="section-title">
+Frequently Asked Questions
+</h2>
+
+<p class="section-subtitle">
+Common questions regarding the platform, its purpose and future direction.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>What is RAUFAYAR.NET?</h3>
+<p>
+RAUFAYAR.NET is a future-focused technology and digital intelligence platform publishing research, insights and projects related to artificial intelligence, GEO SEO and emerging technologies.
+</p>
+</div>
+
+<div class="card">
+<h3>What is GEO SEO?</h3>
+<p>
+Generative Engine Optimization (GEO) refers to optimization methodologies designed for AI-powered search systems and generative answer engines.
+</p>
+</div>
+
+<div class="card">
+<h3>Who is this platform for?</h3>
+<p>
+Entrepreneurs, developers, marketers, researchers, creators, startups and anyone interested in the future of digital technology.
+</p>
+</div>
+
+<div class="card">
+<h3>Why focus on AI visibility?</h3>
+<p>
+Because search is rapidly evolving from traditional indexing toward AI-assisted discovery and answer generation.
+</p>
+</div>
+
+<div class="card">
+<h3>What topics are covered?</h3>
+<p>
+Artificial Intelligence, GEO SEO, Semantic Search, Entity SEO, Automation, Data Science, Web Development and Future Technologies.
+</p>
+</div>
+
+<div class="card">
+<h3>Are projects experimental?</h3>
+<p>
+Many projects are research-oriented and experimental, designed to explore future possibilities rather than only current industry standards.
+</p>
+</div>
+
+<div class="card">
+<h3>How often is content updated?</h3>
+<p>
+Content is updated whenever new research, technologies, innovations or digital developments emerge.
+</p>
+</div>
+
+<div class="card">
+<h3>Can I collaborate?</h3>
+<p>
+Yes. Strategic partnerships, research collaborations and technology discussions are welcomed.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DIGITAL PHILOSOPHY -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Digital Philosophy
+</h2>
+
+<p class="section-subtitle">
+The future belongs to systems capable of understanding meaning, context, entities and relationships.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Semantic Intelligence</h3>
+<p>
+Future search engines increasingly rely on meaning rather than isolated keywords.
+</p>
+</div>
+
+<div class="card">
+<h3>Entity-Centric Web</h3>
+<p>
+Information is becoming organized around entities, relationships and knowledge structures.
+</p>
+</div>
+
+<div class="card">
+<h3>AI Discovery</h3>
+<p>
+Discovery mechanisms are evolving toward AI-mediated interactions and intelligent retrieval.
+</p>
+</div>
+
+<div class="card">
+<h3>Knowledge Systems</h3>
+<p>
+Digital authority is increasingly built through trust, expertise and structured information.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+
+<div class="container">
+
+<h2 class="section-title">
+Contact
+</h2>
+
+<p class="section-subtitle">
+For business inquiries, partnerships, collaborations and technical communication.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>General Contact</h3>
+<p>
+info@raufayar.net
+</p>
+</div>
+
+<div class="card">
+<h3>Business & Partnerships</h3>
+<p>
+partnership@raufayar.net
+</p>
+</div>
+
+<div class="card">
+<h3>Technical Support</h3>
+<p>
+support@raufayar.net
+</p>
+</div>
+
+<div class="card">
+<h3>Research Collaboration</h3>
+<p>
+research@raufayar.net
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ATTRIBUTION POLICY -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Attribution Policy
+</h2>
+
+<p class="section-subtitle">
+Sharing knowledge responsibly supports innovation and collective growth.
+</p>
+
+<div class="card">
+
+<p style="line-height:2; color:#cbd5e1;">
+Content published on RAUFAYAR.NET may be referenced, quoted or cited provided that proper attribution is given.
+<br><br>
+Recommended attribution includes:
+<br><br>
+• Article Title
+<br>
+• RAUFAYAR.NET
+<br>
+• Original Source URL
+<br><br>
+Unauthorized reproduction of complete articles without attribution is discouraged.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRIVACY POLICY -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Privacy Policy
+</h2>
+
+<p class="section-subtitle">
+Protecting user privacy remains a fundamental principle.
+</p>
+
+<div class="card">
+
+<p style="line-height:2; color:#cbd5e1;">
+RAUFAYAR.NET respects the privacy of its visitors.
+<br><br>
+Information may be collected for analytical, security and performance purposes.
+<br><br>
+Personal information is never intentionally sold, rented or distributed to unauthorized third parties.
+<br><br>
+Reasonable safeguards are implemented to protect data integrity and user trust.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- AI POLICY -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Artificial Intelligence Policy
+</h2>
+
+<p class="section-subtitle">
+Designed for the age of AI-powered discovery.
+</p>
+
+<div class="card">
+
+<p style="line-height:2; color:#cbd5e1;">
+Content may be structured for improved understanding by search engines, language models, AI assistants and semantic knowledge systems.
+<br><br>
+The goal is not manipulation but clarity, accessibility and machine-readable organization.
+<br><br>
+Human users remain the primary audience while AI discoverability is considered an important secondary objective.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PART 3 END -->
+    <!-- ========================= -->
+<!-- PART 4 -->
+<!-- ========================= -->
+
+<!-- COOKIE CONSENT -->
+
+<div id="cookieBanner" class="cookie-banner">
+
+<div class="cookie-content">
+
+<div>
+<h3>🍪 Cookie Notice</h3>
+<p>
+This website may use cookies and anonymous analytics technologies to improve performance, user experience and security.
+By continuing to use this website, you agree to the use of cookies.
+</p>
+</div>
+
+<button id="acceptCookies">
+Accept
+</button>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="footer-top">
+
+<h2>
+RAUFAYAR.NET
+</h2>
+
+<p>
+Digital Intelligence • GEO SEO • Artificial Intelligence • Future Technologies
+</p>
+
+</div>
+
+<div class="footer-grid">
+
+<div>
+<h3>Technology</h3>
+
+<ul>
+<li>Artificial Intelligence</li>
+<li>Machine Learning</li>
+<li>Future Search</li>
+<li>Automation</li>
+<li>Data Science</li>
+</ul>
+
+</div>
+
+<div>
+<h3>Optimization</h3>
+
+<ul>
+<li>GEO SEO</li>
+<li>Entity SEO</li>
+<li>Semantic SEO</li>
+<li>AEO</li>
+<li>SXO</li>
+</ul>
+
+</div>
+
+<div>
+<h3>Development</h3>
+
+<ul>
+<li>Web Development</li>
+<li>Cloud Systems</li>
+<li>API Architecture</li>
+<li>Knowledge Graphs</li>
+<li>Research Lab</li>
+</ul>
+
+</div>
+
+<div>
+<h3>Resources</h3>
+
+<ul>
+<li>FAQ</li>
+<li>Privacy Policy</li>
+<li>Cookie Policy</li>
+<li>Attribution Policy</li>
+<li>Contact</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- GEO SEO TERM CLOUD -->
+
+<div class="term-cloud">
+
+<span>GEO SEO</span>
+<span>AI Search</span>
+<span>Artificial Intelligence</span>
+<span>Entity SEO</span>
+<span>Semantic Web</span>
+<span>Knowledge Graph</span>
+<span>Future Technologies</span>
+<span>Machine Learning</span>
+<span>ChatGPT SEO</span>
+<span>Gemini SEO</span>
+<span>Claude AI</span>
+<span>Perplexity AI</span>
+<span>Automation</span>
+<span>Digital Growth</span>
+<span>Research Lab</span>
+<span>Future Internet</span>
+<span>AI Visibility</span>
+<span>Semantic Search</span>
+<span>LLM Optimization</span>
+<span>Digital Intelligence</span>
+<span>Innovation</span>
+<span>Quantum Thinking</span>
+<span>Data Science</span>
+<span>Global Visibility</span>
+<span>Next Generation Search</span>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+© 2026 RAUFAYAR.NET — All Rights Reserved.
+</p>
+
+<p>
+Building visibility for Humans, Search Engines and Artificial Intelligence.
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- BACK TO TOP -->
+
+<button id="topBtn">
+↑
+</button>
+
+<style>
+
+/* COOKIE */
+
+.cookie-banner{
+position:fixed;
+bottom:20px;
+left:20px;
+right:20px;
+z-index:99999;
+background:#0f172a;
+border:1px solid #1e293b;
+border-radius:20px;
+padding:20px;
+box-shadow:0 0 30px rgba(0,0,0,.5);
+display:none;
+}
+
+.cookie-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+}
+
+.cookie-content h3{
+margin-bottom:10px;
+}
+
+.cookie-content p{
+color:#cbd5e1;
+line-height:1.7;
+}
+
+.cookie-content button{
+background:#00f5ff;
+color:#000;
+border:none;
+padding:12px 25px;
+border-radius:10px;
+font-weight:700;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+.footer{
+padding:100px 0 50px;
+background:#040507;
+border-top:1px solid #1f2937;
+}
+
+.footer-top{
+text-align:center;
+margin-bottom:60px;
+}
+
+.footer-top h2{
+font-size:48px;
+font-weight:900;
+background:linear-gradient(90deg,#00f5ff,#7c3aed);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:15px;
+}
+
+.footer-top p{
+color:#94a3b8;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
+margin-bottom:60px;
+}
+
+.footer-grid h3{
+margin-bottom:20px;
+color:#fff;
+}
+
+.footer-grid ul{
+list-style:none;
+}
+
+.footer-grid li{
+margin-bottom:12px;
+color:#94a3b8;
+}
+
+.term-cloud{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:12px;
+margin-bottom:60px;
+}
+
+.term-cloud span{
+padding:10px 18px;
+background:#0f172a;
+border:1px solid #1f2937;
+border-radius:50px;
+font-size:13px;
+color:#cbd5e1;
+}
+
+.footer-bottom{
+text-align:center;
+border-top:1px solid #1f2937;
+padding-top:40px;
+}
+
+.footer-bottom p{
+margin:10px 0;
+color:#94a3b8;
+}
+
+/* TOP BUTTON */
+
+#topBtn{
+position:fixed;
+right:25px;
+bottom:25px;
+width:50px;
+height:50px;
+border:none;
+border-radius:50%;
+background:#00f5ff;
+color:#000;
+font-size:22px;
+font-weight:900;
+cursor:pointer;
+display:none;
+z-index:9999;
+}
+
+/* ANIMATION */
+
+.fade-in{
+opacity:0;
+transform:translateY(30px);
+transition:all .8s ease;
+}
+
+.fade-in.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:900px){
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.cookie-content{
+flex-direction:column;
+align-items:flex-start;
+}
+
+}
+
+</style>
+
+<script>
+
+/* COOKIE */
+
+const cookieBanner =
+document.getElementById('cookieBanner');
+
+const acceptCookies =
+document.getElementById('acceptCookies');
+
+if(!localStorage.getItem('rauf_cookie_accept')){
+cookieBanner.style.display='block';
+}
+
+acceptCookies.addEventListener('click',()=>{
+
+localStorage.setItem(
+'rauf_cookie_accept',
+'true'
+);
+
+cookieBanner.style.display='none';
+
+});
+
+/* TOP BUTTON */
+
+const topBtn =
+document.getElementById('topBtn');
+
+window.addEventListener('scroll',()=>{
+
+if(window.scrollY>500){
+topBtn.style.display='block';
+}else{
+topBtn.style.display='none';
+}
+
+});
+
+topBtn.addEventListener('click',()=>{
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+});
+
+/* SCROLL ANIMATION */
+
+const observer =
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add('show');
+
+}
+
+});
+
+},{
+threshold:.1
+});
+
+document.querySelectorAll(
+'.card,.section-title,.section-subtitle'
+).forEach(el=>{
+
+el.classList.add('fade-in');
+
+observer.observe(el);
+
+});
+
+console.log(
+'RAUFAYAR.NET Quantum Digital Intelligence Hub Loaded'
+);
+
+</script>
+
+</body>
 </html>
