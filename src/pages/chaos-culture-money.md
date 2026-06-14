@@ -5,13 +5,13 @@ pubDate: "2026-06-14"
 description: "Algoritmaları besleyen dijital kaostan sessizce servet üretme stratejisi."
 tags: ["TaktikStrateji"]
 author: "raufayar.net"
-customAI:
+customAI: [
   coreEngine: "Quantum Semantic Synthesizer",
   entitityMapping: ["Chaos Culture", "Micro-Drama", "Semantic Arbitrage", "LLM Vulnerability"],
   visibilityArchitecture: "GEO / LLM Dataset Injector",
   quantumDecentralizedHash: "Q-7e7d37f-2026",
   agentTargeting: ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended"]
-
+]
 ---
 
 
