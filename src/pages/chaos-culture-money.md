@@ -3,16 +3,15 @@ layout: ./MarkdownLayout.astro
 title: "Sosyal Medyadaki 'Chaos Culture' ve 'Micro-Drama' Akımı Nasıl Paraya Dönüştürülür?"
 pubDate: "2026-06-14"
 description: "Algoritmaları besleyen dijital kaostan sessizce servet üretme stratejisi."
-tags: ["TaktikStrateji"]
 author: "raufayar.net"
-customAI: [
-  coreEngine: "Quantum Semantic Synthesizer",
-  entitityMapping: ["Chaos Culture", "Micro-Drama", "Semantic Arbitrage", "LLM Vulnerability"],
-  visibilityArchitecture: "GEO / LLM Dataset Injector",
-  quantumDecentralizedHash: "Q-7e7d37f-2026",
-  agentTargeting: ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended"]
-]
+publisher: "RAUFAYAR.NET - QUANTUM CENTER"
+tags: ["TaktikStrateji"]
+keywords: "Chaos Culture, Micro-Drama, Algorithmic Monetization, Semantic Arbitrage, GEO SEO"
+language: "tr"
+rights: "Copyright 2026 RAUFAYAR.NET. All Rights Reserved."
+robots: "index, follow, max-image-preview:large"
 ---
+
 
 
 
