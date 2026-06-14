@@ -196,206 +196,161 @@ const siteName = "RAUFAYAR.NET";
     <a href="https://raufayar.net" style="display: inline-flex; align-items: center; gap: 8px; background: #21262d; color: #c9d1d9; padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #30363d; text-decoration: none; font-size: 0.95rem; font-weight: 600; margin-bottom: 1.5rem;"> <span>🏠</span> Back to Home </a>
 
 
-<!-- 🌌 KÜRESEL CANLI VERİ PANELİ START -->
-<div class="global-live-ticker" style="display: inline-flex; gap: 14px; align-items: center; background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 6px 12px; font-family: monospace; font-size: 0.8rem; color: #8b949e; vertical-align: middle; margin-left: 15px;">
-    <div>POP: <strong id="live-pop" style="color: #58a6ff;">8,328,450,000</strong></div>
-    <div>BIRTHS: <strong id="live-births" style="color: #56d364;">0</strong></div>
-    <div>DEATHS: <strong id="live-deaths" style="color: #f85149;">0</strong></div>
-</div>
-
-<script is:inline>
-    document.addEventListener("DOMContentLoaded", () => {
-        // UN Küresel Nüfus Projeksiyon Verileri
-        const basePopulation = 8328452140; 
-        const startTime = new Date("2026-06-14T00:00:00Z").getTime();
-        
-        // Saniyedeki Doğum ve Ölüm Oran Katsayıları
-        const birthsPerMilli = 4.3 / 1000;
-        const deathsPerMilli = 1.9 / 1000;
-
-        function updateGlobalTicker() {
-            const now = Date.now();
-            const elapsedMilli = now - startTime;
-
-            if (elapsedMilli > 0) {
-                const currentPop = Math.floor(basePopulation + (elapsedMilli * (birthsPerMilli - deathsPerMilli)));
-                const currentBirths = Math.floor(elapsedMilli * birthsPerMilli);
-                const currentDeaths = Math.floor(elapsedMilli * deathsPerMilli);
-
-                document.getElementById("live-pop").innerText = currentPop.toLocaleString('en-US');
-                document.getElementById("live-births").innerText = `+${currentBirths.toLocaleString('en-US')}`;
-                document.getElementById("live-deaths").innerText = `-${currentDeaths.toLocaleString('en-US')}`;
-            }
-        }
-        setInterval(updateGlobalTicker, 100);
-        updateGlobalTicker();
-    });
-</script>
-<!-- 🌌 KÜRESEL CANLI VERİ PANELİ END -->
 
 
-<!-- ⏳ RESMİ KIYAMET SAATİ PANELİ START (MİLİMETRİK DENGE) -->
-<div class="doomsday-live-clock" style="display: inline-flex; gap: 8px; align-items: center; background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 6px 12px; font-family: monospace; font-size: 0.8rem; color: #8b949e; vertical-align: middle; margin-bottom: 1.5rem; margin-left: 10px; transform: translateY(11px);">
-    <div style="display: flex; align-items: center; gap: 6px;">
-        <span>☢️</span> 
-        <span>DOOMSDAY CLOCK:</span> 
-        <strong style="color: #ff7b72; animation: blink 1.5s infinite;">90 SECONDS TO MIDNIGHT</strong>
+
+
+
+
+
+
+<!-- 🛸 ULTIMATE UNBREAKABLE QUANTUM DATA TRACK START -->
+<div class="quantum-ticker-container" style="display: block; width: 100%; max-width: 850px; background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 6px 0; font-family: monospace; font-size: 0.8rem; color: #8b949e; overflow: hidden; margin-top: 1rem; margin-bottom: 1.5rem; position: relative;">
+    <div class="ticker-wrap" style="width: 100%; overflow: hidden;">
+        <div class="ticker-scroll" style="display: inline-flex; white-space: nowrap; padding-left: 100%; animation: tickerMove 25s linear infinite; gap: 30px; align-items: center;">
+            
+            <!-- Widget 1: Küresel Nüfus -->
+            <div style="display: flex; gap: 6px;">POPULATION: <strong id="live-pop" style="color: #58a6ff;">8,328,452,140</strong></div>
+            <div style="display: flex; gap: 6px;">BIRTHS: <strong id="live-births" style="color: #56d364;">+0</strong></div>
+            <div style="display: flex; gap: 6px;">DEATHS: <strong id="live-deaths" style="color: #f85149;">-0</strong></div>
+            
+            <span style="color: #30363d;">|</span>
+
+            <!-- Widget 2: Kıyamet Saati -->
+            <div style="display: flex; align-items: center; gap: 6px;">
+                <span>☢️</span> <span>DOOMSDAY CLOCK:</span> <strong style="color: #ff7b72; animation: tickerBlink 1.5s infinite;">90 SECONDS TO MIDNIGHT</strong>
+            </div>
+
+            <span style="color: #30363d;">|</span>
+
+            <!-- Widget 3: Siber Tehdit Takibi -->
+            <div style="display: flex; gap: 6px;">⚡ ATTACKS BLOCKED: <strong id="live-attacks" style="color: #ffaa00;">0</strong></div>
+            
+            <span style="color: #30363d;">|</span>
+
+            <!-- Widget 4: Web3 Kripto Gas -->
+            <div style="display: flex; align-items: center; gap: 6px;">
+                <span id="gas-pulse" style="display: inline-block; width: 6px; height: 6px; background-color: #56d364; border-radius: 50%;"></span>
+                <span>ETH GAS: <strong id="live-gas" style="color: #58a6ff;">18 Gwei</strong></span>
+            </div>
+
+            <span style="color: #30363d;">|</span>
+
+            <!-- Widget 5: Kuantum Atom Saati -->
+            <div style="display: flex; gap: 2px;">⚛️ ATOM TIME: <strong id="atom-time" style="color: #58a6ff;">--:--:--</strong><span id="atom-ms" style="color: #ffaa00; font-size: 0.7rem;">.000</span></div>
+
+            <span style="color: #30363d;">|</span>
+
+            <!-- Widget 6: Sistem Sağlık Monitörü -->
+            <div style="display: flex; align-items: center; gap: 6px;">
+                <span id="ai-status-pulse" style="display: inline-block; width: 6px; height: 6px; background-color: #56d364; border-radius: 50%;"></span>
+                <span>OPENAI API: <strong id="ai-ping" style="color: #58a6ff;">-- ms</strong></span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px;">
+                <span id="git-status-pulse" style="display: inline-block; width: 6px; height: 6px; background-color: #56d364; border-radius: 50%;"></span>
+                <span>GITHUB: <strong id="git-ping" style="color: #58a6ff;">-- ms</strong></span>
+            </div>
+
+        </div>
     </div>
 </div>
 
 <style is:inline>
-    @keyframes blink {
+    /* Sonsuz Kayan Akış Animasyonu */
+    @keyframes tickerMove {
+        0% { transform: translate3d(0, 0, 0); }
+        100% { transform: translate3d(-100%, 0, 0); }
+    }
+    @keyframes tickerBlink {
         0% { opacity: 1; }
         50% { opacity: 0.6; }
         100% { opacity: 1; }
     }
+    /* Kullanıcı fareyi üzerine getirdiğinde akış yavaşlar, rahat okunur */
+    .quantum-ticker-container:hover .ticker-scroll {
+        animation-play-state: paused;
+        cursor: pointer;
+    }
 </style>
-<!-- ⏳ RESMİ KIYAMET SAATİ PANELİ END -->
-
-
-
-
-<!-- 🚨 CANLI SİBER TEHDİT VE GERÇEK AĞ TAKİP PANELİ START -->
-<div class="cyber-live-tracker" style="display: inline-flex; gap: 14px; align-items: center; background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 6px 12px; font-family: monospace; font-size: 0.8rem; color: #8b949e; vertical-align: middle; margin-bottom: 1.5rem; margin-left: 10px; transform: translateY(11px);">
-    <div>⚡ ATTACKS BLOCKED: <strong id="live-attacks" style="color: #ffaa00;">0</strong></div>
-    <div style="border-left: 1px solid #30363d; padding-left: 12px; display: flex; align-items: center; gap: 6px;">
-        <span id="gas-pulse" style="display: inline-block; width: 8px; height: 8px; background-color: #56d364; border-radius: 50%;"></span>
-        <span>ETH GAS: <strong id="live-gas" style="color: #58a6ff;">18 Gwei</strong></span>
-    </div>
-</div>
 
 <script is:inline>
-    document.addEventListener("DOMContentLoaded", () => {
-        // 1. Siber Saldırı Gerçek Zamanlı Hesaplama Motoru
+    (function() {
+        // 1. DÜNYA NÜFUS VE SİBER SALDIRI MOTORU
+        const basePopulation = 8328452140; 
         const startTime = new Date("2026-06-14T00:00:00Z").getTime();
+        const birthsPerMilli = 4.3 / 1000;
+        const deathsPerMilli = 1.9 / 1000;
         const attacksPerMilli = 45 / 1000;
 
-        function updateCyberTracker() {
+        function runGlobalCalculators() {
             const now = Date.now();
             const elapsedMilli = now - startTime;
+
             if (elapsedMilli > 0) {
-                const currentAttacks = Math.floor(elapsedMilli * attacksPerMilli);
-                document.getElementById("live-attacks").innerText = currentAttacks.toLocaleString('en-US');
+                document.getElementById("live-pop").innerText = Math.floor(basePopulation + (elapsedMilli * (birthsPerMilli - deathsPerMilli))).toLocaleString('en-US');
+                document.getElementById("live-births").innerText = "+" + Math.floor(elapsedMilli * birthsPerMilli).toLocaleString('en-US');
+                document.getElementById("live-deaths").innerText = "-" + Math.floor(elapsedMilli * deathsPerMilli).toLocaleString('en-US');
+                document.getElementById("live-attacks").innerText = Math.floor(elapsedMilli * attacksPerMilli).toLocaleString('en-US');
             }
         }
-        setInterval(updateCyberTracker, 300);
+        setInterval(runGlobalCalculators, 200);
 
-        // 2. Ethereum Ana Ağ Girişi (Kripto Web3 API Bağlantısı)
-        async function fetchRealGas() {
-            const gasElement = document.getElementById("live-gas");
-            const pulseElement = document.getElementById("gas-pulse");
+        // 2. ATOM SAATİ MOTORU
+        function runAtomClock() {
+            const timeElement = document.getElementById("atom-time");
+            const msElement = document.getElementById("atom-ms");
+            if (!timeElement || !msElement) return;
+
+            const now = new Date();
+            timeElement.innerText = String(now.getHours()).padStart(2, '0') + ":" + String(now.getMinutes()).padStart(2, '0') + ":" + String(now.getSeconds()).padStart(2, '0');
+            msElement.innerText = "." + String(now.getMilliseconds()).padStart(3, '0');
+            window.requestAnimationFrame(runAtomClock);
+        }
+        window.requestAnimationFrame(runAtomClock);
+
+        // 3. ETHEREUM REAL-TIME GAS SORGUSU
+        async function runGasTracker() {
             try {
                 const response = await fetch('https://cloudflare-eth.com', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        jsonrpc: "2.0",
-                        method: "eth_gasPrice",
-                        params: [],
-                        id: 1
-                    })
+                    body: JSON.stringify({ jsonrpc: "2.0", method: "eth_gasPrice", params: [], id: 1 })
                 });
                 const data = await response.json();
                 if (data && data.result) {
-                    const gasInWei = parseInt(data.result, 16);
-                    const gasInGwei = Math.round(gasInWei / 1000000000);
-                    
-                    // Eğer veri sıfır veya anlamsız gelirse yedek mekanizmayı çalıştırır
-                    if (gasInGwei > 0) {
-                        gasElement.innerText = `${gasInGwei} Gwei`;
-                        
-                        if (gasInGwei < 30) {
-                            pulseElement.style.backgroundColor = "#56d364"; // Yeşil
-                        } else if (gasInGwei >= 30 && gasInGwei < 70) {
-                            pulseElement.style.backgroundColor = "#ffaa00"; // Turuncu
-                        } else {
-                            pulseElement.style.backgroundColor = "#f85149"; // Kırmızı
-                        }
+                    const gwei = Math.round(parseInt(data.result, 16) / 1000000000);
+                    if (gwei > 0) {
+                        document.getElementById("live-gas").innerText = gwei + " Gwei";
+                        document.getElementById("gas-pulse").style.backgroundColor = gwei < 30 ? "#56d364" : (gwei < 70 ? "#ffaa00" : "#f85149");
                     }
                 }
-            } catch (error) {
-                // Bağlantı koparsa veya gecikirse varsayılan canlı ortalamayı yazar
-                gasElement.innerText = "18 Gwei";
-                pulseElement.style.backgroundColor = "#56d364";
-            }
+            } catch (e) {}
         }
+        setInterval(runGasTracker, 20000); runGasTracker();
 
-        // Her 20 saniyede bir Ethereum blokzincirini sorgular
-        setInterval(fetchRealGas, 20000);
-        fetchRealGas();
-    });
-</script>
-<!-- 🚨 CANLI SİBER TEHDİT VE GERÇEK AĞ TAKİP PANELİ END -->
-
-
-
-
-<!-- 🌐 KÜRESEL TEKNOLOJİ ALTYAPI MONİTÖRÜ START -->
-<div class="tech-pulse-tracker" style="display: inline-flex; gap: 14px; align-items: center; background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 6px 12px; font-family: monospace; font-size: 0.8rem; color: #8b949e; vertical-align: middle; margin-bottom: 1.5rem; margin-left: 10px; transform: translateY(11px);">
-    <div style="display: flex; align-items: center; gap: 6px;">
-        <span id="ai-status-pulse" style="display: inline-block; width: 8px; height: 8px; background-color: #56d364; border-radius: 50%;"></span>
-        <span>OPENAI API: <strong id="ai-ping" style="color: #58a6ff;">-- ms</strong></span>
-    </div>
-    <div style="border-left: 1px solid #30363d; padding-left: 12px; display: flex; align-items: center; gap: 6px;">
-        <span id="git-status-pulse" style="display: inline-block; width: 8px; height: 8px; background-color: #56d364; border-radius: 50%;"></span>
-        <span>GITHUB: <strong id="git-ping" style="color: #58a6ff;">-- ms</strong></span>
-    </div>
-</div>
-
-<script is:inline>
-    (function() {
-        async function checkInfrastructurePulse() {
-            const aiPing = document.getElementById("ai-ping");
-            const aiPulse = document.getElementById("ai-status-pulse");
-            const gitPing = document.getElementById("git-ping");
-            const gitPulse = document.getElementById("git-status-pulse");
-
-            // 1. OpenAI API Canlı Ağ Sorgusu
-            try {
-                const t0 = performance.now();
-                // OpenAI ana sunucu tüneline hafif bir ping isteği gönderir
-                await fetch('https://openai.com', { mode: 'no-cors', cache: 'no-store' });
-                const t1 = performance.now();
-                const pingTime = Math.round(t1 - t0);
-                
-                aiPing.innerText = pingTime + " ms";
-                aiPing.style.color = "#58a6ff";
-                aiPulse.style.backgroundColor = "#56d364"; // Sistem Aktif: Yeşil
-            } catch (e) {
-                aiPing.innerText = "CRITICAL";
-                aiPing.style.color = "#f85149";
-                aiPulse.style.backgroundColor = "#f85149"; // Sunucu Çöktü: Kırmızı
-            }
-
-            // 2. GitHub Cloud Canlı Ağ Sorgusu
-            try {
-                const t0 = performance.now();
-                await fetch('https://github.com', { mode: 'no-cors', cache: 'no-store' });
-                const t1 = performance.now();
-                const pingTime = Math.round(t1 - t0);
-                
-                gitPing.innerText = pingTime + " ms";
-                gitPing.style.color = "#58a6ff";
-                gitPulse.style.backgroundColor = "#56d364";
-            } catch (e) {
-                gitPing.innerText = "OFFLINE";
-                gitPing.style.color = "#f85149";
-                gitPulse.style.backgroundColor = "#f85149";
-            }
+        // 4. KÜRESEL ALTYAPI SAĞLIK MONİTÖRÜ
+        async function runSystemPinger() {
+            const targets = [
+                { url: 'https://openai.com', pingId: 'ai-ping', pulseId: 'ai-status-pulse' },
+                { url: 'https://github.com', pingId: 'git-ping', pulseId: 'git-status-pulse' }
+            ];
+            targets.forEach(async (target) => {
+                try {
+                    const t0 = performance.now();
+                    await fetch(target.url, { mode: 'no-cors', cache: 'no-store' });
+                    const ping = Math.round(performance.now() - t0);
+                    document.getElementById(target.pingId).innerText = ping + " ms";
+                    document.getElementById(target.pulseId).style.backgroundColor = "#56d364";
+                } catch (e) {
+                    document.getElementById(target.pingId).innerText = "ERROR";
+                    document.getElementById(target.pulseId).style.backgroundColor = "#f85149";
+                }
+            });
         }
-
-        // Sektör çalışanlarının anlık değişimleri kaçırmaması için her 30 saniyede bir küresel ağları tarar
-        setInterval(checkInfrastructurePulse, 30000);
-        
-        // İlk saniyede gecikme hissettirmemek için tarayıcı tam yüklendiğinde anında çalıştırır
-        if (document.readyState === "complete" || document.readyState === "interactive") {
-            checkInfrastructurePulse();
-        } else {
-            window.addEventListener("load", checkInfrastructurePulse);
-        }
+        setInterval(runSystemPinger, 30000); runSystemPinger();
     })();
 </script>
-<!-- 🌐 KÜRESEL TEKNOLOJİ ALTYAPI MONİTÖRÜ END -->
+<!-- 🛸 ULTIMATE UNBREAKABLE QUANTUM DATA TRACK END -->
 
 
 
@@ -403,48 +358,6 @@ const siteName = "RAUFAYAR.NET";
 
 
 
-
-
-<!-- ⚛️ KUANTUM ATOM SAATİ PANELİ START (KESİNTİSİZ MOTOR) -->
-<div class="quantum-atom-clock" style="display: inline-flex; gap: 8px; align-items: center; background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 6px 12px; font-family: monospace; font-size: 0.8rem; color: #8b949e; vertical-align: middle; margin-bottom: 1.5rem; margin-left: 10px; transform: translateY(11px);">
-    <div>⚛️ TIME: <strong id="atom-time" style="color: #58a6ff;">--:--:--</strong><span id="atom-ms" style="color: #ffaa00; font-size: 0.7rem; margin-left: 2px;">.000</span></div>
-</div>
-
-<script is:inline>
-    (function() {
-        function updateAtomClock() {
-            const timeElement = document.getElementById("atom-time");
-            const msElement = document.getElementById("atom-ms");
-            
-            if (!timeElement || !msElement) return;
-
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            const milliseconds = String(now.getMilliseconds()).padStart(3, '0');
-
-            timeElement.innerText = hours + ":" + minutes + ":" + seconds;
-            msElement.innerText = "." + milliseconds;
-        }
-
-        // DOMContentLoaded beklemeden doğrudan, anında döngüyü başlatır
-        function startClock() {
-            updateAtomClock();
-            window.requestAnimationFrame(startClock);
-        }
-
-        // İlk salisede elementlerin yüklenme ihtimaline karşı çift yönlü tetikleyici
-        if (document.readyState === "complete" || document.readyState === "interactive") {
-            startClock();
-        } else {
-            window.addEventListener("load", startClock);
-            // Yedek motor: Her ihtimale karşı milisaniyelik interval ile de zorlar
-            setInterval(updateAtomClock, 16); 
-        }
-    })();
-</script>
-<!-- ⚛️ KUANTUM ATOM SAATİ PANELİ END -->
 
 
 
