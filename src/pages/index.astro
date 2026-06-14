@@ -330,6 +330,40 @@ const siteName = "RAUFAYAR.NET";
 
 
 
+<!-- ⚛️ KUANTUM ATOM SAATİ PANELİ START -->
+<div class="quantum-atom-clock" style="display: inline-flex; gap: 8px; align-items: center; background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 6px 12px; font-family: monospace; font-size: 0.8rem; color: #8b949e; vertical-align: middle; margin-bottom: 1.5rem; margin-left: 10px; transform: translateY(11px);">
+    <div>⚛️ TIME: <strong id="atom-time" style="color: #58a6ff;">00:00:00</strong><span id="atom-ms" style="color: #ffaa00; font-size: 0.7rem; margin-left: 2px;">.000</span></div>
+</div>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        const timeElement = document.getElementById("atom-time");
+        const msElement = document.getElementById("atom-ms");
+
+        function updateAtomClock() {
+            const now = new Date();
+            
+            // Saat, Dakika ve Saniyeyi iki haneli formatta alır
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            
+            // Saliseyi (Milisaniyeyi) üç haneli atomik hızda alır
+            const milliseconds = String(now.getMilliseconds()).padStart(3, '0');
+
+            timeElement.innerText = `${hours}:${minutes}:${seconds}`;
+            msElement.innerText = `.${milliseconds}`;
+        }
+
+        // Tarayıcının yenileme hızına (FPS) senkronize olarak her 1 milisaniyede bir tetiklenir
+        function animateClock() {
+            updateAtomClock();
+            requestAnimationFrame(animateClock);
+        }
+        
+        requestAnimationFrame(animateClock);
+    </script>
+<!-- ⚛️ KUANTUM ATOM SAATİ PANELİ END -->
 
 
 
