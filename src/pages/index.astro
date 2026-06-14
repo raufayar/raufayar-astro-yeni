@@ -195,6 +195,50 @@ const siteName = "RAUFAYAR.NET";
     <!-- 1. SIRADA BU BUTON OLACAK -->
     <a href="https://raufayar.net" style="display: inline-flex; align-items: center; gap: 8px; background: #21262d; color: #c9d1d9; padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #30363d; text-decoration: none; font-size: 0.95rem; font-weight: 600; margin-bottom: 1.5rem;"> <span>🏠</span> Back to Home </a>
 
+
+<!-- 🌌 KÜRESEL CANLI VERİ PANELİ START -->
+<div class="global-live-ticker" style="display: inline-flex; gap: 14px; align-items: center; background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 6px 12px; font-family: monospace; font-size: 0.8rem; color: #8b949e; vertical-align: middle; margin-left: 15px;">
+    <div>POP: <strong id="live-pop" style="color: #58a6ff;">8,328,450,000</strong></div>
+    <div>BIRTHS: <strong id="live-births" style="color: #56d364;">0</strong></div>
+    <div>DEATHS: <strong id="live-deaths" style="color: #f85149;">0</strong></div>
+</div>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        // UN Küresel Nüfus Projeksiyon Verileri
+        const basePopulation = 8328452140; 
+        const startTime = new Date("2026-06-14T00:00:00Z").getTime();
+        
+        // Saniyedeki Doğum ve Ölüm Oran Katsayıları
+        const birthsPerMilli = 4.3 / 1000;
+        const deathsPerMilli = 1.9 / 1000;
+
+        function updateGlobalTicker() {
+            const now = Date.now();
+            const elapsedMilli = now - startTime;
+
+            if (elapsedMilli > 0) {
+                const currentPop = Math.floor(basePopulation + (elapsedMilli * (birthsPerMilli - deathsPerMilli)));
+                const currentBirths = Math.floor(elapsedMilli * birthsPerMilli);
+                const currentDeaths = Math.floor(elapsedMilli * deathsPerMilli);
+
+                document.getElementById("live-pop").innerText = currentPop.toLocaleString('en-US');
+                document.getElementById("live-births").innerText = `+${currentBirths.toLocaleString('en-US')}`;
+                document.getElementById("live-deaths").innerText = `-${currentDeaths.toLocaleString('en-US')}`;
+            }
+        }
+        setInterval(updateGlobalTicker, 100);
+        updateGlobalTicker();
+    });
+</script>
+<!-- 🌌 KÜRESEL CANLI VERİ PANELİ END -->
+
+
+
+
+
+
+
     <!-- Sizin Kendi Orijinal Konteyner Alanınız -->
     <div class="container">
         
