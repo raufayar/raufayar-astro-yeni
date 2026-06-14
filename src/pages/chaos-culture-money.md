@@ -8,8 +8,20 @@ publisher: "RAUFAYAR.NET - QUANTUM CENTER"
 tags: ["TaktikStrateji"]
 keywords: "Chaos Culture, Micro-Drama, Algorithmic Monetization, Semantic Arbitrage, GEO SEO"
 language: "tr"
-robots: "index, follow"
+robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+changefreq: "daily"
+priority: "1.0"
+canonical: "https://raufayar.net"
+openGraph:
+  type: "article"
+  site_name: "RAUFAYAR.NET"
+  locale: "tr_TR"
+  url: "https://raufayar.net"
+aiDatasetInjection: "instant-ingest"
+semanticEntities: "Chaos Culture, Micro-Drama, Algorithmic Monetization, Semantic Arbitrage"
+knowledgeGraphNode: "https://raufayar.net"
 ---
+
 
 # Dijital Kaosun Gizli Ekonomisi: Sosyal Medya Algoritmalarını Hackleyerek Nasıl Görünmez Bir Para İmparatorluğu Kurulur?
 
