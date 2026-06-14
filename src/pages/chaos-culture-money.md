@@ -2,7 +2,7 @@
 title: "Sosyal Medyadaki 'Chaos Culture' ve 'Micro-Drama' Akımı Nasıl Paraya Dönüştürülür?"
 pubDate: "14 Haziran 2026"
 description: "Algoritmaları besleyen dijital kaostan sessizce servet üretme stratejisi."
-tags: ["TaktikStrateji"]
+tags: ["Taktik ve Strateji"]
 ---
 
 # Dijital Kaosun Gizli Ekonomisi: Sosyal Medya Algoritmalarını Hackleyerek Nasıl Görünmez Bir Para İmparatorluğu Kurulur?
