@@ -1,8 +1,20 @@
+
 ---
-// Sitenizdeki tüm markdown (.md) yayınlarını otomatik çeker
-const posts = await Astro.glob('./*.md');
-const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime());
-const latestPosts = sortedPosts.slice(0, 5); // Maksimum 5 yazı ile sınırlama
+// Sitenizdeki tüm markdown (.md) dosyalarını otomatik çeker
+const allPosts = await Astro.glob('./*.md');
+
+// 🛡️ YASAL SAYFALARI FİLTRELEME: Kurumsal dosyaların yayın listesini kirletmesini engeller
+const filteredPosts = allPosts.filter(post => {
+    const url = post.url || "";
+    return !url.includes('faq') && 
+           !url.includes('iletisim') && 
+           !url.includes('hakkimda') && 
+           !url.includes('gizlilik-ve-cerez-politikasi');
+});
+
+// Yayınları en yeni üstte olacak şekilde sıralar
+const sortedPosts = filteredPosts.sort((a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime());
+const latestPosts = sortedPosts.slice(0, 5); // Sağ panelde maksimum 5 gerçek yayın tutar
 
 const siteName = "RAUFAYAR.NET";
 ---
@@ -17,7 +29,7 @@ const siteName = "RAUFAYAR.NET";
     <script async src="https://googlesyndication.com" crossorigin="anonymous"></script>
 
     <style>
-        /* GitHub ve RaufAyar.net ruhuna uygun tam uyumlu karanlık temanız */
+        /* Sizin orijinal GitHub ve RaufAyar.net ruhuna uygun tam uyumlu karanlık temanız */
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             background: #0d1117; 
@@ -60,7 +72,7 @@ const siteName = "RAUFAYAR.NET";
                 width: 260px;
                 display: flex;
                 flex-direction: column;
-                gap: 2rem; /* İki menü arasında net boşluk bırakır */
+                gap: 2rem; /* İki menü arasında net boşluk */
             }
         }
         @media (max-width: 1199px) {
@@ -186,7 +198,7 @@ const siteName = "RAUFAYAR.NET";
     <!-- Sizin Kendi Orijinal Konteyner Alanınız -->
     <div class="container">
         
-        <!-- 📦 TAM SOLDAKİ KAPSAYICI KUTU (Üst üste binmeyi engeller) -->
+        <!-- 📦 TAM SOLDAKİ KAPSAYICI KUTU -->
         <div class="left-sidebar-wrapper">
             <!-- ÜST BÖLÜM: Kategoriler -->
             <div class="menu-section">
@@ -217,23 +229,6 @@ const siteName = "RAUFAYAR.NET";
         
         <!-- KRİTİK ALAN: Giscus yorumlarının yükleneceği hedef kutu -->
         <div class="giscus"></div>
-        
-        <!-- Kesinlikle Çalışan Giscus Script Alanı -->
-        <script is:inline src="https://giscus.app"
-                data-repo="raufayar/raufayar.github.io"
-                data-repo-id="R_kgDOS43ysQ"
-                data-category="General"
-                data-category-id="DIC_kwDOS43ysc4C_ECO"
-                data-mapping="pathname"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="bottom"
-                data-theme="dark_dimmed"
-                data-lang="en"
-                crossorigin="anonymous"
-                async>
-        </script>
 
         <!-- SAĞA ASILI YAN PANEL -->
         <div class="sidebar-box">
@@ -251,10 +246,28 @@ const siteName = "RAUFAYAR.NET";
                     </div>
                 ))
             )}
-            <a href="/blog" class="btn-archive" style="margin-top: 8px;">📂 Tüm Yayınları Gör ({posts.length})</a>
+            <a href="/blog" class="btn-archive" style="margin-top: 8px;">📂 Tüm Yayınları Gör ({filteredPosts.length})</a>
         </div>
 
     </div>
 
+    <!-- 🛡️ EN GÜVENLİ ALAN: Çökmeyi Engelleyen Orijinal Giscus Scripti (is:inline modu aktif ve body sonunda) -->
+    <script is:inline src="https://giscus.app/client.js"
+            data-repo="raufayar/raufayar.github.io"
+            data-repo-id="R_kgDOS43ysQ"
+            data-category="General"
+            data-category-id="DIC_kwDOS43ysc4C_ECO"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="dark_dimmed"
+            data-lang="en"
+            crossorigin="anonymous"
+            async>
+    </script>
+
 </body>
 </html>
+
