@@ -35,6 +35,7 @@ const siteName = "RAUFAYAR.NET";
             border-bottom: 1px solid #30363d; 
             padding-bottom: 1rem; 
             font-size: 2.2rem;
+            margin-top: 0;
         }
         p { 
             color: #8b949e; 
@@ -47,33 +48,35 @@ const siteName = "RAUFAYAR.NET";
             border-left: 4px solid #58a6ff;
             padding: 1rem;
             border-radius: 6px;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* 📁 YENİ: SOL TARAFTAKİ BOŞLUĞU DOLDURAN KATEGORİ ETİKETLERİ */
+        /* 📁 TAM SOL TARAFA HİZALANMIŞ KATEGORİ PANELİ */
         .category-container {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
+            margin-top: 1.5rem;
             margin-bottom: 2rem;
-            padding-bottom: 1rem;
+            padding-bottom: 1.5rem;
             border-bottom: 1px solid #21262d;
+            justify-content: flex-start; /* Tam sol tarafa hizalar */
         }
         .category-tag {
-            background: #1f242c;
+            background: #161b22;
             color: #58a6ff;
             border: 1px solid #30363d;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            padding: 6px 14px;
+            border-radius: 6px; /* Tam GitHub kutu stili */
+            font-size: 0.9rem;
             font-weight: 500;
             text-decoration: none;
             transition: 0.2s;
         }
         .category-tag:hover {
-            background: #388bfd;
-            color: #ffffff;
-            border-color: #58a6ff;
+            background: #21262d;
+            color: #f0f6fc;
+            border-color: #8b949e;
         }
 
         /* ORİJİNAL YAPINIZI BOZMAYAN ASILI SAĞ PANEL CSS */
@@ -152,18 +155,18 @@ const siteName = "RAUFAYAR.NET";
 </head>
 <body>
 
-    <!-- 1. SIRADA BU BUTON OLACAK (Sizin Kodunuzdaki Gibi En Üstte) -->
-    <a href="https://raufayar.net" style="display: inline-flex; align-items: center; gap: 8px; background: #21262d; color: #c9d1d9; padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #30363d; text-decoration: none; font-size: 0.95rem; font-weight: 600; margin-bottom: 1.5rem;"> <span>🏠</span> Back to Home </a>
+    <!-- 1. SIRADA BU BUTON OLACAK -->
+    <a href="https://raufayar.net" style="display: inline-flex; align-items: center; gap: 8px; background: #21262d; color: #c9d1d9; padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #30363d; text-decoration: none; font-size: 0.95rem; font-weight: 600; margin-bottom: 1.5rem; margin-left: 2rem;"> <span>🏠</span> Back to Home </a>
 
-    <!-- Sizin Kendi Orijinal Konteyner Alanınız -->
     <div class="container">
+        <!-- 2. SIRADA BAŞLIK VE AÇIKLAMA METNİ -->
         <h1>🌐 Global Open-Web Forum</h1>
         
         <div class="notice">
             <p><strong>Welcome to the decentralized discussion hub.</strong> This space is directly integrated with our GitHub Discussions. Share your insights, collaborate with global experts, and help us build an open web. Sign in with your GitHub account to participate.</p>
         </div>
 
-        <!-- 📂 KATEGORİ BUTONLARI PANELİ (Sol taraftaki boşluğu harika bir şekilde doldurur) -->
+        <!-- 3. SIRADA TAM SOLA HİZALANMIŞ KATEGORİLER -->
         <div class="category-container">
             <a href="/blog" class="category-tag">🤖 AI</a>
             <a href="/blog" class="category-tag">🎁 Ücretsiz Uygulamalar</a>
@@ -176,8 +179,8 @@ const siteName = "RAUFAYAR.NET";
         <!-- KRİTİK ALAN: Giscus yorumlarının yükleneceği hedef kutu -->
         <div class="giscus"></div>
         
-        <!-- Senin giscus kodun (Orijinal haliyle, yerli yerinde) -->
-        <script src="https://giscus.app"
+        <!-- 🛡️ KORUMALI SCRIPT: is:inline parametresi sayesinde forumun çökmesi tamamen engellendi -->
+        <script is:inline src="https://giscus.app"
                 data-repo="raufayar/raufayar.github.io"
                 data-repo-id="R_kgDOS43ysQ"
                 data-category="General"
@@ -193,7 +196,7 @@ const siteName = "RAUFAYAR.NET";
                 async>
         </script>
 
-        <!-- SAĞA ASILI YAN PANEL (Forumu ve Giscus'u asla ezemez, konteynerin en altında korumalıdır) -->
+        <!-- SAĞA ASILI YAN PANEL -->
         <div class="sidebar-box">
             <h2 class="sidebar-title">📡 Son Yayınlar</h2>
             
