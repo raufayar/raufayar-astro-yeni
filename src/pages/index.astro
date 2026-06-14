@@ -28,7 +28,7 @@ const siteName = "RAUFAYAR.NET";
         .container { 
             max-width: 850px; 
             margin: 0 auto; 
-            position: relative; /* Sağ paneli kilitlemek için gerekli */
+            position: relative; /* Sağ paneli dışarıda kilitlemek için gerekli */
         }
         h1 { 
             color: #f0f6fc; 
@@ -50,7 +50,33 @@ const siteName = "RAUFAYAR.NET";
             margin-bottom: 2rem;
         }
 
-        /* 🎯 ORİJİNAL YAPINIZI BOZMAYAN ASILI SAĞ PANEL CSS */
+        /* 📁 YENİ: SOL TARAFTAKİ BOŞLUĞU DOLDURAN KATEGORİ ETİKETLERİ */
+        .category-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #21262d;
+        }
+        .category-tag {
+            background: #1f242c;
+            color: #58a6ff;
+            border: 1px solid #30363d;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .category-tag:hover {
+            background: #388bfd;
+            color: #ffffff;
+            border-color: #58a6ff;
+        }
+
+        /* ORİJİNAL YAPINIZI BOZMAYAN ASILI SAĞ PANEL CSS */
         @media (min-width: 1200px) {
             .sidebar-box {
                 position: absolute;
@@ -136,12 +162,22 @@ const siteName = "RAUFAYAR.NET";
         <div class="notice">
             <p><strong>Welcome to the decentralized discussion hub.</strong> This space is directly integrated with our GitHub Discussions. Share your insights, collaborate with global experts, and help us build an open web. Sign in with your GitHub account to participate.</p>
         </div>
+
+        <!-- 📂 KATEGORİ BUTONLARI PANELİ (Sol taraftaki boşluğu harika bir şekilde doldurur) -->
+        <div class="category-container">
+            <a href="/blog" class="category-tag">🤖 AI</a>
+            <a href="/blog" class="category-tag">🎁 Ücretsiz Uygulamalar</a>
+            <a href="/blog" class="category-tag">📊 Analizler</a>
+            <a href="/blog" class="category-tag">🎯 Taktik ve Strateji</a>
+            <a href="/blog" class="category-tag">🚀 Gelecek</a>
+            <a href="/blog" class="category-tag">🌌 Kozmoz & Kuantum</a>
+        </div>
         
         <!-- KRİTİK ALAN: Giscus yorumlarının yükleneceği hedef kutu -->
         <div class="giscus"></div>
         
         <!-- Senin giscus kodun (Orijinal haliyle, yerli yerinde) -->
-        <script src="https://giscus.app/client.js"
+        <script src="https://giscus.app"
                 data-repo="raufayar/raufayar.github.io"
                 data-repo-id="R_kgDOS43ysQ"
                 data-category="General"
