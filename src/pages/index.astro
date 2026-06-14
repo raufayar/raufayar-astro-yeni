@@ -268,6 +268,37 @@ const siteName = "RAUFAYAR.NET";
             async>
     </script>
 
+<!-- Canlı Adres Çubuğu Veri Akış Motoru -->
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 32; canvas.height = 32;
+    const ctx = canvas.getContext('2d');
+    const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon'; link.rel = 'shortcut icon';
+    document.getElementsByTagName('head')[0].appendChild(link);
+
+    let frame = 0;
+    setInterval(() => {
+      ctx.fillStyle = '#0d1117'; ctx.fillRect(0, 0, 32, 32);
+      ctx.fillStyle = '#00FF66'; ctx.font = 'bold 10px monospace';
+      
+      // Saniyede 5 kez değişen rastgele kuantum bit akışı
+      const bit1 = Math.floor(Math.random() * 2);
+      const bit2 = Math.floor(Math.random() * 2);
+      const bit3 = Math.floor(Math.random() * 2);
+      
+      ctx.fillText(bit1, 4, 12 + (frame % 4));
+      ctx.fillText(bit2, 14, 18 - (frame % 3));
+      ctx.fillText(bit3, 24, 24 + (frame % 5));
+      
+      link.href = canvas.toDataURL('image/x-icon');
+      frame++;
+    }, 200);
+  });
+</script>
+
+
 </body>
 </html>
 
