@@ -25,6 +25,17 @@ const { frontmatter } = Astro.props;
         p { font-size: 1.1rem; color: #c9d1d9; margin-bottom: 1.5rem; }
         strong { color: #ff7b72; }
         footer { text-align: center; margin-top: 5rem; padding-top: 2rem; border-top: 1px solid #30363d; font-size: 0.85rem; color: #8b949e; }
+        
+        /* 🖼️ SİZİN ORİJİNAL KODUNUZA EKLENEN SÜRDÜRÜLEBİLİR OTOMATİK RESİM BOYUTLANDIRICI */
+        img {
+            max-width: 100% !important;
+            width: 700px !important;
+            height: auto !important;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            display: block;
+            margin: 2rem auto !important;
+        }
     </style>
 </head>
 <body>
@@ -37,3 +48,9 @@ const { frontmatter } = Astro.props;
     </div>
 </body>
 </html>
+
+
+
+
+
+
