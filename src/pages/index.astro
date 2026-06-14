@@ -1,83 +1,187 @@
 ---
-// Sitenizdeki tüm markdown (.md) yayınlarını ana sayfa için de otomatik çeker
+// Sitenizdeki tüm markdown (.md) yayınlarını otomatik çeker
 const posts = await Astro.glob('./*.md');
 const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime());
+const latestPosts = sortedPosts.slice(0, 5); // İlk 5 yazıyı tutar, çöplüğe dönmeyi engeller
 
 const siteName = "RAUFAYAR.NET";
-const siteUrl = "https://raufayar.net";
+const siteUrl = "https://www.raufayar.net";
 const description = "Kuantum Dijital İstihbarat Merkezi"; // Tam 4 kelime
 ---
 
-<!doctype html>
-<html lang="tr" class="dark">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{siteName} | {description}</title>
-		<meta name="description" content={description} />
-		<link rel="canonical" href={siteUrl} />
-		<meta name="robots" content="index, follow" />
-		<link rel="preconnect" href="https://googleapis.com" />
-		<link rel="preconnect" href="https://gstatic.com" crossorigin />
-		<link href="https://googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-	</head>
-	<body class="bg-[#0B0F19] text-[#E2E8F0] font-sans antialiased">
-		<header class="border-b border-[#1E293B] bg-[#0B0F19]/80 backdrop-blur-md sticky top-0 z-50">
-			<div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-				<a href="/" class="text-lg font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#00FF66] to-[#00E5FF]">
-					{siteName}
-				</a>
-			</div>
-		</header>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{siteName} | {description}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={siteUrl} />
+    <meta name="robots" content="index, follow" />
+    
+    <style>
+        /* Sizin gönderdiğiniz orijinal GitHub ve RaufAyar.net uyumlu şık karanlık tema */
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background: #0d1117; 
+            color: #c9d1d9; 
+            padding: 2rem; 
+            margin: 0;
+        }
+        .container { 
+            max-width: 850px; 
+            margin: 0 auto; 
+        }
+        h1 { 
+            color: #f0f6fc; 
+            border-bottom: 1px solid #30363d; 
+            padding-bottom: 1rem; 
+            font-size: 2.2rem;
+            margin-top: 1.5rem;
+        }
+        h2 {
+            color: #58a6ff;
+            font-size: 1.6rem;
+            margin-top: 2rem;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 0.5rem;
+        }
+        p { 
+            color: #8b949e; 
+            line-height: 1.6; 
+            font-size: 1.1rem;
+        }
+        .notice {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-left: 4px solid #58a6ff;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+        /* Geri Dön Butonunun Şık GitHub Tarzı Tasarımı */
+        .btn-home {
+            display: inline-flex;
+            items-center: center;
+            gap: 8px;
+            background: #21262d;
+            color: #c9d1d9;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .btn-home:hover {
+            background: #30363d;
+            border-color: #8b949e;
+            color: #f0f6fc;
+        }
+        /* Otomatik Yayın Kartlarının Şık Tasarımı */
+        .post-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            padding: 1.25rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            position: relative;
+            transition: 0.2s;
+        }
+        .post-card:hover {
+            border-color: #58a6ff;
+            background: #1f242c;
+        }
+        .post-date {
+            font-size: 0.85rem;
+            color: #8b949e;
+            font-family: monospace;
+        }
+        .post-title a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .post-title a::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+        }
+        .post-desc {
+            margin: 0.5rem 0 0 0;
+            font-size: 1rem;
+            color: #8b949e;
+        }
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #30363d;
+            font-size: 0.85rem;
+            color: #8b949e;
+        }
+    </style>
+</head>
+<body>
 
-		<main class="max-w-4xl mx-auto px-6 py-12 space-y-16">
-			<!-- ANA SAYFA HOŞ GELDİNİZ BÖLÜMÜ -->
-			<div class="space-y-4">
-				<h1 class="text-5xl font-extrabold tracking-tight text-white">
-					{siteName}
-				</h1>
-				<p class="text-[#00FF66] text-xl font-mono tracking-wide">{description}</p>
-			</div>
+    <div class="container">
+        <!-- 1. SIRADA BU BUTON (Tam İstediğiniz Gibi En Üstte) -->
+        <a href="https://raufayar.net" class="btn-home">
+            <span>🏠</span> Back to Home
+        </a>
 
-			<!-- OTOMATİK YAYIN LİSTESİ (BURAYA ASLA DOKUNMAYACAKSINIZ) -->
-			<div class="border-t border-[#1E293B] pt-8">
-				<h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-					<span class="w-2 h-2 rounded-full bg-[#00FF66] animate-pulse"></span>
-					Son Yayınlar
-				</h2>
-				
-				<div class="grid gap-6">
-					{sortedPosts.length === 0 ? (
-						<p class="text-[#64748B] italic">Henüz bir yayın bulunamadı.</p>
-					) : (
-						sortedPosts.map((post) => (
-							<article class="group relative flex flex-col items-start p-6 rounded-2xl bg-[#111827]/50 border border-[#1E293B] hover:border-[#00FF66]/30 transition-all duration-300">
-								<div class="text-xs text-[#64748B] mb-2 font-mono">
-									{post.frontmatter.pubDate}
-								</div>
-								<h3 class="text-xl font-bold text-white group-hover:text-[#00FF66] transition-colors">
-									<a href={post.url}>
-										<span class="absolute -inset-y-0 -inset-x-0 z-20 rounded-2xl"></span>
-										{post.frontmatter.title}
-									</a>
-								</h3>
-								<p class="mt-2 text-sm text-[#94A3B8] line-clamp-2">
-									{post.frontmatter.description}
-								</p>
-							</article>
-						))
-					)}
-				</div>
-			</div>
-		</main>
+        <!-- 2. SIRADA FORUM KODLARI VE BAŞLIK -->
+        <h1>🌐 Global Open-Web Forum</h1>
+        
+        <div class="notice">
+            <p><strong>Welcome to the decentralized discussion hub.</strong> This space is directly integrated with our GitHub Discussions. Share your insights, collaborate with global experts, and help us build an open web. Sign in with your GitHub account to participate.</p>
+        </div>
 
-		<footer class="border-t border-[#1E293B] mt-24 py-8 text-center text-xs text-[#64748B]">
-			<p>© 2026 {siteName} — Tüm Hakları Saklıdır.</p>
-		</footer>
-	</body>
+        <!-- OTOMATİK DİNAMİK YAYINLAR BÖLÜMÜ (Asla Çöplüğe Dönmeyecek) -->
+        <h2>📡 Son Yayınlar (Otomatik Akış)</h2>
+        <div style="margin-bottom: 2.5rem;">
+            {latestPosts.length === 0 ? (
+                <p class="italic">Henüz bir yayın bulunamadı.</p>
+            ) : (
+                latestPosts.map((post) => (
+                    <article class="post-card">
+                        <div class="post-date">{post.frontmatter.pubDate}</div>
+                        <h3 class="post-title">
+                            <a href={post.url}>{post.frontmatter.title}</a>
+                        </h3>
+                        <p class="post-desc">{post.frontmatter.description}</p>
+                    </article>
+                ))
+            )}
+        </div>
+        
+        <!-- KRİTİK ALAN: Sizin Canlı Giscus Tartışma Alanınız -->
+        <h2>💬 Canlı Tartışmalar</h2>
+        <div class="giscus"></div>
+        
+        <!-- Sizin orijinal giscus kodunuz -->
+        <script src="https://giscus.app/client.js"
+                data-repo="raufayar/raufayar.github.io"
+                data-repo-id="R_kgDOS43ysQ"
+                data-category="General"
+                data-category-id="DIC_kwDOS43ysc4C_ECO"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="dark_dimmed"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+        </script>
+
+        <footer>
+            © 2026 {siteName} — Tüm Hakları Saklıdır.
+        </footer>
+    </div>
+
+</body>
 </html>
-
-<style is:global>
-	html { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-</style>
