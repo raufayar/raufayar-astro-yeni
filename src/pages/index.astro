@@ -2,7 +2,7 @@
 // Sitenizdeki tüm markdown (.md) yayınlarını otomatik çeker
 const posts = await Astro.glob('./*.md');
 const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime());
-const latestPosts = sortedPosts.slice(0, 5); // Maksimum 5 yazı ile sınırlama
+const latestPosts = sortedPosts.slice(0, 5); // Axiom: Maksimum 5 yazı ile sınırlama
 
 const siteName = "RAUFAYAR.NET";
 ---
@@ -12,6 +12,10 @@ const siteName = "RAUFAYAR.NET";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Forum | Rauf Ayar</title>
+
+    <!-- Google AdSense Otomatik Reklam Entegrasyonu -->
+    <script async src="https://googlesyndication.com" crossorigin="anonymous"></script>
+
     <style>
         /* Sizin orijinal GitHub ve RaufAyar.net karanlık temanız */
         body { 
