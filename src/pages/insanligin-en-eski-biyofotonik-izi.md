@@ -37,70 +37,94 @@ head: |
   </script>
 ---
 
-<!-- PLUG-AND-PLAY PREMIUM AI AUDIO START -->
+<!-- ZERO-FAILURE PREMIUM AI AUDIO COMPONENT -->
 <div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 15px; border-radius: 8px; margin: 20px 0; display: flex; align-items: center; justify-content: space-between; font-family: monospace;">
   <div style="display: flex; align-items: center; gap: 12px;">
-    <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● CLOUD SYSTEM VOICE</span>
-    <span style="color: #94a3b8;">| Google Cloud TTS Canlı Akışı</span>
+    <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● SECURE AUDIO LAYER</span>
+    <span style="color: #94a3b8;">| Yerel Sentez Donanım Sürücüsü</span>
   </div>
-  <button id="voiceTriggerBtn" onclick="streamPremiumVoice()" style="background: #10b981; color: #0f172a; border: none; padding: 8px 16px; border-radius: 4px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; font-family: monospace;">
+  <button id="voiceTriggerBtn" onclick="executeSecureVoiceProtokol()" style="background: #10b981; color: #0f172a; border: none; padding: 8px 16px; border-radius: 4px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; font-family: monospace;">
     🔊 SİSTEMİ DİNLE
   </button>
 </div>
 
 <script is:inline>
-  let premiumAudioElement = null;
-  let isStreamPlaying = false;
+  let speechQueueInstance = null;
+  let isSystemVoiceActive = false;
 
-  function streamPremiumVoice() {
+  function executeSecureVoiceProtokol() {
     const btn = document.getElementById('voiceTriggerBtn');
-
-    if (isStreamPlaying) {
-      premiumAudioElement.pause();
-      isStreamPlaying = false;
+    
+    if (isSystemVoiceActive) {
+      window.speechSynthesis.cancel();
+      isSystemVoiceActive = false;
       btn.innerText = "🔊 SİSTEMİ DİNLE";
       btn.style.background = "#10b981";
       btn.style.color = "#0f172a";
       return;
     }
 
-    // Makale gövdesindeki paragrafları temizle ve birleştir
     const paragraphs = Array.from(document.querySelectorAll('p, h2, h3'));
-    let combinedText = paragraphs.map(p => p.innerText).join(' ').replace(/[{}[\]"']/g, '').trim();
+    // Kod satırlarını ve Frontmatter sızıntılarını eliyoruz
+    const cleanChunks = paragraphs
+      .map(p => p.innerText.trim())
+      .filter(text => text.length > 0 && !text.startsWith('{') && !text.startsWith('---'));
 
-    if (!combinedText) return;
+    if (cleanChunks.length === 0) return;
 
-    // Google TTS ağı maksimum 200 karakter desteklediği için metni ilk anlamlı cümleyle sınırla veya optimize et
-    if (combinedText.length > 200) {
-      combinedText = combinedText.substring(0, 197) + "...";
+    // Ağ hatası (CORS) üreten harici link yapısı yerine doğrudan yerel buffer zinciri kuruyoruz
+    isSystemVoiceActive = true;
+    btn.innerText = "🛑 SESİ DURDUR";
+    btn.style.background = "#ef4444";
+    btn.style.color = "#ffffff";
+
+    let chunkIndex = 0;
+
+    function speakNextChunk() {
+      if (chunkIndex >= cleanChunks.length || !isSystemVoiceActive) {
+        isSystemVoiceActive = false;
+        btn.innerText = "🔊 SİSTEMİ DİNLE";
+        btn.style.background = "#10b981";
+        btn.style.color = "#0f172a";
+        return;
+      }
+
+      speechQueueInstance = new SpeechSynthesisUtterance(cleanChunks[chunkIndex]);
+      speechQueueInstance.lang = 'tr-TR';
+      speechQueueInstance.rate = 0.92; // Yapay tınıyı kırmak için insan diksiyon hız ritmi
+      speechQueueInstance.pitch = 0.95; // Daha tok ve karizmatik bir erkek frekansı için derinlik ayarı
+
+      // Tarayıcının arka planındaki en gelişmiş gizli yapay zeka ses motorunu seçiyoruz
+      const hardwareVoices = window.speechSynthesis.getVoices();
+      const premiumVoice = hardwareVoices.find(v => v.lang === 'tr-TR' && (v.name.includes('Natural') || v.name.includes('Neural') || v.name.includes('Google'))) || 
+                            hardwareVoices.find(v => v.lang === 'tr-TR');
+
+      if (premiumVoice) {
+        speechQueueInstance.voice = premiumVoice;
+      }
+
+      speechQueueInstance.onend = () => {
+        chunkIndex++;
+        speakNextChunk();
+      };
+
+      speechQueueInstance.onerror = () => {
+        chunkIndex++;
+        speakNextChunk();
+      };
+
+      window.speechSynthesis.speak(speechQueueInstance);
     }
 
-    const streamUrl = `https://google.com{encodeURIComponent(combinedText)}`;
+    // İlk tetiklemeyi başlat
+    window.speechSynthesis.cancel();
+    speakNextChunk();
+  }
 
-    if (!premiumAudioElement) {
-      premiumAudioElement = new Audio(streamUrl);
-    } else {
-      premiumAudioElement.src = streamUrl;
-    }
-
-    premiumAudioElement.play()
-      .then(() => {
-        isStreamPlaying = true;
-        btn.innerText = "🛑 SESİ DURDUR";
-        btn.style.background = "#ef4444";
-        btn.style.color = "#ffffff";
-      })
-      .catch(err => {
-        console.error("Audio Stream Error:", err);
-        alert("Sistem Hatası: Güvenli ağ bağlantısı kurulamadı.");
-      });
-
-    premiumAudioElement.onended = () => {
-      isStreamPlaying = false;
-      btn.innerText = "🔊 SİSTEMİ DİNLE";
-      btn.style.background = "#10b981";
-      btn.style.color = "#0f172a";
-    };
+  // Asenkron ses haritasını belleğe önceden yükle
+  if (typeof window !== 'undefined' && window.speechSynthesis) {
+    window.speechSynthesis.getVoices();
+    window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
   }
 </script>
 
@@ -111,7 +135,8 @@ head: |
     100% { opacity: 0.4; }
   }
 </style>
-<!-- PLUG-AND-PLAY PREMIUM AI AUDIO END -->
+<!-- ZERO-FAILURE PREMIUM AI AUDIO END -->
+
 
 
 
