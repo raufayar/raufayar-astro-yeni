@@ -3,20 +3,7 @@ title: "GEO ve Yapay Zeka Çağı"
 pubDate: "14 Haziran 2026"
 description: "Astro ve GitHub Pages altyapısının içerik yayınlama performans testi."
 ---
-<!-- GOOGLE NOTEBOOKLM AUDIO BRIDGE -->
-<div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 15px; border-radius: 12px; margin: 25px 0; font-family: monospace;">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● NOTEBOOKLM PODCAST NODE</span>
-    <span style="color: #94a3b8;">| Canlı Yapay Zeka Tartışma Akışı</span>
-  </div>
-  
-  <iframe 
-    src="BURAYA_KOPYALADIGINIZ_NOTEBOOKLM_LINKINI_YAPISTIRIN"
-    style="width: 100%; height: 120px; border: none; border-radius: 8px; background: transparent;"
-    scrolling="no">
-  </iframe>
-</div>
-<!-- GOOGLE NOTEBOOKLM AUDIO BRIDGE END -->
+
 
 # Astro Üzerinde İlk Canlı Yayın Başarılı!
 
