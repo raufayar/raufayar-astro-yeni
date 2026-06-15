@@ -43,7 +43,91 @@ head: |
 
 
 
-[![SİSTEMİ DİNLE (ELEVENLABS QUALITY)](https://shields.io)](https://googleapis.com)
+<!-- SYSTEM ZERO-TRUST AUDIO LAYER -->
+<div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 15px; border-radius: 8px; margin: 20px 0; display: flex; align-items: center; justify-content: space-between; font-family: monospace;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● SPEKTRAL CORE INJECTION</span>
+    <span style="color: #94a3b8;">| ElevenLabs CDN Tunnel Active</span>
+  </div>
+  <button id="voiceTriggerBtn" onclick="executeSpektralTunnel()" style="background: #10b981; color: #0f172a; border: none; padding: 8px 16px; border-radius: 4px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; font-family: monospace;">
+    🔊 SİSTEMİ DİNLE
+  </button>
+</div>
+
+<script is:inline>
+  let rawAudioContext = null;
+  let currentBufferSource = null;
+  let isCorePlaying = false;
+
+  async function executeSpektralTunnel() {
+    const btn = document.getElementById('voiceTriggerBtn');
+    
+    if (isCorePlaying) {
+      if (currentBufferSource) currentBufferSource.stop();
+      isCorePlaying = false;
+      btn.innerText = "🔊 SİSTEMİ DİNLE";
+      btn.style.background = "#10b981";
+      btn.style.color = "#0f172a";
+      return;
+    }
+
+    btn.innerText = "⚡ TÜNEL KURULUYOR...";
+    btn.style.background = "#eab308";
+    btn.style.color = "#0f172a";
+
+    try {
+      // Tarayıcının ham ses işlemcisini doğrudan tetikle
+      rawAudioContext = new (window.AudioContext || window.webkitAudioContext)();
+      
+      // ElevenLabs CDN sunucusundan gelen ham ses dalgası (Siber ara belleğe alma)
+      // CORS engeline takılmayan doğrudan ikili veri (Binary Data) akış kanalı
+      const targetCdnStream = "https://googleapis.com";
+      
+      const response = await fetch(`https://allorigins.win{encodeURIComponent(targetCdnStream)}`);
+      const rawBytes = await response.arrayBuffer();
+      
+      // Ham veriyi gerçek zamanlı olarak sese deşifre et
+      rawAudioContext.decodeAudioData(rawBytes, (audioBuffer) => {
+        currentBufferSource = rawAudioContext.createBufferSource();
+        currentBufferSource.buffer = audioBuffer;
+        currentBufferSource.connect(rawAudioContext.destination);
+        
+        currentBufferSource.onended = () => {
+          isCorePlaying = false;
+          btn.innerText = "🔊 SİSTEMİ DİNLE";
+          btn.style.background = "#10b981";
+          btn.style.color = "#0f172a";
+        };
+
+        currentBufferSource.start(0);
+        isCorePlaying = true;
+        btn.innerText = "🛑 SESİ DURDUR";
+        btn.style.background = "#ef4444";
+        btn.style.color = "#ffffff";
+      }, (err) => {
+        throw new Error("Deşifre hatası.");
+      });
+
+    } catch (error) {
+      console.error(error);
+      isCorePlaying = false;
+      btn.innerText = "🔊 SİSTEMİ DİNLE";
+      btn.style.background = "#10b981";
+      btn.style.color = "#0f172a";
+      alert("Siber Defans Engeli: Tarayıcı ham veri akışını bloke etti.");
+    }
+  }
+</script>
+
+<style>
+  @keyframes pulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+  }
+</style>
+<!-- SYSTEM ZERO-TRUST AUDIO LAYER END -->
+
 
 
 
