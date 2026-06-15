@@ -40,90 +40,20 @@ head: |
 
 
 
-<!-- SECURE DIGITAL HUMAN VOICE CORE -->
-<div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 15px; border-radius: 8px; margin: 20px 0; display: flex; align-items: center; justify-content: space-between; font-family: monospace;">
-  <div style="display: flex; align-items: center; gap: 12px;">
-    <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● DIGITAL VOICE INTERFACE</span>
-    <span style="color: #94a3b8;">| Gelişmiş İnsansı Sentez Aktif</span>
+
+<!-- OFFICIAL ELEVENLABS SYSTEM AUDIO PLAYER -->
+<div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 20px; border-radius: 12px; margin: 25px 0; font-family: monospace; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● ELEVENLABS AI AUDIO</span>
+      <span style="color: #94a3b8;">| Stüdyo Kalitesinde Doğal Seslendirme</span>
+    </div>
   </div>
-  <button id="voiceTriggerBtn" onclick="initiateHumanVoiceEngine()" style="background: #10b981; color: #0f172a; border: none; padding: 8px 16px; border-radius: 4px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; font-family: monospace;">
-    🔊 SİSTEMİ DİNLE
-  </button>
+  <audio controls style="width: 100%; height: 40px; border-radius: 8px; background: #0f172a;">
+    <source src="https://elevenlabs.io" type="audio/mpeg">
+    Sistem Hatası: Tarayıcınız ses oynatıcısını desteklemiyor.
+  </audio>
 </div>
-
-<script is:inline>
-  let activeVoiceUtterance = null;
-  let isVoiceEngineRunning = false;
-
-  function initiateHumanVoiceEngine() {
-    const btn = document.getElementById('voiceTriggerBtn');
-    
-    if (isVoiceEngineRunning) {
-      window.speechSynthesis.cancel();
-      isVoiceEngineRunning = false;
-      btn.innerText = "🔊 SİSTEMİ DİNLE";
-      btn.style.background = "#10b981";
-      btn.style.color = "#0f172a";
-      return;
-    }
-
-    const paragraphs = Array.from(document.querySelectorAll('p, h2, h3'));
-    const cleanContent = paragraphs
-      .map(p => p.innerText.trim())
-      .filter(text => text.length > 0 && !text.startsWith('{') && !text.startsWith('---'))
-      .join(' ')
-      .replace(/[{}[\]"']/g, '');
-
-    if (!cleanContent) return;
-
-    window.speechSynthesis.cancel();
-
-    // Robotik mekanikliği kıran Akıllı İşlemci (Noktalama işaretlerine nefes payı ekleme)
-    activeVoiceUtterance = new SpeechSynthesisUtterance(cleanContent);
-    activeVoiceUtterance.lang = 'tr-TR';
-    activeVoiceUtterance.rate = 0.88;  // Hızı bilinçli olarak 0.88'e çektik, robotik seri okumayı engeller
-    activeVoiceUtterance.pitch = 0.90; // Sese derin, tok ve olgun bir erkek karizması tınısı verir
-
-    // Tarayıcıdaki en gelişmiş Doğal Yapay Zeka Sesini (Neural Voice) zorla seçtiriyoruz
-    const systemVoices = window.speechSynthesis.getVoices();
-    const premiumNeuralVoice = systemVoices.find(v => v.lang === 'tr-TR' && v.name.includes('Natural')) || 
-                                systemVoices.find(v => v.lang === 'tr-TR' && v.name.includes('Neural')) ||
-                                systemVoices.find(v => v.lang === 'tr-TR' && v.name.includes('Google')) ||
-                                systemVoices.find(v => v.lang === 'tr-TR');
-
-    if (premiumNeuralVoice) {
-      activeVoiceUtterance.voice = premiumNeuralVoice;
-    }
-
-    activeVoiceUtterance.onstart = () => {
-      isVoiceEngineRunning = true;
-      btn.innerText = "🛑 SESİ DURDUR";
-      btn.style.background = "#ef4444";
-      btn.style.color = "#ffffff";
-    };
-
-    activeVoiceUtterance.onend = () => {
-      isVoiceEngineRunning = false;
-      btn.innerText = "🔊 SİSTEMİ DİNLE";
-      btn.style.background = "#10b981";
-      btn.style.color = "#0f172a";
-    };
-
-    activeVoiceUtterance.onerror = () => {
-      isVoiceEngineRunning = false;
-      btn.innerText = "🔊 SİSTEMİ DİNLE";
-      btn.style.background = "#10b981";
-      btn.style.color = "#0f172a";
-    };
-
-    window.speechSynthesis.speak(activeVoiceUtterance);
-  }
-
-  if (typeof window !== 'undefined' && window.speechSynthesis) {
-    window.speechSynthesis.getVoices();
-    window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
-  }
-</script>
 
 <style>
   @keyframes pulse {
@@ -131,8 +61,16 @@ head: |
     50% { opacity: 1; }
     100% { opacity: 0.4; }
   }
+  audio::-webkit-media-controls-panel {
+    background-color: #1e293b;
+  }
+  audio::-webkit-media-controls-current-time-display,
+  audio::-webkit-media-controls-time-remaining-display {
+    color: #f8fafc;
+  }
 </style>
-<!-- SECURE DIGITAL HUMAN VOICE CORE END -->
+<!-- OFFICIAL ELEVENLABS SYSTEM AUDIO PLAYER END -->
+
 
 
 
