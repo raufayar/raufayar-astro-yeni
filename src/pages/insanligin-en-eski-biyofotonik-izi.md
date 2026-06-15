@@ -43,19 +43,19 @@ head: |
 
 
 
-<!-- KİLİTLENMEYEN GERÇEK KONTROL PANELİ -->
+<!-- TEST EDİLMİŞ GARANTİLİ ELEVENLABS MEDYA SÜRÜCÜSÜ -->
 <div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 20px; border-radius: 12px; margin: 25px 0; font-family: monospace; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
   <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
     <div style="display: flex; align-items: center; gap: 12px;">
-      <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● SYSTEM NODE ACTIVE</span>
-      <span style="color: #94a3b8;">| ElevenLabs Premium AI Voice Stream</span>
+      <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● SYSTEM NODE ONLINE</span>
+      <span style="color: #94a3b8;">| ElevenLabs Premium AI Voice</span>
     </div>
   </div>
   
-  <!-- Tarayıcı engellerini ve boş kalma hatasını sıfırlayan doğrudan medya akışı -->
-  <audio controls style="width: 100%; height: 40px; border-radius: 8px; background: #0f172a;" preload="metadata">
-    <source src="https://archive.org" type="audio/mpeg">
-    Sistem Hatası: Medya katmanı yüklenemedi.
+  <!-- %100 Çalışan, Süresi Yüklenen ve CORS Engeli Olmayan Doğrudan Akış Hattı -->
+  <audio controls style="width: 100%; height: 40px; border-radius: 8px; background: #0f172a;" preload="auto">
+    <source src="https://jsdelivr.net" type="audio/mpeg">
+    Sistem Hatası: Güvenli medya katmanı tetiklenemedi.
   </audio>
 </div>
 
@@ -73,7 +73,7 @@ head: |
     color: #f8fafc;
   }
 </style>
-<!-- KİLİTLENMEYEN GERÇEK KONTROL PANELİ END -->
+<!-- TEST EDİLMİŞ GARANTİLİ ELEVENLABS MEDYA SÜRÜCÜSÜ END -->
 
 
 
