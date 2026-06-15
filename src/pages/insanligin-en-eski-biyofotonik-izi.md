@@ -40,54 +40,21 @@ head: |
 
 
 
-<div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 20px; border-radius: 12px; margin: 25px 0; font-family: monospace;">
-  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● NEURAL ENGINE ACTIVE</span>
-    </div>
-  </div>
-  
-  <button id="playSystemAudio" onclick="triggerNeuralStream()" style="width: 100%; background: #10b981; color: #0f172a; border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer;">
-    ▶ BAŞLAT: SENTETİK SES AKIŞI
-  </button>
-  
-  <audio id="neuralAudio" style="display:none;"></audio>
-</div>
+// ElevenLabs üzerinden anlık ses akışı başlatma yapısı
+async function playHighQualityVoice(text) {
+  const response = await fetch("https://api.elevenlabs.io/v1/text-to-speech/{VOICE_ID}/stream", {
+    method: "POST",
+    headers: {
+      "xi-api-key": "SİZİN_API_KEY",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ text: text })
+  });
 
-<script is:inline>
-  async function triggerNeuralStream() {
-    const btn = document.getElementById('playSystemAudio');
-    const audio = document.getElementById('neuralAudio');
-    
-    // Seslendirilmesini istediğiniz metin
-    const textToSpeak = "Biyolojik sistem mimarisinde sürdürülebilir optimizasyon: Bio-hacking manifesto. Modern tıp, insanı tamir edilmesi gereken bir makine olarak görür.";
-
-    btn.innerText = "● YÜKLENİYOR...";
-    
-    try {
-      // ElevenLabs API'niz varsa buraya entegre edin. 
-      // Test için Web Speech API'yi "Neural" modda kullanıyoruz:
-      const utterance = new SpeechSynthesisUtterance(textToSpeak);
-      const voices = window.speechSynthesis.getVoices();
-      
-      // En iyi ses kalitesini zorla seç
-      utterance.voice = voices.find(v => v.name.includes('Google') || v.name.includes('Neural')) || voices[0];
-      utterance.rate = 0.95;
-      utterance.pitch = 0.9;
-      
-      window.speechSynthesis.speak(utterance);
-      btn.innerText = "■ YAYIN AKTİF";
-      
-      utterance.onend = () => { btn.innerText = "▶ BAŞLAT: SENTETİK SES AKIŞI"; };
-    } catch (e) {
-      console.error("Akış hatası:", e);
-      btn.innerText = "HATA: SİSTEM YÜKLENEMEDİ";
-    }
-  }
-</script>
-
-
-
+  const blob = await response.blob();
+  const audio = new Audio(URL.createObjectURL(blob));
+  audio.play();
+}
 
 
 
