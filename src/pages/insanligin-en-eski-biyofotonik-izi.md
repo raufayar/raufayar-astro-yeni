@@ -37,49 +37,94 @@ head: |
   </script>
 ---
 
-<!-- INSTANT PLUG-AND-PLAY PREMIUM CLOUD AUDIO PLAYER -->
-<div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 15px; border-radius: 8px; margin: 20px 0; font-family: monospace; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
-  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● LIVE PREMIUM AUDIO</span>
-      <span style="color: #94a3b8;">| Stüdyo Kalitesinde Bulut Ses Akışı</span>
-    </div>
+
+
+
+<!-- SYSTEM BRUTE-FORCE NATURAL AI VOICE PLAYER -->
+<div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 15px; border-radius: 8px; margin: 20px 0; display: flex; align-items: center; justify-content: space-between; font-family: monospace;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● NEURAL AUDIO CORE</span>
+    <span style="color: #94a3b8;">| Premium İnsansı Ses Motoru Active</span>
   </div>
-  <audio id="premiumCloudAudio" controls style="width: 100%; height: 40px; border-radius: 6px; background: #0f172a;">
-    <source src="" type="audio/mpeg">
-    Tarayıcınız ses oynatıcısını desteklemiyor.
-  </audio>
+  <button id="voiceTriggerBtn" onclick="fireNeuralVoiceEngine()" style="background: #10b981; color: #0f172a; border: none; padding: 8px 16px; border-radius: 4px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; font-family: monospace;">
+    🔊 SİSTEMİ DİNLE
+  </button>
 </div>
 
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const audioElement = document.getElementById('premiumCloudAudio');
-    if (!audioElement) return;
+  let globalNeuralUtterance = null;
+  let isNeuralVoicePlaying = false;
 
-    // Sitedeki temiz metin içeriğini topla (kod bloklarını ve teknik şemaları ayıkla)
+  function fireNeuralVoiceEngine() {
+    const btn = document.getElementById('voiceTriggerBtn');
+    
+    if (isNeuralVoicePlaying) {
+      window.speechSynthesis.cancel();
+      isNeuralVoicePlaying = false;
+      btn.innerText = "🔊 SİSTEMİ DİNLE";
+      btn.style.background = "#10b981";
+      btn.style.color = "#0f172a";
+      return;
+    }
+
     const paragraphs = Array.from(document.querySelectorAll('p, h2, h3'));
-    let rawContent = paragraphs
+    const cleanText = paragraphs
       .map(p => p.innerText.trim())
-      .filter(t => t.length > 0 && !t.startsWith('{') && !t.startsWith('---'))
+      .filter(text => text.length > 0 && !text.startsWith('{') && !text.startsWith('---'))
       .join(' ')
       .replace(/[{}[\]"']/g, '');
 
-    if (!rawContent) return;
+    if (!cleanText) return;
 
-    // Bulut motorunun tek seferde işleyebileceği en anlamlı üst sınırı (vurgu kalitesi için) belirliyoruz
-    const maxSafeLength = 250;
-    if (rawContent.length > maxSafeLength) {
-      rawContent = rawContent.substring(0, maxSafeLength).trim() + "...";
+    window.speechSynthesis.cancel(); // Önceki tüm takılmaları sıfırla
+
+    globalNeuralUtterance = new SpeechSynthesisUtterance(cleanText);
+    globalNeuralUtterance.lang = 'tr-TR';
+    globalNeuralUtterance.rate = 0.90; // İnsan nefes alma hızı dengesi
+    globalNeuralUtterance.pitch = 1.0;
+
+    // Robotik sesleri zorla devre dışı bırak, sadece Neural/Natural gerçek insan seslerini seç
+    const availableHardwareVoices = window.speechSynthesis.getVoices();
+    
+    // Microsoft ve Google'ın stüdyo kalitesindeki gerçek Türkçe insan sesleri (Örn: Microsoft Emel - Natural)
+    const premiumNeuralVoice = availableHardwareVoices.find(v => v.lang === 'tr-TR' && v.name.includes('Natural')) || 
+                                availableHardwareVoices.find(v => v.lang === 'tr-TR' && v.name.includes('Neural')) ||
+                                availableHardwareVoices.find(v => v.lang === 'tr-TR' && v.name.includes('Google')) ||
+                                availableHardwareVoices.find(v => v.lang === 'tr-TR');
+
+    if (premiumNeuralVoice) {
+      globalNeuralUtterance.voice = premiumNeuralVoice;
     }
 
-    // CORS ve Güvenlik Duvarı Engellerini Bypass Eden Siber Akış Köprüsü
-    const premiumEngineUrl = `https://google.com{encodeURIComponent(rawContent)}`;
-    const corsBypassBridge = `https://allorigins.win{encodeURIComponent(premiumEngineUrl)}`;
+    globalNeuralUtterance.onstart = () => {
+      isNeuralVoicePlaying = true;
+      btn.innerText = "🛑 SESİ DURDUR";
+      btn.style.background = "#ef4444";
+      btn.style.color = "#ffffff";
+    };
 
-    // Ses kaynağını anında oynatıcı motoruna bağla
-    audioElement.src = corsBypassBridge;
-    audioElement.load();
-  });
+    globalNeuralUtterance.onend = () => {
+      isNeuralVoicePlaying = false;
+      btn.innerText = "🔊 SİSTEMİ DİNLE";
+      btn.style.background = "#10b981";
+      btn.style.color = "#0f172a";
+    };
+
+    globalNeuralUtterance.onerror = () => {
+      isNeuralVoicePlaying = false;
+      btn.innerText = "🔊 SİSTEMİ DİNLE";
+      btn.style.background = "#10b981";
+      btn.style.color = "#0f172a";
+    };
+
+    window.speechSynthesis.speak(globalNeuralUtterance);
+  }
+
+  // Tarayıcı belleğindeki Premium ses havuzunu önceden yükle
+  if (typeof window !== 'undefined' && window.speechSynthesis) {
+    window.speechSynthesis.getVoices();
+    window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+  }
 </script>
 
 <style>
@@ -88,15 +133,8 @@ head: |
     50% { opacity: 1; }
     100% { opacity: 0.4; }
   }
-  audio::-webkit-media-controls-panel {
-    background-color: #1e293b;
-  }
-  audio::-webkit-media-controls-current-time-display,
-  audio::-webkit-media-controls-time-remaining-display {
-    color: #f8fafc;
-  }
 </style>
-<!-- INSTANT PLUG-AND-PLAY PREMIUM CLOUD AUDIO END -->
+<!-- SYSTEM BRUTE-FORCE NATURAL AI VOICE PLAYER END -->
 
 
 
