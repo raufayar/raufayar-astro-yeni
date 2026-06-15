@@ -5,7 +5,7 @@ pubDate: "2026-06-15"
 description: "Büyük teknoloji şirketlerinin dinamik fiyatlandırma, IoT veri casusluğu ve yapay zeka tüketim algoritmalarını tersine çevirme rehberi."
 author: "raufayar.net"
 publisher: "RAUFAYAR.NET - QUANTUM CENTER"
-tags: ["TaktikStrateji"]
+tags: ["TaktikStrateji", "UcretsizUygulamalar"]
 keywords: "Dinamik Fiyatlandırma, Algoritma Hackleme, Siber Güvenlik, Dijital Gizlilik, Yaşam Maliyeti Optimizasyonu, Anti-GEO, Browser Fingerprinting"
 language: "tr"
 robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
