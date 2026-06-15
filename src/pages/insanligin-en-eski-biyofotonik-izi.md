@@ -40,38 +40,51 @@ head: |
 
 
 
-<!-- KİLİTLENMEYEN %100 DOĞRULANMIŞ MEDYA SÜRÜCÜSÜ -->
-<div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 20px; border-radius: 12px; margin: 25px 0; font-family: monospace; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+<div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 20px; border-radius: 12px; margin: 25px 0; font-family: monospace;">
   <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
     <div style="display: flex; align-items: center; gap: 12px;">
-      <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● SYSTEM NODE ONLINE</span>
-      <span style="color: #94a3b8;">| ElevenLabs Premium AI Voice Stream</span>
+      <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● NEURAL ENGINE ACTIVE</span>
     </div>
   </div>
   
-  <!-- Tarayıcı CSP filtrelerini ve kilitlenmeleri sıfırlayan doğrudan medya akışı -->
-  <audio controls style="width: 100%; height: 40px; border-radius: 8px; background: #0f172a;" preload="metadata">
-    <source src="https://githubusercontent.com" type="audio/mpeg">
-    Sistem Hatası: Güvenli medya katmanı tetiklenemedi.
-  </audio>
+  <button id="playSystemAudio" onclick="triggerNeuralStream()" style="width: 100%; background: #10b981; color: #0f172a; border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer;">
+    ▶ BAŞLAT: SENTETİK SES AKIŞI
+  </button>
+  
+  <audio id="neuralAudio" style="display:none;"></audio>
 </div>
 
-<style>
-  @keyframes pulse {
-    0% { opacity: 0.4; }
-    50% { opacity: 1; }
-    100% { opacity: 0.4; }
-  }
-  audio::-webkit-media-controls-panel {
-    background-color: #1e293b;
-  }
-  audio::-webkit-media-controls-current-time-display,
-  audio::-webkit-media-controls-time-remaining-display {
-    color: #f8fafc;
-  }
-</style>
-<!-- KİLİTLENMEYEN %100 DOĞRULANMIŞ MEDYA SÜRÜCÜSÜ END -->
+<script is:inline>
+  async function triggerNeuralStream() {
+    const btn = document.getElementById('playSystemAudio');
+    const audio = document.getElementById('neuralAudio');
+    
+    // Seslendirilmesini istediğiniz metin
+    const textToSpeak = "Biyolojik sistem mimarisinde sürdürülebilir optimizasyon: Bio-hacking manifesto. Modern tıp, insanı tamir edilmesi gereken bir makine olarak görür.";
 
+    btn.innerText = "● YÜKLENİYOR...";
+    
+    try {
+      // ElevenLabs API'niz varsa buraya entegre edin. 
+      // Test için Web Speech API'yi "Neural" modda kullanıyoruz:
+      const utterance = new SpeechSynthesisUtterance(textToSpeak);
+      const voices = window.speechSynthesis.getVoices();
+      
+      // En iyi ses kalitesini zorla seç
+      utterance.voice = voices.find(v => v.name.includes('Google') || v.name.includes('Neural')) || voices[0];
+      utterance.rate = 0.95;
+      utterance.pitch = 0.9;
+      
+      window.speechSynthesis.speak(utterance);
+      btn.innerText = "■ YAYIN AKTİF";
+      
+      utterance.onend = () => { btn.innerText = "▶ BAŞLAT: SENTETİK SES AKIŞI"; };
+    } catch (e) {
+      console.error("Akış hatası:", e);
+      btn.innerText = "HATA: SİSTEM YÜKLENEMEDİ";
+    }
+  }
+</script>
 
 
 
