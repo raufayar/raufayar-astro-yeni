@@ -43,37 +43,8 @@ head: |
 
 
 
-<!-- TEST EDİLMİŞ GARANTİLİ ELEVENLABS MEDYA SÜRÜCÜSÜ -->
-<div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 20px; border-radius: 12px; margin: 25px 0; font-family: monospace; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
-  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● SYSTEM NODE ONLINE</span>
-      <span style="color: #94a3b8;">| ElevenLabs Premium AI Voice</span>
-    </div>
-  </div>
-  
-  <!-- %100 Çalışan, Süresi Yüklenen ve CORS Engeli Olmayan Doğrudan Akış Hattı -->
-  <audio controls style="width: 100%; height: 40px; border-radius: 8px; background: #0f172a;" preload="auto">
-    <source src="https://jsdelivr.net" type="audio/mpeg">
-    Sistem Hatası: Güvenli medya katmanı tetiklenemedi.
-  </audio>
-</div>
+[![SİSTEMİ DİNLE (ELEVENLABS QUALITY)](https://shields.io)](https://googleapis.com)
 
-<style>
-  @keyframes pulse {
-    0% { opacity: 0.4; }
-    50% { opacity: 1; }
-    100% { opacity: 0.4; }
-  }
-  audio::-webkit-media-controls-panel {
-    background-color: #1e293b;
-  }
-  audio::-webkit-media-controls-current-time-display,
-  audio::-webkit-media-controls-time-remaining-display {
-    color: #f8fafc;
-  }
-</style>
-<!-- TEST EDİLMİŞ GARANTİLİ ELEVENLABS MEDYA SÜRÜCÜSÜ END -->
 
 
 
