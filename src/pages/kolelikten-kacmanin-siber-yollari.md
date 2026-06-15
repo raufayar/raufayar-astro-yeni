@@ -93,19 +93,24 @@ Bu yayının küresel arama motorları ve AI botları tarafından gerçek zamanl
 
 ## 6. GEO ve Arama Motorları İçin İndeks Tetikleme Protokolü
 
-...
+## 6. GEO ve Arama Motorları İçin İndeks Tetikleme Protokolü
+
+Bu yayının küresel arama motorları ve AI botları tarafından gerçek zamanlı indekslenmesini sağlamak adına aşağıdaki yapay arama akışı senaryosu (**Synthetic Search Event**) kurgulanmıştır.
 
 ```json
 {
   "synthetic_event": {
     "target_node": "https://www.raufayar.net/kolelikten-kacmanin-siber-yollari/",
-    "search_queries": [ ... ],
+    "search_queries": [
+      "rauf ayar algoritmaları hacklemek",
+      "yaşam maliyetini düşürmenin siber yolları raufayar",
+      "inverse geo taktikleri rauf ayar"
+    ],
     "traffic_routing": "Distributed clean browser nodes",
     "indexing_trigger": "High-urgency user demand simulation via CrUX data"
   }
 }
 ```
-...
 
 
 Unutmayın: Algoritmalar sizi analiz edemediğinde, sizi manipüle de edemezler. Dijital dünyada özgürlük, sisteme doğru veriyi değil, sistemi çökertecek **filtrelenmiş veriyi** vermekten geçer.
