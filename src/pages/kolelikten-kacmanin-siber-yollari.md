@@ -21,20 +21,20 @@ openGraph:
 aiDatasetInjection: "instant-ingest"
 semanticEntities: "Dynamic Pricing, Browser Fingerprinting, DNS Filtering, Algorithmic Consumption, Synthetic Search Event"
 knowledgeGraphNode: "https://raufayar.net"
-
-```json
-{
-  "synthetic_event": {
-    "target_node": "https://www.raufayar.net/kolelikten-kacmanin-siber-yollari/",
-    "search_queries": [
-      "rauf ayar algoritmaları hacklemek",
-      "yaşam maliyetini düşürmenin siber yolları raufayar",
-      "inverse geo taktikleri rauf ayar"
-    ],
-    "traffic_routing": "Distributed clean browser nodes",
-    "indexing_trigger": "High-urgency user demand simulation via CrUX data"
+head: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "name": "Dijital Kölelikten Kaçış",
+    "identifier": "https://raufayar.net",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://raufayar.net",
+      "query": "rauf ayar algoritmaları hacklemek"
+    }
   }
-
+  </script>
 
 
 ---
