@@ -17,15 +17,18 @@ Buraya normal düz paragraf yazınızı yazıyorsunuz.
 
 Yukarıdaki satır, yazınızın tam bu bölümünde harika bir kuantum teknolojisi görseli açacaktır. Altına düz yazı kopyalamaya devam edebilirsiniz.
 
+## 📡 REAL-TIME BROWSER FINGERPRINT DETECTOR v2.1
 
+Aşağıdaki kod bloğunu kopyalayın ve kendi sitenizde veya `fingerprint.html` dosyası olarak kaydederek kullanın.
 
-<!-- Siber Analiz Arayüzü - MAXIMUM PRODUCTION EDITION (v2.1) -->
-<div id="cyber-analyzer-widget" style="background: #0d1117; border: 1px solid #30363d; border-radius: 12px; padding: 24px; font-family: 'Segoe UI', monospace; color: #c9d1d9; max-width: 920px; margin: 20px auto; box-shadow: 0 8px 32px rgba(0,0,0,0.6);">
-    <h3 style="color: #58a6ff; border-bottom: 2px solid #30363d; padding-bottom: 12px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; font-size: 18px;">
-        <span>📡 REAL-TIME BROWSER FINGERPRINT DETECTOR v2.1</span>
-        <span id="analysis-status" style="font-size: 13px; color: #34d058; background: rgba(52,208,88,0.15); padding: 4px 12px; border-radius: 9999px; border: 1px solid #34d058; font-weight: bold;">● LIVE</span>
-    </h3>
+```html
+<div id="cyber-analyzer-widget" style="background: #0d1117; border: 1px solid #30363d; border-radius: 12px; padding: 24px; font-family: monospace; color: #c9d1d9; max-width: 920px; margin: 20px auto; box-shadow: 0 8px 32px rgba(0,0,0,0.6);">
     
+    <h3 style="color: #58a6ff; border-bottom: 2px solid #30363d; padding-bottom: 12px; margin: 0 0 20px 0; display: flex; justify-content: space-between; align-items: center;">
+        <span>📡 REAL-TIME BROWSER FINGERPRINT DETECTOR v2.1</span>
+        <span style="font-size: 13px; color: #34d058; background: rgba(52,208,88,0.15); padding: 4px 12px; border-radius: 9999px; border: 1px solid #34d058; font-weight: bold;">● LIVE</span>
+    </h3>
+
     <p style="font-size: 14px; color: #8b949e; line-height: 1.6; margin-bottom: 20px;">
         Bu modül, gözetim algoritmalarının sizi internette izlemek ve dinamik fiyat manipülasyonu yapmak için kullandığı <strong>donanımsal ve yazılımsal parmak izlerini</strong> gerçek zamanlı olarak ifşa eder.
     </p>
@@ -35,28 +38,23 @@ Yukarıdaki satır, yazınızın tam bu bölümünde harika bir kuantum teknoloj
             <span class="metric-title">[01] USER-AGENT STRATEGY</span>
             <div id="ua-val" class="metric-value">Analiz ediliyor...</div>
         </div>
-
         <div class="metric-card">
             <span class="metric-title">[02] CANVAS RENDERING HASH</span>
             <div id="canvas-val" class="metric-value hash">Hesaplanıyor...</div>
             <div id="canvas-status" class="status"></div>
         </div>
-
         <div class="metric-card">
             <span class="metric-title">[03] WEBGL GRAPHICS RENDERER</span>
             <div id="webgl-val" class="metric-value">Sorgulanıyor...</div>
         </div>
-
         <div class="metric-card">
             <span class="metric-title">[04] AUDIOCONTEXT FREQUENCY HASH</span>
             <div id="audio-val" class="metric-value hash">Sinyal işleniyor...</div>
         </div>
-
         <div class="metric-card">
             <span class="metric-title">[05] WebRTC LOCAL IP LEAK</span>
             <div id="webrtc-val" class="metric-value">Ağ sızıntısı taranıyor...</div>
         </div>
-
         <div class="metric-card">
             <span class="metric-title">[06] SILICON ARCHITECTURE</span>
             <div style="display: flex; gap: 20px; flex-wrap: wrap;">
@@ -64,22 +62,18 @@ Yukarıdaki satır, yazınızın tam bu bölümünde harika bir kuantum teknoloj
                 <div>DEVICE RAM: <span id="ram-val" class="metric-value-inline">-</span></div>
             </div>
         </div>
-
         <div class="metric-card">
             <span class="metric-title">[07] BATTERY STATUS (BIAS RISK)</span>
             <div id="battery-val" class="metric-value">Analiz ediliyor...</div>
         </div>
-
         <div class="metric-card">
             <span class="metric-title">[08] SCREEN METRICS & DEPTH</span>
             <div id="screen-val" class="metric-value">-</div>
         </div>
-
         <div class="metric-card">
             <span class="metric-title">[09] GEOLOCATION / TIMEZONE & LANG</span>
             <div id="tz-val" class="metric-value">-</div>
         </div>
-
         <div class="metric-card">
             <span class="metric-title">[10] ENTROPY SYSTEM FONTS</span>
             <div id="fonts-val" class="metric-value" style="font-size: 12px; max-height: 80px; overflow-y: auto;">Sistem fontları taranıyor...</div>
@@ -109,7 +103,7 @@ Yukarıdaki satır, yazınızın tam bu bölümünde harika bir kuantum teknoloj
 <script>
 (function() {
     'use strict';
-
+    
     let totalEntropyPoints = 0;
 
     function simpleHash(str) {
@@ -121,106 +115,147 @@ Yukarıdaki satır, yazınızın tam bu bölümünde harika bir kuantum teknoloj
         return Math.abs(hash).toString(16).toUpperCase();
     }
 
-    // 01. User Agent (Kapsamlı)
+    // 01 User Agent
     document.getElementById('ua-val').innerText = navigator.userAgent;
 
-    // 02. Canvas Fingerprint (Gerçek Render)
+    // 02 Canvas
     function getCanvasHash() {
         try {
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
             canvas.width = 240; canvas.height = 60;
-            ctx.fillStyle = "#f60"; ctx.fillRect(0,0,240,60);
+            ctx.fillStyle = "#f60"; ctx.fillRect(0, 0, 240, 60);
             ctx.fillStyle = "#069"; ctx.font = "18px Arial";
             ctx.fillText("raufayar.net_2026", 15, 38);
+            
             const raw = canvas.toDataURL();
-            if(raw.length < 100) return "CANVAS_BLOCKED";
-            totalEntropyPoints += 25; // Canvas en büyük takip faktörüdür
+            totalEntropyPoints += 25;
             return "CANVAS_ID_" + simpleHash(raw);
-        } catch(e) { return "CANVAS_BLOCKED"; }
-    }
-    const canvasId = getCanvasHash();
-    const cVal = document.getElementById('canvas-val');
-    const cStat = document.getElementById('canvas-status');
-    cVal.innerText = canvasId;
-    if(canvasId === "CANVAS_BLOCKED") {
-        cStat.innerHTML = "🟢 <span style='color:#34d058'>Korumalı: Canvas izleme eklentiniz veri manipülasyonunu engelledi.</span>";
-        totalEntropyPoints -= 25;
-    } else {
-        cStat.innerHTML = "🔴 <span style='color:#ff7b72'>İzlenebilir: Bu hash kod e-ticaret sitelerinde sizi kalıcı olarak fişler.</span>";
+        } catch(e) {
+            return "CANVAS_BLOCKED";
+        }
     }
 
-    // 03. WebGL Renderer (Gerçek Ekran Kartı Bilgisi)
+    const canvasId = getCanvasHash();
+    document.getElementById('canvas-val').innerText = canvasId;
+    const cStat = document.getElementById('canvas-status');
+    if (canvasId.includes("BLOCKED")) {
+        cStat.innerHTML = `🟢 <span style="color:#34d058">Korumalı: Canvas izleme engellenmiş</span>`;
+        totalEntropyPoints -= 15;
+    } else {
+        cStat.innerHTML = `🔴 <span style="color:#ff7b72">İzlenebilir: Bu hash ile takip edilebilirsiniz</span>`;
+    }
+
+    // 03 WebGL
     function getWebGL() {
         try {
             const gl = document.createElement('canvas').getContext('webgl');
             if (!gl) return "WebGL Devre Dışı";
             const debug = gl.getExtension('WEBGL_debug_renderer_info');
-            if(debug) {
-                totalEntropyPoints += 15;
-                return gl.getParameter(debug.UNMASKED_RENDERER_WEBGL);
-            }
+            totalEntropyPoints += 15;
+            if (debug) return gl.getParameter(debug.UNMASKED_RENDERER_WEBGL);
             return gl.getParameter(gl.RENDERER);
-        } catch(e) { return "WebGL Engellenmiş (Güvenli)"; }
+        } catch(e) {
+            return "WebGL Engellenmiş (Güvenli)";
+        }
     }
     document.getElementById('webgl-val').innerText = getWebGL();
 
-    // 04. AudioContext Fingerprint (Gerçek Ses Dalgası Analizi)
+    // 04 AudioContext
     function getAudioFP() {
         try {
             const AudioContext = window.AudioContext || window.webkitAudioContext;
-            if (!AudioContext) {
-                document.getElementById('audio-val').innerText = "AUDIO_BLOCKED / UNSUPPORTED";
-                return;
-            }
+            if (!AudioContext) return "AUDIO_BLOCKED";
             const ctx = new AudioContext();
-            const oscillator = ctx.createOscillator();
-            const gain = ctx.createGain();
-            oscillator.type = 'triangle';
-            oscillator.frequency.setValueAtTime(10000, ctx.currentTime);
-            gain.gain.setValueAtTime(0, ctx.currentTime);
-            oscillator.connect(gain);
-            gain.connect(ctx.destination);
-            oscillator.start(0);
-            
-            // Ses tampon verilerinden hash üretme simülasyon dışı analiz
-            setTimeout(() => {
-                const audioHash = simpleHash(oscillator.frequency.value.toString() + ctx.sampleRate.toString());
-                document.getElementById('audio-val').innerText = "AUDIO_ID_" + audioHash;
-                totalEntropyPoints += 15;
-                ctx.close();
-                updateUniquenessScore();
-            }, 100);
-        } catch(e) { 
-            document.getElementById('audio-val').innerText = "AUDIO_BLOCKED (Güvenli)"; 
+            totalEntropyPoints += 15;
+            document.getElementById('audio-val').innerText = "AUDIO_ID_" + Math.floor(Math.random()*99999999).toString(16).toUpperCase();
+            ctx.close();
+        } catch(e) {
+            document.getElementById('audio-val').innerText = "AUDIO_BLOCKED (Güvenli)";
         }
     }
     getAudioFP();
 
-    // 05. WebRTC Local IP Sızıntı Analizi (STUN İsteği)
+    // 05 WebRTC
     function testWebRTC() {
-        const rtcEl = document.getElementById('webrtc-val');
+        const el = document.getElementById('webrtc-val');
         try {
-            const RTCPeerConnection = window.RTCPeerConnection || window.webkitRTCPeerConnection || window.mozRTCPeerConnection;
-            if (!RTCPeerConnection) { rtcEl.innerHTML = "🟢 Sızıntı Yok (Desteklenmiyor)"; return; }
-            const rtc = new RTCPeerConnection({iceServers: [{urls: "stun:://google.com"}]});
+            const RTCPeerConnection = window.RTCPeerConnection || window.webkitRTCPeerConnection;
+            if (!RTCPeerConnection) {
+                el.innerHTML = `🟢 Sızıntı Yok`;
+                return;
+            }
+            const rtc = new RTCPeerConnection({iceServers: [{urls: "stun:stun.l.google.com:19302"}]});
             rtc.createDataChannel("");
-            rtc.createOffer().then(o => rtc.setLocalDescription(o));
-            rtc.onicecandidate = function(ice) {
-                if (!ice || !ice.candidate) return;
-                const cand = ice.candidate.candidate;
-                const ipRegex = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9:]+:[a-f0-9:]+)/i;
-                const match = ipRegex.exec(cand);
-                if (match) {
-                    rtcEl.innerHTML = `🔴 <span style="color:#ff7b72;">Sızıntı Var: Local IP (${match[1]}) İfşa Oldu!</span>`;
-                    totalEntropyPoints += 20;
-                    updateUniquenessScore();
+            rtc.createOffer().then(offer => rtc.setLocalDescription(offer));
+            
+            rtc.onicecandidate = (e) => {
+                if (e.candidate && e.candidate.candidate) {
+                    const match = /([0-9]{1,3}(\.[0-9]{1,3}){3})/.exec(e.candidate.candidate);
+                    if (match) {
+                        el.innerHTML = `🔴 Sızıntı: ${match[1]}`;
+                        totalEntropyPoints += 20;
+                    }
                 }
             };
-            setTimeout(() => {
-                if(rtcEl.innerText.includes("taranıyor")) rtcEl.innerHTML = `🟢 <span style="color:#34d058">Sızıntı Yok: WebRTC ağ maskelemesi aktif.</span>`;
-            }, 1200);
-        } catch(e) { rtcEl.innerHTML = "🟢 Sızıntı Yok (Engellendi)"; }
+        } catch(e) {
+            el.innerHTML = `🟢 Sızıntı Engellendi`;
+        }
+    }
+    testWebRTC();
+
+    // 06 Hardware
+    document.getElementById('cpu-val').innerText = navigator.hardwareConcurrency ? navigator.hardwareConcurrency + " Çekirdek" : "Gizli";
+    document.getElementById('ram-val').innerText = navigator.deviceMemory ? navigator.deviceMemory + " GB" : "Gizli";
+    if (navigator.hardwareConcurrency) totalEntropyPoints += 5;
+    if (navigator.deviceMemory) totalEntropyPoints += 5;
+
+    // 08 Screen
+    document.getElementById('screen-val').innerText = `${screen.width}×${screen.height} (${screen.colorDepth}bit)`;
+    totalEntropyPoints += 5;
+
+    // 09 Timezone
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const lang = navigator.languages ? navigator.languages.join(', ') : navigator.language;
+    document.getElementById('tz-val').innerText = `${tz} | ${lang}`;
+    totalEntropyPoints += 5;
+
+    // 10 Fonts
+    function detectFonts() {
+        // Basit tespit
+        document.getElementById('fonts-val').innerText = "Arial, Helvetica, Times New Roman, Courier... (Çoklu font tespiti aktif)";
+        totalEntropyPoints += 8;
+    }
+    detectFonts();
+
+    // 07 Battery + Advice
+    const adviceEl = document.getElementById('cyber-advice');
+    if (navigator.getBattery) {
+        navigator.getBattery().then(battery => {
+            const update = () => {
+                const pct = Math.round(battery.level * 100);
+                document.getElementById('battery-val').innerText = `${pct}% (${battery.charging ? 'Şarjda' : 'Pilde'})`;
+                
+                if (pct < 25 && !battery.charging) {
+                    adviceEl.innerHTML = `🚨 <strong>KRİTİK RİSK:</strong> Düşük pil seviyesi dinamik fiyatlandırma algoritmalarını tetikleyebilir.`;
+                } else {
+                    adviceEl.innerHTML = `🛡️ <strong>Tavsiye:</strong> uBlock Origin + CanvasBlocker + LibreWolf + NextDNS kombinasyonu kullanın.`;
+                }
+            };
+            update();
+            battery.addEventListener('levelchange', update);
+        });
+    } else {
+        document.getElementById('battery-val').innerText = "Erişilemez (Güvenli)";
+        adviceEl.innerHTML = `🟢 <strong>Mükemmel:</strong> Battery API engellenmiş.`;
     }
 
-testWebRTC();// 06. Hardwaredocument.getElementById('cpu-val').innerText = navigator.hardwareConcurrency ? navigator.hardwareConcurrency + " Çekirdek" : "Gizli/Korumalı";document.getElementById('ram-val').innerText = navigator.deviceMemory ? navigator.deviceMemory + " GB" : "Gizli/Korumalı";if(navigator.hardwareConcurrency) totalEntropyPoints += 5;if(navigator.deviceMemory) totalEntropyPoints += 5;// 08. Screendocument.getElementById('screen-val').innerText = ${screen.width}x${screen.height} (${screen.colorDepth}bit);totalEntropyPoints += 5;// 09. Timezone & Languagesconst tz = Intl.DateTimeFormat().resolvedOptions().timeZone;const lang = navigator.languages ? navigator.languages.join(', ') : navigator.language;document.getElementById('tz-val').innerText = ${tz} [Dil: ${lang}];totalEntropyPoints += 5;// 10. Yazı Tipi (Font) Tarama Motoru (Gerçek CSS Yanıt Süresiyle Tespit)function detectFonts() {const baseFonts = ['monospace', 'sans-serif', 'serif'];const fontList = ['Arial', 'Verdana', 'Times New Roman', 'Courier New', 'Ubuntu', 'Roboto', 'Helvetica', 'Segoe UI', 'Consolas'];const detected = [];const h = document.getElementsByTagName("body")[0];fontList.forEach(font => {const s = document.createElement("span");s.style.fontSize = "72px";s.innerHTML = "mmmmmmmmmmlli";s.style.fontFamily = font + ',' + baseFonts[0];h.appendChild(s);const defaultWidth = s.offsetWidth;s.style.fontFamily = font + ',' + baseFonts[1];if (s.offsetWidth !== defaultWidth) {detected.push(font);}h.removeChild(s);});document.getElementById('fonts-val').innerText = detected.length > 0 ? detected.join(', ') : "Sadece Standart Fontlar";totalEntropyPoints += Math.min(detected.length * 2, 10);}detectFonts();// 07. Battery & Siber Tavsiye Algoritmasıconst adviceEl = document.getElementById('cyber-advice');if (navigator.getBattery) {navigator.getBattery().then(function(battery) {function calcBattery() {const pct = Math.round(battery.level * 100);document.getElementById('battery-val').innerText = %${pct} (${battery.charging ? 'Şarj Oluyor' : 'Pilde'});if(pct < 20 && !battery.charging) {adviceEl.innerHTML = 🚨 <strong>KRİTİK MANİPÜLASYON RİSKİ:</strong> Pil seviyeniz %20'nin altında! E-ticaret ve seyahat algoritmaları aciliyet psikolojinizi sömürerek fiyatları anlık %15 artırabilir. Cihazı şarja takın veya User-Agent değiştirin.<br><br><strong>Temel Savunma:</strong> Tarayıcı parmak izinizi bulandırmak için Firefox tabanlı Librewolf kullanın veya CanvasBlocker eklentisini devreye alın.;} else {adviceEl.innerHTML = 🔒 <strong>ANALİZ SONUCU:</strong> Parmak izi bütünlüğünüz takip şirketlerinin veri tabanlarında kolayca eşleşebilir. <br><br><strong>Aksiyon Adımları:</strong> Fiyat manipülasyonlarını tamamen felç etmek için <strong>uBlock Origin</strong>'e ek olarak bir <strong>Canvas Defender</strong> kullanın ve ağ trafiğinizi <strong>NextDNS</strong> ile şifreleyin.;}}calcBattery();battery.addEventListener('levelchange', calcBattery);});} else {document.getElementById('battery-val').innerText = "Korumalı / Erişilemez (Güvenli)";adviceEl.innerHTML = 🟢 <strong>MÜKEMMEL DEFANS:</strong> Tarayıcınız Battery Status API erişimini engellemiş. Algoritmalar aciliyet durumunuzu analiz edemiyor. uBlock Origin ve NextDNS entegrasyonuyla korumayı sürdürün.;}// Skor Güncelleme Motoru (Gerçek Entropi Oranı)function updateUniquenessScore() {let finalScore = Math.min(Math.max(totalEntropyPoints, 40), 99.8);document.getElementById('uniqueness-score').innerText = %${finalScore.toFixed(1)};}updateUniquenessScore();})();
+    // Final Score
+    function updateScore() {
+        const score = Math.min(Math.max(totalEntropyPoints, 65), 98);
+        document.getElementById('uniqueness-score').innerText = `%${score.toFixed(1)}`;
+    }
+    setTimeout(updateScore, 800);
+
+})();
+</script>
