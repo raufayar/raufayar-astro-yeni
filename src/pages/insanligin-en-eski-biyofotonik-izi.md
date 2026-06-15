@@ -38,6 +38,25 @@ head: |
 ---
 
 
+<!-- GOOGLE NOTEBOOKLM AUDIO BRIDGE -->
+<div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 15px; border-radius: 12px; margin: 25px 0; font-family: monospace;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● NOTEBOOKLM PODCAST NODE</span>
+    <span style="color: #94a3b8;">| Canlı Yapay Zeka Tartışma Akışı</span>
+  </div>
+  
+  <iframe 
+    src="BURAYA_KOPYALADIGINIZ_NOTEBOOKLM_LINKINI_YAPISTIRIN"
+    style="width: 100%; height: 120px; border: none; border-radius: 8px; background: transparent;"
+    scrolling="no">
+  </iframe>
+</div>
+<!-- GOOGLE NOTEBOOKLM AUDIO BRIDGE END -->
+
+
+
+
+
 
 ![Karanlık bir laboratuvarda, antik bir kuvars taşının içindeki atomik elektron sapmalarını ve milyonlarca yıllık insanlık izlerini lazerle tarayarak holografik zaman çizgisine dönüştüren kuantum arkeoloji arayüzü.
 ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjK7f3p4J_6l5mHBfl9H-GlVS_ZXvxjhb4NTWJ04OAiPnKChXke7ibcc3lD4kvrE2WFfPJ8j2C4zECpZO7HRGQjyAIzBDh0P0L8nLvNDBNaCnq1hIsofgemiPM9CXqTgArL-2X_v0hc3jeNnJL55eQb8eKL1mG7vFf03LOLICeua-2-8-S8glJ7YCNrlkE/w640-h272/biyofotonik-arkeoloji-kuantum-zaman-cizgisi.webp.jpg)
