@@ -36,6 +36,77 @@ head: |
   }
   </script>
 ---
+
+<!-- AUDIO READER COMPONENT START -->
+<div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 15px; border-radius: 8px; margin: 20px 0; display: flex; align-items: center; justify-content: space-between; font-family: monospace;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● REAL-TIME VOICE</span>
+    <span style="color: #94a3b8;">| Yapay Zeka Sesli Okuma Sistemi</span>
+  </div>
+  <button id="voiceTriggerBtn" onclick="toggleSystemVoice()" style="background: #10b981; color: #0f172a; border: none; padding: 8px 16px; border-radius: 4px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; font-family: monospace;">
+    🔊 SİSTEMİ DİNLE
+  </button>
+</div>
+
+<script is:inline>
+  let cryptoSpeechSynthesis = null;
+  let isVoiceActive = false;
+
+  function toggleSystemVoice() {
+    const btn = document.getElementById('voiceTriggerBtn');
+    
+    if (!('speechSynthesis' in window)) {
+      alert('Sistem Hatası: Tarayıcınız Web Speech API desteklemiyor.');
+      return;
+    }
+
+    if (isVoiceActive) {
+      window.speechSynthesis.cancel();
+      isVoiceActive = false;
+      btn.innerText = "🔊 SİSTEMİ DİNLE";
+      btn.style.background = "#10b981";
+      return;
+    }
+
+    // Makale gövdesindeki metinleri topla (Frontmatter ve kod blokları hariç)
+    const paragraphs = Array.from(document.querySelectorAll('p, h2, h3'));
+    const cleanText = paragraphs.map(p => p.innerText).join(' ').replace(/[{}[\]"']/g, '');
+
+    cryptoSpeechSynthesis = new SpeechSynthesisUtterance(cleanText);
+    cryptoSpeechSynthesis.lang = 'tr-TR';
+    cryptoSpeechSynthesis.rate = 1.0; // Okuma hızı
+    cryptoSpeechSynthesis.pitch = 0.9; // Ses tonu derinliği (Geek tınısı)
+
+    cryptoSpeechSynthesis.onend = () => {
+      isVoiceActive = false;
+      btn.innerText = "🔊 SİSTEMİ DİNLE";
+      btn.style.background = "#10b981";
+    };
+
+    cryptoSpeechSynthesis.onerror = () => {
+      isVoiceActive = false;
+      btn.innerText = "🔊 SİSTEMİ DİNLE";
+      btn.style.background = "#10b981";
+    };
+
+    window.speechSynthesis.speak(cryptoSpeechSynthesis);
+    isVoiceActive = true;
+    btn.innerText = "🛑 SESİ DURDUR";
+    btn.style.background = "#ef4444";
+    btn.style.color = "#ffffff";
+  }
+</script>
+
+<style>
+  @keyframes pulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+  }
+</style>
+<!-- AUDIO READER COMPONENT END -->
+
+
 ![Karanlık bir laboratuvarda, antik bir kuvars taşının içindeki atomik elektron sapmalarını ve milyonlarca yıllık insanlık izlerini lazerle tarayarak holografik zaman çizgisine dönüştüren kuantum arkeoloji arayüzü.
 ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjK7f3p4J_6l5mHBfl9H-GlVS_ZXvxjhb4NTWJ04OAiPnKChXke7ibcc3lD4kvrE2WFfPJ8j2C4zECpZO7HRGQjyAIzBDh0P0L8nLvNDBNaCnq1hIsofgemiPM9CXqTgArL-2X_v0hc3jeNnJL55eQb8eKL1mG7vFf03LOLICeua-2-8-S8glJ7YCNrlkE/w640-h272/biyofotonik-arkeoloji-kuantum-zaman-cizgisi.webp.jpg)
 Resmi tarih tezi ve geleneksel arkeoloji, insanlığın kökenini ve en eski yapısal işaretlerini fosilleşmiş kemik parçalarında (Lucy veya Homo naledi kalıntıları), taş aletlerde ya da Göbeklitepe gibi megalitik yapılarda arar. Bu hantal yaklaşım, zamanı sadece organik maddenin çürüme hızıyla (Karbon-14 testi) ölçen analog bir işletim sistemidir. Oysa insanlık tarihinin yerkabuğuna bıraktığı en eski, en kararlı ve silinemez iz; biyolojik dokuların taşların atomik hafızasında bıraktığı **Biyofotonik ve Kuantum Kristal Deformasyonları**dır.
