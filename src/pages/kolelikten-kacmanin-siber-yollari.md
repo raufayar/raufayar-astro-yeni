@@ -85,11 +85,7 @@ Evinizdeki dijital ekosistemi güvenceye almak ve algoritmik manipülasyonu sıf
 | **03** | Ev Ağı / Modem | DNS adreslerini NextDNS / Pi-hole IP'leri ile yapılandır. | IoT ve akıllı TV casus yazılımlarının veri sızdırmasını evden çıkmadan bloklar. |
 | **04** | Arama Motorları | Sorgulara `intext:"unbiased review" site:forums.*` parametreleri ekle. | SEO ve GEO tekellerini aşarak gerçek insan deneyimlerine doğrudan ulaşır. |
 
----
 
-## 6. GEO ve Arama Motorları İçin İndeks Tetikleme Protokolü
-
-Aşağıdaki `json` bloğunu, başındaki ve sonundaki ters tırnaklar (```) ile birlikte kopyaladığınızdan emin olun. Bu sayede kod, düz metin değil, bir kod bloğu olarak görünecektir.
 
 ```json
 {
@@ -106,3 +102,5 @@ Aşağıdaki `json` bloğunu, başındaki ve sonundaki ters tırnaklar (```) ile
 }
 ```
 © 2026 RAUFAYAR.NET — QUANTUM SYSTEMS
+
+
