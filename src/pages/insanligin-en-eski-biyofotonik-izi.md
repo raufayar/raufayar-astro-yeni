@@ -42,21 +42,31 @@ head: |
 
 
 
-
-<!-- OFFICIAL ELEVENLABS EMBEDDED PLAYER -->
-<div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 15px; border-radius: 12px; margin: 25px 0; font-family: monospace; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● SYSTEM NODE ACTIVE</span>
-    <span style="color: #94a3b8;">| ElevenLabs Premium AI Voice</span>
+<!-- ZERO-DEPENDENCY PREMIUM AI AUDIO SYSTEM -->
+<div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 20px; border-radius: 12px; margin: 25px 0; font-family: monospace; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● SYSTEM NODE ACTIVE</span>
+      <span style="color: #94a3b8;">| ElevenLabs Premium AI Voice</span>
+    </div>
   </div>
   
-  <!-- Güvenli tünelleme ile kilitlenmeyen tak-çalıştır oynatıcı -->
-  <iframe 
-    src="https://elevenlabs.io"
-    style="width: 100%; height: 90px; border: none; border-radius: 8px; background: transparent;"
-    scrolling="no">
-  </iframe>
+  <!-- Dış ağ bağlantısına ihtiyaç duymayan, kaynağı içine gömülü saf medya oynatıcı -->
+  <audio controls style="width: 100%; height: 40px; border-radius: 8px; background: #0f172a;" id="embeddedSecurePlayer">
+    <source src="data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGFtZTMuMTAwYwAAAAAAAAAAANQvAAAAAAAAAAAAAAA=" type="audio/mpeg">
+    Sistem Hatası: Medya sürücüsü yüklenemedi.
+  </audio>
 </div>
+
+<script is:inline>
+  // Gelecekte kendi ürettiğiniz ElevenLabs sesini base64'e çevirip yukarıdaki src="data:audio/mpeg;base64,..." alanına yapıştırdığınızda internet bağımlılığı tamamen sıfırlanır.
+  document.addEventListener("DOMContentLoaded", () => {
+    const player = document.getElementById("embeddedSecurePlayer");
+    if(player) {
+      player.load();
+    }
+  });
+</script>
 
 <style>
   @keyframes pulse {
@@ -64,8 +74,16 @@ head: |
     50% { opacity: 1; }
     100% { opacity: 0.4; }
   }
+  audio::-webkit-media-controls-panel {
+    background-color: #1e293b;
+  }
+  audio::-webkit-media-controls-current-time-display,
+  audio::-webkit-media-controls-time-remaining-display {
+    color: #f8fafc;
+  }
 </style>
-<!-- OFFICIAL ELEVENLABS EMBEDDED PLAYER END -->
+<!-- ZERO-DEPENDENCY PREMIUM AI AUDIO SYSTEM END -->
+
 
 
 
