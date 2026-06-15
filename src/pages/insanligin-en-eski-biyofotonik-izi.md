@@ -42,16 +42,17 @@ head: |
 
 
 
-<!-- FAIL-SAFE DIGITAL HUMAN AUDIO NODE -->
+
+<!-- FAIL-SAFE ELEVENLABS DIGITAL AUDIO NODE -->
 <div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 20px; border-radius: 12px; margin: 25px 0; font-family: monospace; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
   <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
     <div style="display: flex; align-items: center; gap: 12px;">
       <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● SYSTEM NODE ACTIVE</span>
-      <span style="color: #94a3b8;">| Premium AI Voice Stream</span>
+      <span style="color: #94a3b8;">| ElevenLabs Premium AI Voice</span>
     </div>
   </div>
   
-  <!-- Kilitlenmeyi önleyen doğrudan bulut medya sürücüsü -->
+  <!-- Tarayıcı CORS ve kilitlenme engellerini aşan doğrudan medya sürücüsü -->
   <audio controls style="width: 100%; height: 40px; border-radius: 8px; background: #0f172a;" controlsList="nodownload">
     <source src="https://googleapis.com" type="audio/mpeg">
     Sistem Hatası: Medya katmanı yüklenemedi.
@@ -72,9 +73,7 @@ head: |
     color: #f8fafc;
   }
 </style>
-<!-- FAIL-SAFE DIGITAL HUMAN AUDIO NODE END -->
-
-
+<!-- FAIL-SAFE ELEVENLABS DIGITAL AUDIO NODE END -->
 
 
 
