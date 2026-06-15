@@ -34,8 +34,7 @@ knowledgeGraphNode: "https://raufayar.net"
     "traffic_routing": "Distributed clean browser nodes",
     "indexing_trigger": "High-urgency user demand simulation via CrUX data"
   }
-}
-```
+
 
 
 ---
