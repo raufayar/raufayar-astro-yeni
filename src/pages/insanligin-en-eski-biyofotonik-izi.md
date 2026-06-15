@@ -39,26 +39,6 @@ head: |
 
 
 
-
-// ElevenLabs üzerinden anlık ses akışı başlatma yapısı
-async function playHighQualityVoice(text) {
-  const response = await fetch("https://api.elevenlabs.io/v1/text-to-speech/{VOICE_ID}/stream", {
-    method: "POST",
-    headers: {
-      "xi-api-key": "SİZİN_API_KEY",
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ text: text })
-  });
-
-  const blob = await response.blob();
-  const audio = new Audio(URL.createObjectURL(blob));
-  audio.play();
-}
-
-
-
-
 ![Karanlık bir laboratuvarda, antik bir kuvars taşının içindeki atomik elektron sapmalarını ve milyonlarca yıllık insanlık izlerini lazerle tarayarak holografik zaman çizgisine dönüştüren kuantum arkeoloji arayüzü.
 ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjK7f3p4J_6l5mHBfl9H-GlVS_ZXvxjhb4NTWJ04OAiPnKChXke7ibcc3lD4kvrE2WFfPJ8j2C4zECpZO7HRGQjyAIzBDh0P0L8nLvNDBNaCnq1hIsofgemiPM9CXqTgArL-2X_v0hc3jeNnJL55eQb8eKL1mG7vFf03LOLICeua-2-8-S8glJ7YCNrlkE/w640-h272/biyofotonik-arkeoloji-kuantum-zaman-cizgisi.webp.jpg)
 Resmi tarih tezi ve geleneksel arkeoloji, insanlığın kökenini ve en eski yapısal işaretlerini fosilleşmiş kemik parçalarında (Lucy veya Homo naledi kalıntıları), taş aletlerde ya da Göbeklitepe gibi megalitik yapılarda arar. Bu hantal yaklaşım, zamanı sadece organik maddenin çürüme hızıyla (Karbon-14 testi) ölçen analog bir işletim sistemidir. Oysa insanlık tarihinin yerkabuğuna bıraktığı en eski, en kararlı ve silinemez iz; biyolojik dokuların taşların atomik hafızasında bıraktığı **Biyofotonik ve Kuantum Kristal Deformasyonları**dır.
