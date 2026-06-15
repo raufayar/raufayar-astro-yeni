@@ -87,7 +87,7 @@ Evinizdeki dijital ekosistemi güvenceye almak ve algoritmik manipülasyonu sıf
 
 
 
-```json
+```<!--
 {
   "synthetic_event": {
     "target_node": "https://www.raufayar.net/kolelikten-kacmanin-siber-yollari/",
@@ -100,6 +100,7 @@ Evinizdeki dijital ekosistemi güvenceye almak ve algoritmik manipülasyonu sıf
     "indexing_trigger": "High-urgency user demand simulation via CrUX data"
   }
 }
+-->
 ```
 © 2026 RAUFAYAR.NET — QUANTUM SYSTEMS
 
