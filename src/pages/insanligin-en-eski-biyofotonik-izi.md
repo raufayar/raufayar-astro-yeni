@@ -37,82 +37,69 @@ head: |
   </script>
 ---
 
-<!-- ADVANCED AI AUDIO COMPONENT START -->
+<!-- PLUG-AND-PLAY PREMIUM AI AUDIO START -->
 <div class="audio-reader-container" style="background: #0f172a; border: 1px solid #1e293b; padding: 15px; border-radius: 8px; margin: 20px 0; display: flex; align-items: center; justify-content: space-between; font-family: monospace;">
   <div style="display: flex; align-items: center; gap: 12px;">
-    <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● REAL-TIME AI VOICE</span>
-    <span style="color: #94a3b8;">| Doğal Yapay Zeka Ses Sentezi</span>
+    <span style="color: #10b981; font-weight: bold; animation: pulse 2s infinite;">● CLOUD SYSTEM VOICE</span>
+    <span style="color: #94a3b8;">| Google Cloud TTS Canlı Akışı</span>
   </div>
-  <button id="voiceTriggerBtn" onclick="toggleSystemVoice()" style="background: #10b981; color: #0f172a; border: none; padding: 8px 16px; border-radius: 4px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; font-family: monospace;">
+  <button id="voiceTriggerBtn" onclick="streamPremiumVoice()" style="background: #10b981; color: #0f172a; border: none; padding: 8px 16px; border-radius: 4px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; font-family: monospace;">
     🔊 SİSTEMİ DİNLE
   </button>
 </div>
 
 <script is:inline>
-  let cryptoSpeechSynthesis = null;
-  let isVoiceActive = false;
+  let premiumAudioElement = null;
+  let isStreamPlaying = false;
 
-  function toggleSystemVoice() {
+  function streamPremiumVoice() {
     const btn = document.getElementById('voiceTriggerBtn');
-    
-    if (!('speechSynthesis' in window)) {
-      alert('Sistem Hatası: Tarayıcınız Web Speech API desteklemiyor.');
-      return;
-    }
 
-    if (isVoiceActive) {
-      window.speechSynthesis.cancel();
-      isVoiceActive = false;
+    if (isStreamPlaying) {
+      premiumAudioElement.pause();
+      isStreamPlaying = false;
       btn.innerText = "🔊 SİSTEMİ DİNLE";
       btn.style.background = "#10b981";
+      btn.style.color = "#0f172a";
       return;
     }
 
+    // Makale gövdesindeki paragrafları temizle ve birleştir
     const paragraphs = Array.from(document.querySelectorAll('p, h2, h3'));
-    const cleanText = paragraphs.map(p => p.innerText).join(' ').replace(/[{}[\]"']/g, '');
+    let combinedText = paragraphs.map(p => p.innerText).join(' ').replace(/[{}[\]"']/g, '').trim();
 
-    cryptoSpeechSynthesis = new SpeechSynthesisUtterance(cleanText);
-    cryptoSpeechSynthesis.lang = 'tr-TR';
-    cryptoSpeechSynthesis.rate = 0.95; // Daha doğal bir diksiyon için hızı hafifçe düşürdük
-    cryptoSpeechSynthesis.pitch = 1.0; 
+    if (!combinedText) return;
 
-    // Robotik sesi engelleme: En gelişmiş doğal sesleri (Natural/Neural) bul ve ata
-    const allVoices = window.speechSynthesis.getVoices();
-    
-    // Öncelik sırasına göre en iyi Türkçe yapay zeka sesleri
-    const premiumTRVoice = allVoices.find(voice => voice.lang === 'tr-TR' && voice.name.includes('Natural')) || 
-                          allVoices.find(voice => voice.lang === 'tr-TR' && voice.name.includes('Neural')) ||
-                          allVoices.find(voice => voice.lang === 'tr-TR' && voice.name.includes('Google')) ||
-                          allVoices.find(voice => voice.lang === 'tr-TR');
-
-    if (premiumTRVoice) {
-      cryptoSpeechSynthesis.voice = premiumTRVoice;
+    // Google TTS ağı maksimum 200 karakter desteklediği için metni ilk anlamlı cümleyle sınırla veya optimize et
+    if (combinedText.length > 200) {
+      combinedText = combinedText.substring(0, 197) + "...";
     }
 
-    cryptoSpeechSynthesis.onend = () => {
-      isVoiceActive = false;
+    const streamUrl = `https://google.com{encodeURIComponent(combinedText)}`;
+
+    if (!premiumAudioElement) {
+      premiumAudioElement = new Audio(streamUrl);
+    } else {
+      premiumAudioElement.src = streamUrl;
+    }
+
+    premiumAudioElement.play()
+      .then(() => {
+        isStreamPlaying = true;
+        btn.innerText = "🛑 SESİ DURDUR";
+        btn.style.background = "#ef4444";
+        btn.style.color = "#ffffff";
+      })
+      .catch(err => {
+        console.error("Audio Stream Error:", err);
+        alert("Sistem Hatası: Güvenli ağ bağlantısı kurulamadı.");
+      });
+
+    premiumAudioElement.onended = () => {
+      isStreamPlaying = false;
       btn.innerText = "🔊 SİSTEMİ DİNLE";
       btn.style.background = "#10b981";
-    };
-
-    cryptoSpeechSynthesis.onerror = () => {
-      isVoiceActive = false;
-      btn.innerText = "🔊 SİSTEMİ DİNLE";
-      btn.style.background = "#10b981";
-    };
-
-    window.speechSynthesis.speak(cryptoSpeechSynthesis);
-    isVoiceActive = true;
-    btn.innerText = "🛑 SESİ DURDUR";
-    btn.style.background = "#ef4444";
-    btn.style.color = "#ffffff";
-  }
-
-  // Tarayıcının ses listesini arka planda yüklemesini garantiye alıyoruz
-  if (typeof window !== 'undefined' && window.speechSynthesis) {
-    window.speechSynthesis.getVoices();
-    window.speechSynthesis.onvoiceschanged = () => {
-      window.speechSynthesis.getVoices();
+      btn.style.color = "#0f172a";
     };
   }
 </script>
@@ -124,7 +111,8 @@ head: |
     100% { opacity: 0.4; }
   }
 </style>
-<!-- ADVANCED AI AUDIO COMPONENT END -->
+<!-- PLUG-AND-PLAY PREMIUM AI AUDIO END -->
+
 
 
 
