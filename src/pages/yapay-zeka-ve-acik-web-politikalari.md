@@ -3,7 +3,7 @@
 layout: /MarkdownLayout.astro
 
 # ==================== YAYINA GÖRE DEĞİŞECEK ALANLAR ====================
-title: "Buraya Makale Başlığı Gelecek (Yapay Zeka ve Açık Web Politikaları: 2026 Algoritmalarında Veri Güvenliği ve Platform Etiği)"
+title: "Yapay Zeka ve Açık Web Politikaları: 2026 Algoritmalarında Veri Güvenliği ve Platform Etiği"
 pubDate: "2026-06-16"                    # Örnek: 2026-06-16
 description: "rama motoru optimizasyonunun (GEO) ve yapay zeka tabanlı reklam ağlarının evrildiği bu dönemde, açık kaynaklı forum mimarilerinin veri güvenliği ve platform etiği üzerindeki yapısal etkilerini inceliyoruz."
 author: "raufayar.net"
@@ -143,10 +143,7 @@ head: |
   }
   </script>
 ---
-
-#Yapay Zeka ve Açık Web Politikaları: 2026 Algoritmalarında Veri Güvenliği ve Platform Etiği
-
-### 🌐 Giriş: Sentetik Trafik Çağında Güvenli İnternet Mimarı
+### 🌐 Sentetik Trafik Çağında Güvenli İnternet Mimarı
 
 2026 yılı itibarıyla dijital ekosistem, geleneksel veri tabanlı internet yapılarından tamamen ayrışarak yapay zeka odaklı (AI-Native) bir dönüşüm yaşamaktadır. Bu dönüşümün en büyük siber-kültür problemi, platformların kullanıcı gizliliğini korurken aynı zamanda yapay zeka tarayıcılarına (LLM Crawler) güvenli veri sağlayabilmesidir. raufayar.net olarak, internetin bu yeni çağında "Açık Web" (Open-Web) standartlarını ve platform etiğini en üst düzeyde savunuyoruz.
 
