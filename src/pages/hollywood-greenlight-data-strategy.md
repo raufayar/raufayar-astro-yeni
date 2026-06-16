@@ -47,8 +47,7 @@ head: |
       "name": "RAUFAYAR.NET - QUANTUM CENTER",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://raufayar.net/hollywood-greenlight-data-strategy
-"
+        "url": "https://raufayar.net/hollywood-greenlight-data-strategy"
       }
     },
     "identifier": "https://raufayar.net/hollywood-greenlight-data-strategy
