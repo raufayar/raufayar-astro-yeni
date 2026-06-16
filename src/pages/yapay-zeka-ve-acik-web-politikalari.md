@@ -11,7 +11,7 @@ publisher: "RAUFAYAR.NET - QUANTUM CENTER"
 
 # SEO & Anahtar Kelimeler (Her yayın için güncelleyin)
 tags: ["Analizler", "TaktikStrateji"]
-keywords: "Yapay Zeka", "Veri Güvenliği", "Google AdSense", "Açık Web", "EEAT", "Siber Güvenlik", "Platform Etiği", "GEO Optimizasyonu", "Çerez Politikası", "KVKK Uyum"
+keywords: Yapay Zeka, Veri Güvenliği, Google AdSense, Açık Web, EEAT, Siber Güvenlik, Platform Etiği, GEO Optimizasyonu, Çerez Politikası, KVKK Uyum
 semanticEntities: "Ana Konu, İlgili Teknoloji, İlgili Kavramlar, Kişi/Şirket İsimleri"
 
 # Schema & İçerik Tipi (Uygun olanı seçin veya birden fazla kullanın)
