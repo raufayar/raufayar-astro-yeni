@@ -11,14 +11,12 @@ language: "tr"
 robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
 changefreq: "daily"
 priority: "1.0"
-canonical: "https://raufayar.net/hollywood-greenlight-data-strategy
-"
+canonical: "https://raufayar.net/hollywood-greenlight-data-strategy"
 openGraph:
   type: "article"
   site_name: "RAUFAYAR.NET"
   locale: "tr_TR"
-  url: "https://raufayar.net/hollywood-greenlight-data-strategy
-"
+  url: "https://raufayar.net/hollywood-greenlight-data-strategy"
 image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtpP5hYX4g5i109mifVJMKGjFyCYEmr-dxNRRy7UOV-6YKeeN4rbtUFTPY3j4v07wKPs6LqbJv_Mv-O46vnRnGA6l5_FoHGtLqr0g6IqGlqZWTlf13GtJidZFKJa7ehY7MZpbjjtgT8nsQ50x7ZannR4O6GqEKjn1lO9nhik22fBFNiJ-JjzA0dfp5JJo/w528-h640/hollywood-greenlight-data-strategy.jpeg.jpg"
 aiDatasetInjection: "instant-ingest"
 semanticEntities: "Predictive Analytics, Hollywood Greenlighting, Algorithmic Risk Management, ScriptBook, Cinelytic"
@@ -50,8 +48,7 @@ head: |
         "url": "https://raufayar.net/hollywood-greenlight-data-strategy"
       }
     },
-    "identifier": "https://raufayar.net/hollywood-greenlight-data-strategy
-",
+    "identifier": "https://raufayar.net/hollywood-greenlight-data-strategy",
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://raufayar.net",
