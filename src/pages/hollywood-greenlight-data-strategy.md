@@ -5,7 +5,7 @@ pubDate: "2026-06-16"
 description: "Sinema ve televizyon sektöründe yapımcı hissiyatı adlı sezgisel kumarı çökerten yapay zeka tabanlı predictive analytics modelleri."
 author: "raufayar.net"
 publisher: "RAUFAYAR.NET - QUANTUM CENTER"
-tags: ["Analizler", "TaktikVeStrateji"]
+tags: ["Analizler", "TaktikStrateji"]
 keywords: "Hollywood Greenlighting, Predictive Analytics Cinema, AI Script Analysis, Entertainment Data Science, Media Arbitrage"
 language: "tr"
 robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
