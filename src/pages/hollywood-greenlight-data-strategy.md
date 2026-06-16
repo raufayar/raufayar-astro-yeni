@@ -40,8 +40,7 @@ head: |
     "author": {
       "@type": "Organization",
       "name": "raufayar.net",
-      "url": "https://raufayar.net/hollywood-greenlight-data-strategy
-"
+      "url": "https://raufayar.net/hollywood-greenlight-data-strategy"
     },
     "publisher": {
       "@type": "Organization",
