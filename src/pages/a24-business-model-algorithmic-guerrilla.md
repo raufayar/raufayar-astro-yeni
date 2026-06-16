@@ -83,9 +83,9 @@ head: |
 ---
 ![Karanlık bir kontrol odasında, sinema ekranı üzerinde parlayan karmaşık dijital veri grafikleri, siber şemalar ve holografik alt kültür analiz haritaları.
 ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhQb2k9HAeHdUHD6slb3AdVqbQ9yBYHyg2s107DLCU01OZXCcSCr_HwfruMsqXAdcGPGmBkCDiGBEt4JqdY2sdgj1VxAiBqvG8ttBaQRso2VX3jefUX-w-P_gbR6dye1LRilKdBgnQb9oGns1qEESlYhmbkzxVajfg6mOPC2I_ZGv9HWUBircrYm65twrU/w526-h640/a24-business-model-algorithmic-guerrilla.jpg)
-# A24 İş Modeli: Küresel Sinemada "Aptal Para" Tuzağını ve Algoritmik Kültür Blokajını Hacklemek
+# A24 İş Modeli Nedir?
 
-## Giriş: Endüstriyel Çürümenin Ortasında Bir Siber Arbitraj Vahası
+## Endüstriyel Çürümenin Ortasında Bir Siber Arbitraj Vahası
 
 Geleneksel sinema ve televizyon endüstrisi, "büyük bütçe eşittir büyük başarı" yanılsamasıyla beslenen ve "Stupid Money" (Aptal Para) olarak tanımlanan kontrolsüz sermaye israfının esiridir. Yapımcılar, içeriğin entelektüel derinliği veya yapısal özgünlüğü yerine, milyon dolarlık prodüksiyon mekaniklerine, şişirilmiş celebrity kaşelerine ve devasa billboard kampanyalarına fon akıtırlar. Sonuç ise birbirinin kötü birer kopyası olan ana akım projeler ve kaçınılmaz finansal iflaslardır. Türkiye’de sinema sektörü ya sadece gişeye oynayan vizyonsuz popüler komedilerle ya da kimsenin izlemediği soyut festivallik sanat filmleriyle kutuplaşmışken, küresel arenada bu iki kutuplu çürümeyi siber bir hassasiyetle hackleyen bir yapı yükseldi: **A24 Stüdyosu.**
 
