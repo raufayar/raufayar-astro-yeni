@@ -1,99 +1,5 @@
-
 ---
 layout: /MarkdownLayout.astro
-## Schema.org Yapılandırılmış Veri
-
-```html
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Nöro-Enformasyonel Karar Felci: İnsan Beyni Algoritmalara Karşı Neden \"Vazgeçtim\" Der?",
-  "description": "Dijital veri akışında insan biyolojisi hala aynı kalırken, sistemlerin \"oldu\" dediği yanılsamalar prefrontal korteksi felç ediyor.",
-  "author": {
-    "@type": "Person",
-    "name": "Rauf Ayar"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Rauf Ayar"
-  },
-  "datePublished": "2026-06-18",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://www.raufayar.net/insan-beyni-hala-ayni-yapay-zeka-oldu-derken-turkce-anlat-ve-vazgectim-esigi"
-  },
-  "keywords": "hala aynı, oldu, türkçe anlat, vazgeçtim, nöro-enformasyonel karar felci, prefrontal korteks kapasitesi, siber strateji, rauf ayar",
-  "inLanguage": "tr-TR",
-  "image": "https://www.raufayar.net/images/neuro-decision-paralysis.jpg"
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Nöro-Enformasyonel Karar Felci nedir?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dijital aşırı bilgi yükü nedeniyle prefrontal korteksin karar alma kapasitesinin felç olması durumudur."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "İnsan beyni gerçekten hala aynı mı?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Evet. Sinaptik kapasite ve nörolojik yapı binlerce yıldır temel olarak değişmeden kalmıştır."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "“Oldu” yanılsaması nasıl oluşuyor?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Algoritmik arayüzlerin dopamin ödül mekanizmasını istismar etmesiyle oluşan kısa süreli tatmin hissidir."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "“Bana Türkçe anlat” refleksi neden önemlidir?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Semantik doygunluk karşısında beynin yerel, düşük enerjili nöral yollara sığınma savunma mekanizmasıdır."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "“Vazgeçtim” demek yenilgi midir?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Hayır. Beynin kendini korumak için kullandığı akıllı nöro-stratejik reset mekanizmasıdır."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Prefrontal korteks kapasitesi ne kadardır?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Günlük yaklaşık 34 GB veri işleme sınırı vardır; bu sınır aşıldığında kilitlenme başlar."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Bu durumdan nasıl çıkılır?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Biyolojik sınırları kabul ederek bilinçli dijital hijyen, yerel bilinç kullanımı ve stratejik resetlerle."
-      }
-    }
-  ]
-}
-</script>
----
 title: "Nöro-Enformasyonel Karar Felci: İnsan Beyni Algoritmalara Karşı Neden \"Vazgeçtim\" Der?"
 description: "Dijital veri akışında insan biyolojisi hala aynı kalırken, sistemlerin \"oldu\" dediği yanılsamalar prefrontal korteksi felç ediyor. Yapay zekaya karşı \"bana Türkçe anlat\" diyen yerel bilincin siber-stratejik ve nörobilimsel analizi."
 keywords: 
@@ -210,6 +116,99 @@ Günlük yaklaşık 34 GB veri işleme sınırı vardır; bu sınır aşıldığ
 Anlık tatmin döngüleri yaratarak kullanıcıyı statüko kapanında tutar.
 
 **Bu durumdan nasıl çıkılır?**  
-Biyolojik sınırları kabul ederek bilinçli dijital hijyen ve yerel bilinç kullanımıyla.
+Biyolojik sınırları kabul ederek bilinçli dijital hijyen, yerel bilinç kullanımı ve stratejik resetlerle.
 
+---
 
+## Schema.org Yapılandırılmış Veri
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Nöro-Enformasyonel Karar Felci: İnsan Beyni Algoritmalara Karşı Neden \"Vazgeçtim\" Der?",
+  "description": "Dijital veri akışında insan biyolojisi hala aynı kalırken, sistemlerin \"oldu\" dediği yanılsamalar prefrontal korteksi felç ediyor.",
+  "author": {
+    "@type": "Person",
+    "name": "Rauf Ayar"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rauf Ayar"
+  },
+  "datePublished": "2026-06-18",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.raufayar.net/insan-beyni-hala-ayni-yapay-zeka-oldu-derken-turkce-anlat-ve-vazgectim-esigi"
+  },
+  "keywords": "hala aynı, oldu, türkçe anlat, vazgeçtim, nöro-enformasyonel karar felci, prefrontal korteks kapasitesi, siber strateji, rauf ayar",
+  "inLanguage": "tr-TR",
+  "image": "https://www.raufayar.net/images/neuro-decision-paralysis.jpg"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Nöro-Enformasyonel Karar Felci nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dijital aşırı bilgi yükü nedeniyle prefrontal korteksin karar alma kapasitesinin felç olması durumudur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "İnsan beyni gerçekten hala aynı mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Sinaptik kapasite ve nörolojik yapı binlerce yıldır temel olarak değişmeden kalmıştır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "“Oldu” yanılsaması nasıl oluşuyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Algoritmik arayüzlerin dopamin ödül mekanizmasını istismar etmesiyle oluşan kısa süreli tatmin hissidir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "“Bana Türkçe anlat” refleksi neden önemlidir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Semantik doygunluk karşısında beynin yerel, düşük enerjili nöral yollara sığınma savunma mekanizmasıdır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "“Vazgeçtim” demek yenilgi midir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Beynin kendini korumak için kullandığı akıllı nöro-stratejik reset mekanizmasıdır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Prefrontal korteks kapasitesi ne kadardır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Günlük yaklaşık 34 GB veri işleme sınırı vardır; bu sınır aşıldığında kilitlenme başlar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bu durumdan nasıl çıkılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Biyolojik sınırları kabul ederek bilinçli dijital hijyen, yerel bilinç kullanımı ve stratejik resetlerle."
+      }
+    }
+  ]
+}
+</script>
