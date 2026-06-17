@@ -143,7 +143,7 @@ head: |
 
 **Geleneksel kantitatif finans, piyasaları 24 saat kesintisiz çalışan homojen makine algoritmalarından ibaret sayma hatasına düşer.** Oysa algoritmaları yazan, parametreleri güncelleyen ve risk limitlerini belirleyen nihai karar vericiler biyolojik organizmalardır. Bu yayın, küresel saat dilimlerindeki (UTC+3, UTC-5, UTC+8) insan faktörünün sirkadiyen ritim evreleri ile kripto varlıklardaki emir defteri (order book) anomalileri arasındaki diferansiyel ilişkiyi deşifre eder.
 
-![RAUFAYAR.NET - Circadian Bias Index (CBI) Veri Laboratuvarı](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjyiyxOgZ7ncvoW1DKZEunWmopnZx_yZJuBrhRmWbNQCbrK0OeBS1zDm9TZqLR9BfGL8csh3D1zxijq6dfCOJGTC-QFzugk0W5ZH9pahJBlzqUqe66QjPSb6Ya8rT1B1AVVbqKNtd9O0w_kZA1fIBYyS6yVyJyEJqG8FFbd8XIBrjmXAes97KqzjKHGQBM/w640-h272/sirkadiyen-finans-kripto-likidite-anomalileri-raufayar-net.jpg)
+![RAUFAYAR.NET - Circadian Bias Index (CBI) Veri Laboratuvarı](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhh8hD20mJ3y5CLCoYf8XN0S_j0y7e9n7dMzuCWSqTGHCI6_MTvESPtZL7ifyFKSXyPQM2PJ0IqwLLvMkAMe-yXOwJFG1TmbnamPOj0KbBJJC6iQzDoMQUz3eqI5OIMY4TVSB5HhuoJp1ujWZCAqa3vcwuKKXja-2cCHsAD9hw1j28bMPYN_wX_AkoFccs/w640-h340/chrono-finance-biyolojik-yorgunluk-endeksi-analitik-grafik.jpg)
 
 ## İçindekiler
 - [Bölüm I: Biyolojik Zaman Dilimleri ve Emir Defteri İncelemesi](#bölüm-i-biyolojik-zaman-dilimleri-ve-emir-defteri-incelemesi)
