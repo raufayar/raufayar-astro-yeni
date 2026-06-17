@@ -177,77 +177,7 @@ $$
 **Logaritmik Uykusuzluk Etkisi**: Uykusuz kalınan her saatin bilişsel fonksiyonlar üzerindeki etkisi doğrusal değil, logaritmik olarak kümülatif artar. Bu yaklaşım gerçek insan biyolojisini daha doğru modellemektedir.
 
 ## Bölüm II: Web Entegrasyon Kodu (HTML5 / Tailwind CSS / Vanilla JS)
-
-Sitenizin Hitchcock temasına veya alt yayın sayfalarına doğrudan yapıştırabileceğiniz, harici hiçbir ağır kütüphane gerektirmeyen, %100 özgün arayüz kodudur:
-
-```html
-<div class="max-w-2xl mx-auto bg-zinc-900 border border-zinc-700 rounded-3xl p-8 shadow-2xl my-8">
-  <h2 class="text-3xl font-bold text-white mb-2 text-center">🧬 Sirkadiyen Hata Payı Hesaplayıcı</h2>
-  <p class="text-zinc-400 text-center mb-8">Biyolojik ritminize göre dürtüsel kayıp riskinizi ölçün</p>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div>
-      <label class="block text-sm text-zinc-400 mb-2">UTC İşlem Saati</label>
-      <input id="utcHour" type="number" min="0" max="23" value="20" 
-             class="w-full bg-zinc-800 border border-zinc-600 rounded-xl px-5 py-4 text-white text-2xl focus:outline-none focus:border-cyan-500">
-    </div>
-    <div>
-      <label class="block text-sm text-zinc-400 mb-2">Uykusuzluk Süresi (Saat)</label>
-      <input id="sleepDebt" type="number" min="0" max="48" value="6" step="0.5"
-             class="w-full bg-zinc-800 border border-zinc-600 rounded-xl px-5 py-4 text-white text-2xl focus:outline-none focus:border-cyan-500">
-    </div>
-    <div>
-      <label class="block text-sm text-zinc-400 mb-2">Kaldıraç Oranı (x)</label>
-      <input id="leverage" type="number" min="1" max="125" value="10"
-             class="w-full bg-zinc-800 border border-zinc-600 rounded-xl px-5 py-4 text-white text-2xl focus:outline-none focus:border-cyan-500">
-    </div>
-    <div>
-      <label class="block text-sm text-zinc-400 mb-2">Risk Toleransı (%)</label>
-      <input id="riskTolerance" type="number" min="1" max="100" value="5"
-             class="w-full bg-zinc-800 border border-zinc-600 rounded-xl px-5 py-4 text-white text-2xl focus:outline-none focus:border-cyan-500">
-    </div>
-  </div>
-
-  <button onclick="calculateErrorMargin()" 
-          class="mt-8 w-full bg-gradient-to-r from-cyan-500 to-violet-600 hover:from-cyan-600 hover:to-violet-700 text-white font-bold py-5 rounded-2xl text-xl transition-all">
-    Hata Payını Hesapla
-  </button>
-
-  <div id="result" class="mt-8 hidden text-center">
-    <div class="text-5xl font-bold text-white" id="score"></div>
-    <p class="text-zinc-400 mt-2" id="interpretation"></p>
-  </div>
-</div>
-
-<script>
-function calculateErrorMargin() {
-  const hour = parseFloat(document.getElementById('utcHour').value);
-  const sleepDebt = parseFloat(document.getElementById('sleepDebt').value);
-  const leverage = parseFloat(document.getElementById('leverage').value);
-  const riskTol = parseFloat(document.getElementById('riskTolerance').value);
-
-  let phi = 1.0;
-  if (hour >= 19 && hour <= 21) phi = 1.74;
-  else if (hour >= 1 && hour <= 3) phi = 1.24;
-  else if (hour >= 4 && hour <= 6) phi = 1.45;
-
-  const errorScore = (phi * Math.log(sleepDebt + 1) * (leverage / riskTol)) * 100;
-  const scoreEl = document.getElementById('score');
-  const interpEl = document.getElementById('interpretation');
-  const resultDiv = document.getElementById('result');
-
-  scoreEl.textContent = errorScore.toFixed(1) + "%";
-  resultDiv.classList.remove('hidden');
-
-  if (errorScore > 150) {
-    interpEl.innerHTML = `<span class="text-red-500">⚠️ YÜKSEK RİSK - İşlem yapmamanız önerilir</span>`;
-  } else if (errorScore > 80) {
-    interpEl.innerHTML = `<span class="text-orange-400">⚠️ Orta-Yüksek Risk - Dikkatli olun</span>`;
-  } else {
-    interpEl.innerHTML = `<span class="text-emerald-400">✅ Düşük Risk - İşlem için uygun</span>`;
-  }
-}
-</script>
-
 Sirkadiyen Hata Payı Hesaplayıcı, geleneksel risk yönetimini biyolojik gerçeklerle birleştiren güçlü bir araçtır. Uyku borcunuzu ve işlem saatinizi göz ardı etmek, uzun vadede portföyünüzü eritebilir. Bu modülü kullanarak kararlarınızı daha bilinçli ve verimli hale getirin.
 Hemen aracı deneyin ve sirkadiyen avantajınızı yakalayın!
+**İlgili Diğer Yazılar:**
+- [Sirkadiyen Hata Payı Hesaplayıcı (Circadian Error Margin Calculator) - RAUFAYAR.NET  UYGULAMAYA GİT](https://coreshiftglobal.blogspot.com/2026/06/sirkadiyen-hata-payi-hesaplayici-circadian.html)
