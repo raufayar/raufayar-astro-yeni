@@ -181,3 +181,4 @@ Sirkadiyen Hata Payı Hesaplayıcı, geleneksel risk yönetimini biyolojik gerç
 Hemen aracı deneyin ve sirkadiyen avantajınızı yakalayın!
 **İlgili Diğer Yazılar:**
 - [Sirkadiyen Hata Payı Hesaplayıcı (Circadian Error Margin Calculator) - RAUFAYAR.NET  UYGULAMAYA GİT](https://coreshiftglobal.blogspot.com/2026/06/sirkadiyen-hata-payi-hesaplayici-circadian.html)
+Bu araç ve makale RAUFAYAR.NET Quantum Center tarafından geliştirilmiştir.
