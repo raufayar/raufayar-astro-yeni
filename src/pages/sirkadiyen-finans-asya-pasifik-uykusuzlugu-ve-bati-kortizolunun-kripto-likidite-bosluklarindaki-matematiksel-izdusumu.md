@@ -196,6 +196,11 @@ $$
 - Burada **Φ**<sub>fatigue</sub>(**t**), o saat dilimindeki aktif işlem hacmine sahip nüfusun sirkadiyen yorgunluk fonksiyonudur.
 - Emir defterindeki derinliğin (**L**<sub>depth</sub>), hacme (**V**<sub>volume</sub>) oranındaki anomaliler, biyolojik kırılma anlarında zirve yapar.
 
+
+![Matematiksel Modelin Zamansal Dağılım Grafiği (edugraph)
+](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhV4Iv5PWLE6Bf43QFyNOz7gG_OKTCForxnnA5PAdOyB_qv-7hAH8aJNI10JoCI4rI1tgrM04l6kfpkT-q_w4xrmX_96MjvFdjzH1v7ZquLXkpSpFYrV98yS9P6C1hjd6fz2GyiD6C5AA2b5bjraLs7Qz2c1KZ8GXFY6JECpJSgoOJOSX-TflJQPVU8rFc/w640-h368/graph.jpg.png)
+ \(C_{bias}\) diferansiyel yaklaşımının gün içerisindeki anatomisini gösterir.NY Kortizol Çöküşü (UTC 19:00 - 21:00): Kurumsal risk mekanizmalarının yavaşlaması ve emir defterindeki derinliğin %18-24 çekilmesiyle endeksteki en büyük dikey sıçramayı (kırmızı alan) gösterir.Asya Dürtüsel Evre (UTC 01:00 - 03:00): Bölgesel momentum dalgasıyla hacim yanılsaması yaratan, mikro arbitraj pencerelerinin açıldığı ikinci kırılma evresidir (yeşil alan).
+
 ## Bölüm V: Sirkadiyen Sapma Endeksi (C<sub>bias</sub>) Algoritmik Altyapısı
 
 ### 1. TradingView Çözümü: Pine Script v5 İndikatör Kodu
