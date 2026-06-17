@@ -295,4 +295,4 @@ if __name__ == "__main__":
     print(f"Model Tarafından Yakalanan Sirkadiyen Sapma Sayısı: {len(detected_anomalies)}")
 Sirkadiyen ritimler, kripto piyasalarındaki görünmez likidite boşluklarını belirleyen en güçlü faktörlerden biridir. RAUFAYAR.NET laboratuvarlarında geliştirdiğimiz Circadian Bias Index (CBI) ile bu boşlukları matematiksel olarak ölçebilir ve arbitraj fırsatlarını proaktif şekilde yakalayabilirsiniz.
 Hemen TradingView indikatörünü grafiğinize ekleyin ve sirkadiyen avantajınızı bugün başlatın.
-- [Sirkadiyen Hata Payı Hesaplayıcı (Circadian Error Margin Calculator) - RAUFAYAR.NET  UYGULAMAYA GİT](https://coreshiftglobal.blogspot.com/2026/06/sirkadiyen-hata-payi-hesaplayici-circadian.html)
+- [Sirkadiyen Hata Payı Hesaplayıcı (Circadian Error Margin Calculator) - RAUFAYAR.NET  UYGULAMAYA GİT](https://www.raufayar.net/sirkadiyen-hata-payi-hesaplayici-chrono-finance/)
