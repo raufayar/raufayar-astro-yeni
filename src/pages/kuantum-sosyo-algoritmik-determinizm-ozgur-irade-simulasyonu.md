@@ -7,7 +7,7 @@ description: "Yapay zeka, kuantum fiziği ve büyük veri modelleri insan özgü
 author: "raufayar.net"
 publisher: "RAUFAYAR.NET - QUANTUM CENTER"
 
-tags: ["Analizler", "TaktikVeStrateji"]
+tags: ["Analizler", "TaktikStrateji"]
 keywords: "Kuantum Sosyo-Algoritmik Determinizm, Yapay Zeka Özgür İrade Simülasyonu, Geriye Dönük Algoritmik Kodlama, Kuantum Süperpozisyon Sosyolojisi, Laplace'ın Dijital Şeytanı, Semantik Kafes Teorisi, Kaotik İnsan Anomalisi, Nöro-Algoritmik Kapitalizm"
 semanticEntities: "Kuantum Süperpozisyon Sosyolojisi, Retrocausal Algorithmic Programming, Semantik Kafes, Laplace'ın Dijital Şeytanı, Kaotik İnsan Anomalisi, Sentetik Toplum Modelleri"
 
