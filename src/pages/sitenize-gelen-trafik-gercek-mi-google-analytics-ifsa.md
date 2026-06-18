@@ -7,7 +7,7 @@ description: "Yapay zeka botları ve arama motorları sitenizi gizlice sömürü
 author: "raufayar.net"
 publisher: "RAUFAYAR.NET - QUANTUM CENTER"
 # SEO & Anahtar Kelimeler (Her yayın için güncelleyin)
-tags: ["Analizler", "TaktikVeStrateji", "Teknoloji", "Webmaster", "SiberSavunma", "YapayZeka"]
+tags: ["Analizler", "TaktikStrateji", "AI"]
 keywords: "sitenize gelen trafik gerçek mi, google analytics verileri gerçek mi, organik hitler gerçek mi, yapay zeka bot trafiği gerçek mi, webmaster reklam tıklamaları gerçek mi, zero scrape anti llm script, global dead web map, yapay zeka veri hırsızlığı ifşa, model collapse sentetik veri tuzağı"
 semanticEntities: "Google Analytics, AI Botları, LLM Scrapers, Zero-Scrape Anti-LLM, Global Dead-Web Map, Model Collapse, Sentetik Trafik, Proof of Humanity"
 # Schema & İçerik Tipi (Uygun olanı seçin veya birden fazla kullanın)
