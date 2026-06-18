@@ -202,5 +202,3 @@ Algoritmalar giderek "insan kokusu"nu arayacak. Sentetik içeriklerin işaretlen
 **İlgili Diğer Yazılar**  
 - [Bilişsel Sentetik Enflasyon: AI Çağında İnsan Beynini Algoritmik Esaretten Kurtarmanın Siber Yolları](https://www.raufayar.net/ai-caginda-bilissel-siber-guvenlik/)  
 - [Biyolojik Sistem Mimarisinde Sürdürülebilir Optimizasyon: Bio-Hacking Manifesto](https://www.raufayar.net/Bio-Hacking-Sistem-Mimarisi/)
-
-*Bu makale, dijital ölümsüzlük tartışmasına insan merkezli bir bakış açısı sunmak amacıyla hazırlanmıştır.*
