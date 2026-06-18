@@ -1,46 +1,23 @@
 import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 
 export async function GET(context) {
-  const postImportResult = import.meta.glob('./**/*.{md,mdx}', { eager: true });
-  const rawPosts = Object.values(postImportResult);
+  const posts = await getCollection('blog');   // <-- Koleksiyon adın ne ise onu yaz
 
-  // Geçerli postları filtrele
-  const validPosts = rawPosts.filter((post) => 
-    post?.frontmatter?.title && 
-    post?.frontmatter?.pubDate
+  const sortedPosts = posts.sort((a, b) => 
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
   );
-
-  // Tarihe göre sırala (en yeni en üstte)
-  const sortedPosts = validPosts.sort((a, b) => {
-    const dateA = new Date(a.frontmatter.pubDate);
-    const dateB = new Date(b.frontmatter.pubDate);
-    return dateB.getTime() - dateA.getTime();   // ← Burası düzeltildi
-  });
 
   return rss({
     title: 'Rauf Ayar',
     description: 'Sistem Gerçeklik Algoritması ve Güncel İçerikler',
     site: context.site || 'https://www.raufayar.net',
-    items: sortedPosts.map((post) => {
-      // Daha güvenli URL üretimi
-      let link = post.url;
-
-      if (!link && post.file) {
-        const parts = post.file.split('/pages/');
-        if (parts[1]) {
-          link = '/' + parts[1]
-            .replace(/\.(md|mdx)$/, '')     // uzantıyı kaldır
-            .replace(/\/index$/, '');       // /index → /
-        }
-      }
-
-      return {
-        title: post.frontmatter.title,
-        pubDate: new Date(post.frontmatter.pubDate),
-        description: post.frontmatter.description || post.frontmatter.excerpt || '',
-        link: link || '/',
-      };
-    }),
+    items: sortedPosts.map((post) => ({
+      title: post.data.title,
+      pubDate: new Date(post.data.pubDate),
+      description: post.data.description || '',
+      link: `/blog/${post.slug}/`,          // slug'ına göre ayarla
+    })),
     customData: `<language>tr-TR</language>`,
   });
 }
