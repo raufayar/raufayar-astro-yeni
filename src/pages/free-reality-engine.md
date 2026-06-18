@@ -195,7 +195,7 @@ Resmi veriler birer hapistir. **Sistem Gerçeklik Algoritması** ise o hapishane
 
 Rakamları olduğu gibi kabul etmeyi bırakın. Gerçeği kendi şartlarınızla görün ve yorumlayın.
 
-**Hemen deneyin →** [Sistem Gerçeklik Algoritması](https://www.raufayar.net/free-reality-engine/)
+**Hemen deneyin →** [Sistem Gerçeklik Algoritması](https://www.raufayar.net/free-reality-engine-app/)
 
 ---
 
