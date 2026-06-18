@@ -7,7 +7,7 @@ description: "Size sunulan resmi veriler manipüle edilmiş bir illüzyondur. Si
 author: "raufayar.net"
 publisher: "RAUFAYAR.NET - QUANTUM CENTER"
 # SEO & Anahtar Kelimeler (Her yayın için güncelleyin)
-tags: ["Analizler", "TaktikVeStrateji", "Ekonomi", "Finans", "SistemEleştirisi", "GerçeklikAlgoritması"]
+tags: ["TaktikStrateji", "UcretsizUygulamalar"]
 keywords: "gerçeklik algoritması, sistem analizi, veri manipülasyonu, enflasyon hesaplama, statüko deşifre, finansal gerçekler, rauf ayar, gizli maliyet analizi, alternatif ekonomi"
 semanticEntities: "Sistem Gerçeklik Algoritması, Veri Manipülasyonu, Resmi Enflasyon, Statüko, Gizli Maliyetler, Rauf Ayar"
 # Schema & İçerik Tipi (Uygun olanı seçin veya birden fazla kullanın)
