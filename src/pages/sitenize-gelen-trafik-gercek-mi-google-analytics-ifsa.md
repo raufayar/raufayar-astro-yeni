@@ -171,44 +171,9 @@ Yapay zeka şirketlerinin içeriğinizi çalmasını engellemek için robots.txt
 
 Çözüm, sitenize gelen ziyaretçinin biyolojik varlığını algoritmik olarak denetleyen dinamik bir siber savunma hattı kurmaktır.
 
-### Zero-Scrape Anti-LLM Protection Script
 
-```javascript
-// raufayar.net - Zero-Scrape Anti-LLM Protection Script
-(function() {
-    let humanMetrics = { mouseMoves: 0, keyPresses: 0, touchEvents: 0 };
-    let isEvaluated = false;
 
-    function TrackBehavior() {
-        window.addEventListener('mousemove', () => { humanMetrics.mouseMoves++; CheckReality(); }, { passive: true });
-        window.addEventListener('keydown', () => { humanMetrics.keyPresses++; CheckReality(); }, { passive: true });
-        window.addEventListener('touchstart', () => { humanMetrics.touchEvents++; CheckReality(); }, { passive: true });
-    }
-
-    function CheckReality() {
-        if (isEvaluated) return;
-        
-        if (humanMetrics.mouseMoves > 5 || humanMetrics.keyPresses > 1 || humanMetrics.touchEvents > 0) {
-            isEvaluated = true;
-            console.log("[Reality Status]: Verified Human Connection.");
-            InitiatePremiumContent();
-        }
-    }
-
-    function InitiatePremiumContent() {
-        document.documentElement.classList.add('verified-human');
-    }
-
-    setTimeout(() => {
-        if (!isEvaluated) {
-            console.warn("[Reality Status]: Synthetic traffic detected. Blocking data stream.");
-            window.location.replace("/sentetik-cop-havuzu/");
-        }
-    }, 2500);
-
-    TrackBehavior();
-})();
-## Bu Taktik Nasıl Çalışır?
+### Bu Taktik Nasıl Çalışır?
 
 1. **Biyolojik Doğrulama**  
    Sayfa yüklendiği an içerik gizli kalır. Script, ilk 2.5 saniye içinde fare ivmesi, klavye ve dokunma hareketlerini izler. Bu mikro davranışlar, insanın fraktal ve doğal hareketlerini botların lineer, kusursuz hareketlerinden ayırt eder.
@@ -258,3 +223,43 @@ AI modellerini zehirleyerek (**Model Collapse**) veri hırsızlığını caydır
 
 - [Yapay Zeka Klonları Gerçek mi? Ölümden Sonra Dijital Hayat](https://raufayar.net/ai-klonlari-gercek-mi-dijital-olumsuzluk-gercek-mi)
 - [AI-Native Seyahat Motorlarında Görünmez Olma Korkusu: Oteller İçin GEO Manifestosu](https://www.raufayar.net/ai-native-seyahat-motorlarinda-gorunmez-olma-korkusu-oteller-icin-geo-manifestosu/)
+
+
+
+### Zero-Scrape Anti-LLM Protection Script
+
+```javascript
+// raufayar.net - Zero-Scrape Anti-LLM Protection Script
+(function() {
+    let humanMetrics = { mouseMoves: 0, keyPresses: 0, touchEvents: 0 };
+    let isEvaluated = false;
+
+    function TrackBehavior() {
+        window.addEventListener('mousemove', () => { humanMetrics.mouseMoves++; CheckReality(); }, { passive: true });
+        window.addEventListener('keydown', () => { humanMetrics.keyPresses++; CheckReality(); }, { passive: true });
+        window.addEventListener('touchstart', () => { humanMetrics.touchEvents++; CheckReality(); }, { passive: true });
+    }
+
+    function CheckReality() {
+        if (isEvaluated) return;
+        
+        if (humanMetrics.mouseMoves > 5 || humanMetrics.keyPresses > 1 || humanMetrics.touchEvents > 0) {
+            isEvaluated = true;
+            console.log("[Reality Status]: Verified Human Connection.");
+            InitiatePremiumContent();
+        }
+    }
+
+    function InitiatePremiumContent() {
+        document.documentElement.classList.add('verified-human');
+    }
+
+    setTimeout(() => {
+        if (!isEvaluated) {
+            console.warn("[Reality Status]: Synthetic traffic detected. Blocking data stream.");
+            window.location.replace("/sentetik-cop-havuzu/");
+        }
+    }, 2500);
+
+    TrackBehavior();
+})();
