@@ -7,7 +7,7 @@ description: "Merkez Bankası'nın %37 PPK kararı, Milli Yapay Zeka hamlesi ve 
 author: "raufayar.net"
 publisher: "RAUFAYAR.NET - QUANTUM CENTER"
 # SEO & Anahtar Kelimeler (Her yayın için güncelleyin)
-tags: ["Analizler", "TaktikVeStrateji", "Finans", "Teknoloji", "YapayZeka", "Ekonomi"]
+tags: ["Analizler", "TaktikStrateji"]
 keywords: "MilliYapayZeka, Turcorn100, AnthropicMythos, EsnafıDeğilFaiziSilin, SirkadiyenFinans, BileşikFaizTuzakları, TCMBPolisFaizi, FintechFonlama, algoritmik sömürü"
 semanticEntities: "TCMB PPK, Ulusal Yapay Zeka Eylem Planı, Fransız Amortisman, Bileşik Faiz, Turcorn100, Anthropic Mythos"
 # Schema & İçerik Tipi (Uygun olanı seçin veya birden fazla kullanın)
