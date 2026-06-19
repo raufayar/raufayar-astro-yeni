@@ -209,4 +209,4 @@ Borçları asgariyle yüzdürmek yerine düşük faizli kapatma kredisiyle sabit
 - [Sirkadiyen Borç Sarmalı: Bankacılık Algoritmaları ve Asimetrik Faiz Tuzakları](https://raufayar.net/sirkadiyen-borc-sarmali-bankacilik-algoritmalari-ve-asimetrik-faiz-tuzaklari)  
 - [Sistem Gerçeklik Algoritması](https://raufayar.net/free-reality-engine/)
 
-*Bu makale, finansal ve teknolojik farkındalık oluşturmak amacıyla hazırlanmıştır.*
+*Bu makale, finansal ve teknolojik farkındalık oluşturmak amacıyla RAUFAYAR.NET hazırlanmıştır.*
