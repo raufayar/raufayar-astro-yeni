@@ -151,7 +151,7 @@ Bu yazı, sokağın en büyük finansal dertlerine derman olacak, matematiksel v
 
 
 <!-- sirkadiyen-borc-sarmali-banner.svg -->
-<svg xmlns="http://w3.org" viewBox="0 0 1200 630" width="100%" height="100%" style="background:#0a0d14; font-family:'Courier New', Courier, monospace;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="100%" height="100%" style="background:#0a0d14; font-family:'Courier New', Courier, monospace; max-width:100%; height:auto;">
   <!-- Siber Arka Plan Izgarası (Grid) -->
   <defs>
     <pattern id="cyber-grid" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -173,7 +173,7 @@ Bu yazı, sokağın en büyük finansal dertlerine derman olacak, matematiksel v
       <stop offset="100%" stop-color="#ff0055" stop-opacity="1"/>
     </linearGradient>
   </defs>
-
+  
   <!-- Arka Plan Tabakası -->
   <rect width="1200" height="630" fill="#06080c" />
   <rect width="1200" height="630" fill="url(#cyber-grid)" />
@@ -194,7 +194,7 @@ Bu yazı, sokağın en büyük finansal dertlerine derman olacak, matematiksel v
   <!-- Merkez: Ana Başlık ve Tipografi -->
   <!-- Küçük Üst Başlık -->
   <text x="80" y="240" fill="#00e5ff" font-size="18" font-weight="bold" letter-spacing="4">QUANTITATIVE FINANCE // DECONSTRUCTION</text>
-  
+ 
   <!-- Büyük Başlık (İki Satır) -->
   <text x="80" y="310" fill="#ffffff" font-size="46" font-weight="900" font-family="system-ui, sans-serif" letter-spacing="-1">SİRKADİYEN BORÇ SARMALI</text>
   <text x="80" y="375" fill="#e2e8f0" font-size="32" font-weight="300" font-family="system-ui, sans-serif">Bankacılık Algoritmaları ve Asimetrik Faiz Tuzakları</text>
@@ -209,19 +209,19 @@ Bu yazı, sokağın en büyük finansal dertlerine derman olacak, matematiksel v
     <!-- Grafik Çerçevesi -->
     <rect width="380" height="240" fill="#0a0d14" stroke="#1e293b" stroke-width="2" rx="8"/>
     <text x="20" y="30" fill="#94a3b8" font-size="12">INTEREST DECAY VS TIMELINE</text>
-    
+   
     <!-- Grafik Eksenleri -->
     <line x1="40" y1="60" x2="40" y2="200" stroke="#4b5563" stroke-width="2"/>
     <line x1="40" y1="200" x2="340" y2="200" stroke="#4b5563" stroke-width="2"/>
-    
+   
     <!-- Eksen Etiketleri -->
     <text x="25" y="55" fill="#ff0055" font-size="10" text-anchor="end">FAİZ</text>
     <text x="340" y="215" fill="#00ff66" font-size="10" text-anchor="end">VADE</text>
-
-    <!-- Bankanın Önden Yüklemeli Faiz Eğrisi (Fransız Modeli - Üssel Düşüş) -->
-    <path d="M 40 70 Q 120 180 340 195" fill="none" stroke="url(#grad-line)" stroke-width="4" filter="url(#glow-green)"/>
     
-    <!-- Kritik Tuzak Noktası (Kesişim) -->
+    <!-- Bankanın Önden Yüklemeli Faiz Eğrisi -->
+    <path d="M 40 70 Q 120 180 340 195" fill="none" stroke="url(#grad-line)" stroke-width="4" filter="url(#glow-green)"/>
+   
+    <!-- Kritik Tuzak Noktası -->
     <circle cx="150" cy="143" r="6" fill="#ff0055" filter="url(#glow-red)"/>
     <line x1="150" y1="60" x2="150" y2="200" stroke="#ff0055" stroke-dasharray="4,4" opacity="0.5"/>
     <text x="160" y="80" fill="#ff0055" font-size="11" font-weight="bold">FAİZİN %80'İ ALINDI!</text>
@@ -230,19 +230,14 @@ Bu yazı, sokağın en büyük finansal dertlerine derman olacak, matematiksel v
 
   <!-- Alt Bar / Küresel Bilgi Şeridi -->
   <line x1="50" y1="540" x2="1150" y2="540" stroke="#1e293b" stroke-width="1" />
-  
+ 
   <text x="50" y="575" fill="#ff0055" font-size="14" font-weight="bold" filter="url(#glow-red)">[!] DEŞİFRE EDİLDİ</text>
   <text x="220" y="575" fill="#94a3b8" font-size="14">OKUMA SÜRESİ: 7 DK</text>
   <text x="420" y="575" fill="#94a3b8" font-size="14">MODEL: FRENCH AMORTIZATION</text>
-  
+ 
   <!-- Sağ Alt Köşe: Site İmzası -->
   <text x="1150" y="575" fill="#00ff66" font-size="16" font-weight="bold" text-anchor="end" filter="url(#glow-green)">RAUFAYAR.NET</text>
 </svg>
-
-
-
-
-
 
 
 
