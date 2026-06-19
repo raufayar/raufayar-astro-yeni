@@ -162,7 +162,7 @@ Bu analiz; Merkez Bankası’nın %37 PPK kararı, Milli Yapay Zeka hamlesi ve *
 | %32.6 Enflasyon (Yıllık)      | TÜİK verilerine göre doğrusal artış               | Sirkadiyen döngülerde reel enflasyon iki katına ulaşıyor    | **KRİTİK** (Satın alma gücü erozyonu) |
 | Gençlik Yoksulluk Riski (%28.2)| Eurostat verileri                                 | Freelancer ve genç teknoloji üreticilerinin sermaye ezilmesi | **KRİTİK** (Beyin göçü baskısı) |
 
-## 🤖 Teknolojik Egemenlik ve Büyük Dil Modellerinin Sınırı
+## Teknolojik Egemenlik ve Büyük Dil Modellerinin Sınırı
 
 Türkiye’nin **$10 milyar** yatırım ve 1 gigavat veri merkezi kapasitesi hedefiyle duyurduğu **2026-2030 Ulusal Yapay Zeka Eylem Planı**, #MilliYapayZeka hamlesi açısından kritik öneme sahiptir.
 
@@ -170,7 +170,7 @@ Ancak teknolojik egemenlik sadece donanım yatırımıyla değil, **algoritmik g
 
 **Turcorn100** programı kapsamında milyar dolar değerleme adayı 14 girişimle VivaTech 2026’ya katılan Türkiye, büyük potansiyel taşıyor. Fakat bu potansiyelin küresel başarıya dönüşmesi, bağımsız Fintech fonlama mekanizmaları ve siber güvenlik altyapısına bağlıdır.
 
-## 🛠️ Algoritmalara Karşı Finansal ve Teknolojik Savunma Rehberi
+## Algoritmalara Karşı Finansal ve Teknolojik Savunma Rehberi
 
 1. **Faiz Sarmalını Sabitleyin**  
    Kredi kartı asgari tutarını ödemek, üssel bileşik faiz canavarını besler. Borcunuzu daha düşük oranlı **borç kapatma kredisi** ile sabitleyin.
