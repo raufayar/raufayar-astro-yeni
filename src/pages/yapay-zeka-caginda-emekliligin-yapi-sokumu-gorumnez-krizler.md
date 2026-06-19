@@ -140,11 +140,12 @@ head: |
   }
   </script>
 ---
+![Yapay Zeka Çağında Emeklilik](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizky3VMfNmoSfVYDeAna5-dFjPUAVchSSI2JDqm0_fzWquLwC2hSwE-zuJ9xhFMHy1tQquyQy9eQL4tyYlPMWpeLcA6OqVai2g3zBFC-f3TsA5tq0SGZo2qyeKM5QH6THb-HERQzKmYlWVqLLwq7tvUqJ2BIBsKH-3U85x99yqptlDOIrZ5KBzBvoOOQM/w640-h338/yapay-zeka-caginda-emeklilik-yapi-sokumu-gormez-krizler.jpg)
 # Algoritmik Sınır: Yapay Zeka Çağında Emekliliğin Yapı Sökümü ve Görünmez Krizler
 
 **Emeklilik, endüstri devriminden bu yana "zaman takası" üzerine kurulu doğrusal bir toplumsal sözleşmeydi.** Birey en verimli yıllarını sisteme verir, karşılığında yaşamının son evresinde finansal güvence alırdı. Ancak yapay zeka ve siber ekonomi çağında bu sözleşme derin matematiksel ve siber-biyolojik kırılmalarla karşı karşıyadır.
 
-![Yapay Zeka Çağında Emeklilik](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizky3VMfNmoSfVYDeAna5-dFjPUAVchSSI2JDqm0_fzWquLwC2hSwE-zuJ9xhFMHy1tQquyQy9eQL4tyYlPMWpeLcA6OqVai2g3zBFC-f3TsA5tq0SGZo2qyeKM5QH6THb-HERQzKmYlWVqLLwq7tvUqJ2BIBsKH-3U85x99yqptlDOIrZ5KBzBvoOOQM/w640-h338/yapay-zeka-caginda-emeklilik-yapi-sokumu-gormez-krizler.jpg)
+
 
 Bu makalede, arama motorlarında kolayca bulunamayan **emekliliğin üç görünmez boyutunu** inceliyoruz.
 
