@@ -145,9 +145,8 @@ head: |
 **Bankaların kredi kartları, KMH ve ihtiyaç kredilerinde kullandığı en büyük finansal illüzyon şudur:** Siz borcunuzu zamana yayılmış sabit bir oranla ödediğinizi sanırken, bankanın algoritmaları parayı sizden **asimetrik** ve **önden yüklemeli** olarak tahsil eder.
 
 Bu yazı, sokağın en büyük finansal dertlerine derman olacak, matematiksel ve algoritmik bir deşifredir.
-![Sirkadiyen Borç Sarmalı Analitiği](https://unsplash.com)
-
-![Sirkadiyen Borç Sarmalı Banner](https://raufayar.net/images/sirkadiyen-borc-sarmali-banner.svg)
+![sirkadiyen-borc-sarmali-bankacilik-algoritmalari-ve-asimetrik-faiz-tuzaklari
+](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcWIlUwPeYtdyiBE4NLUqDPhiqkHwogcZPW4WXNV12xsiQYc9l1uyfcm6h5NV3zePxU2Vl_SvanzOrvydKZLaZeF-gdeZSFON7WeCXXYKrhLPjAXaJw-mFdrS4TkxamnybXF8Ri77sWzI-Zu2xwDRrHxozE-cTpqqyIvWGJWDDR4o5NPB7WM9SOdFLDtU/w640-h336/sirkadiyen-borc-sarmali-bankacilik-algoritmalari-ve-asimetrik-faiz-tuzaklari.jpg)
 
 ## 1. "Eşit Taksitli" Kredi İllüzyonu: Önden Yüklemeli Faiz Tuzağı
 
