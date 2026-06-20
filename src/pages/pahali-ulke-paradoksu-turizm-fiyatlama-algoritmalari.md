@@ -151,7 +151,7 @@ head: |
   </script>
 ---
 ![Siberpunk tarzında lüks bir otel kontrol odasında neon okyanus manzarasına bakan, üzerinde turizm gelir verileri ve dinamik doluluk grafiklerinin parladığı holografik ekranlar.](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-EZChXdC4X0v_-gG8J6jkq5G1_6dFT4GJ3sISiZ8TM_1zukPJeb5-IjDgpS8TVrT8sEFsR2VnwTzJvli0ptb8l2E-L_BOXw2dsUt6UdOBkB2IYyMJ_aJqNjOAPK6MBWkQTXq3kfJCU26GEtV_1tTQwzT936_1B4-Xi4eoigtK8rWF4HtjtrNYKgn2Vc8/w640-h630/pahali-ulke-paradoksu-turizm-fiyatlama-algoritmalaripeg.jpg)
-# Yüksek Enflasyon ve Sabit Kur Kıskacında Turizm Otomasyonunu ve Fiyatlama Algoritmalarını Hacklemek mi?
+## Yüksek Enflasyon ve Sabit Kur Kıskacında Turizm Otomasyonunu ve Fiyatlama Algoritmalarını Hacklemek mi?
 
 Modern konaklama ve turizm yönetimi, jenerik pazarlama stratejilerinin veya ham misafir memnuniyeti formüllerinin çok ötesinde, doğrudan bir makroekonomik veri mühendisliği savaşıdır. Türkiye’de turizm sektörü, son yıllarda eşine az rastlanır cinsten yapısal ve algoritmik bir finansal sıkışma döngüsünün ortasında hayatta kalma mücadelesi veriyor. Bir tarafta yerel piyasada Türk Lirası bazında yüzde yetmiş sınırına dayanan operasyonel maliyet artışları, yani personel maaş enflasyonu, katlanan enerji faturaları, tedarik zincirindeki lojistik kırılmalar var. Diğer tarafta ise bu maliyetlerin ivmesiyle senkronize hareket etmeyen, yapay olarak baskılanmış veya sabit tutulan döviz kuru bulunuyor.
 
