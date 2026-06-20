@@ -147,7 +147,7 @@ head: |
   </script>
 ---
 
-# Sirkadiyen Hata Payı Hesaplayıcı (Circadian Error Margin Calculator) - RAUFAYAR.NET
+## Sirkadiyen Hata Payı Hesaplayıcı (Circadian Error Margin Calculator) - RAUFAYAR.NET
 
 **RAUFAYAR.NET laboratuvarlarının amiral gemisi araçlarından biri olmaya aday “Sirkadiyen Hata Payı Hesaplayıcı”, siber-finans dünyasında insan biyo-ritmini matematiksel hata paylarına dönüştüren yenilikçi bir chrono-finance modülüdür.** Bu araç, özellikle kripto ve FX traderlarının işlem yaptıkları saat dilimini, uykusuzluk sürelerini ve aldıkları riski birleştirerek tamamen biyolojik siber-analiz yöntemleriyle **dürtüsel kayıp / hata payı (Behavioral Drawdown)** riskini anında hesaplar.
 
