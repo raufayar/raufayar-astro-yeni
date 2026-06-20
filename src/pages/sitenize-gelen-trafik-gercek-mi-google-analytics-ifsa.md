@@ -151,7 +151,7 @@ head: |
 ![Karanlık bir siber komuta merkezinde devasa holografik ekranda sergilenen küresel internet haritası; ekranın bir yarısında yapay zeka botlarını simgeleyen kusursuz yeşil dijital kristaller, diğer yarısında insan hareketlerini simgeleyen sıcak turuncu organik nöral ağlar ve ortasında bu simülasyonu izleyen bir siber yazılımcı figürü.
 ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKLAIxYNtJ7YJ7qIpYoQqrKv37TORS1iH6OAXdQdKWzVtGO2DoBfB2B19Ub4RaEnjoqw3a8R8_ENYrX3_6a-9fkr1VCKGvKry3bC9W6PoetljLagdq7RkEbd8f1l6qOtdKlnPhbPxmXs31vxsTeOPPHOHXRmB2k0ucKEjyyvxJGotgdEoiZz3mjoJprss/w640-h306/google-analytics-trafik-gercek-mi-zero-scrape-manifesto.jpg)
 
-# Google Analytics Yalan mı Söylüyor? Sitenize Gelen Trafik Gerçek mi? (Büyük İfşa)
+## Google Analytics Yalan mı Söylüyor? Sitenize Gelen Trafik Gerçek mi? (Büyük İfşa)
 
 **Arama motoru optimizasyonu (SEO) bitti, üretken motor optimizasyonu (GEO) emekliyor ve webmaster dünyası derin bir sessizliğe gömülüyor.** Dijital panellerinizde gördüğünüz o iştah kabartan grafikler, binlerce tekil ziyaretçi ve her gün yukarı doğru ivmelenen sayılar...
 
