@@ -151,7 +151,7 @@ head: |
   </script>
 ---
 ![Koyu lacivert ve neon yeşil renk şemasına sahip, siber-distopik tarzda bir siber-kültür infografiği. Görselin merkezinde holografik veri akışlarına ve algoritmik şemalara bağlı bir insan beyni illüstrasyonu yer alıyor. Arka planda parıldayan neon matris çizgileri, Hollywood ve TikTok ikonlarının dijital kodlara dönüşerek eridiği teknik çizimler ve hiper-gerçekçi fütüristik arayüz (UI) detayları bulunuyor.](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikv38jIa-0Nm9-1W5znNSirhZlXcAO1tBqT3dbe4-t8a09hKTqSbdNrf1hcdBgrGbeSUcowrqQkD1-tl5VrgARyLKzT9_j70ehuxbpQattc2Rh8TQiEgM-Lypc46U1ne_AEP3BlpOmlH-DQC7RrrODLL6GNFwTVHKtdOdSuiMzGUr7WYcreNBsCs09OH4/w446-h640/siber-distopik-sinema-veri-algoritma-infografik.jpg)
-# Gişe Rekortmeni Veri Stratejileri: Yapay Zeka ve Sinema Çağında Özgün Kalabilmek
+## Gişe Rekortmeni Veri Stratejileri: Yapay Zeka ve Sinema Çağında Özgün Kalabilmek
 
 İnsanlık, hikaye anlatıcılığının sıfır noktasına geri dönüyor; ancak bu kez ateş başında değil, sunucu odalarının soğuk loşluğunda oturuyoruz. Sinema, kuruluşundan bu yana kitlelerin rüyalarını yöneten bir aygıt oldu. Bugün ise o rüyalar, rüyayı görenlerin kolektif verileriyle beslenen makine öğrenimi modelleri tarafından önceden imal ediliyor. Karşımızdaki olgu, basit bir dijitalleşme sürecinin ötesinde, insanın yaratıcı iradesinin algoritmik bir vesayet altına alınmasıdır. Bu yeni çağda özgün kalabilmek, yalnızca sanatsal bir tercih değil, varoluşsal bir siber-direniş biçimidir.
 
