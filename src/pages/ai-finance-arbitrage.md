@@ -24,9 +24,9 @@ knowledgeGraphNode: "https://raufayar.net"
 ---
 ![Karanlık bir odada siberpunk neon yeşili dijital matris kod akışı ve kuantum veri sayı dizilimleri mimarisi.
 ](https://blogger.googleusercontent.com/img/a/AVvXsEh5v3uDUCYuqMXqS1qeG9iM7A0gnz-Rl80ycMeqDSmmDcziL20XeymAmXseHrnAL1TdFYyQNjAdmdtDOgRpgNdlyexUG_mI3xzD1gzBF7o0OuXXWSRf545OEHnuECyA5a1HUSMNvG2rn9hcR91JL50J77exUvaq3ZbWI4ASJytDFr2GyXr4poN6kktJDMs=w640-h388)
-# Yapay Zeka ve Kuantum Finans Arbitrajı: Algoritmik Sermaye Yönetimi Nasıl Yapılır?
+## Yapay Zeka ve Kuantum Finans Arbitrajı: Algoritmik Sermaye Yönetimi Nasıl Yapılır?
 
-## Finansal Yapay Zekanın Perde Arkası: Wall Street Botlarını Kendi Silahıyla Vurmak
+### Finansal Yapay Zekanın Perde Arkası: Wall Street Botlarını Kendi Silahıyla Vurmak
 
 Bugün küresel finans piyasalarındaki nakit akışının yüzde sekseninden fazlası insanlar tarafından değil, Yüksek Frekanslı İşlem (High-Frequency Trading) yapan yapay zeka botları tarafından yönetilmektedir. Bu botlar, milisaniyeler içinde milyonlarca veriyi tarayarak fiyat farklılıklarından kâr elde etmek üzere programlanmıştır. Finans dünyasında bu sisteme Kuantum Finans Arbitrajı (Quantum Finance Arbitrage) diyoruz.
 
