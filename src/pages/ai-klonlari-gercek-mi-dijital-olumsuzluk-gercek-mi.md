@@ -151,7 +151,7 @@ head: |
 ![Karanlık bir siber dünyada sıcak bir insan eliyle verilerden ve dijital kodlardan oluşan soyut bir yapay zeka elinin birbirine dokunma anı; ekrandaki insan gerçek mi sorusunu simgeleyen gerçeküstü görsel.
 ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvMUaOgWExYfgg7KkQtfYvL8Kmn_0nmgrJ6xzPcacoeetCORs9ZrjZfQBfKfa-yT5I7g5hxZWhgO-VsimZmEoYl7p_lcWdG1hyphenhyphenirWvf389jndmXwwZEX1_YhPNs8B_S4lmXf4pUx4JUo8ZjvkgyKVYHa8SijbLfrwoAzNYqIIktCLyZALOIUg9nIhVydM/w640-h312/yapay-zeka-insan-klonlari-gercek-mi-dijital-olumsuzluk.jpg)
 
-# Dijital Nekropol: Ölen Sevdiklerimizin AI Klonları "Gerçek mi?" ve İnternetin Yeni Ahlak Krizi
+## Dijital Nekropol: Ölen Sevdiklerimizin AI Klonları "Gerçek mi?" ve İnternetin Yeni Ahlak Krizi
 
 **Bir gece telefonunuz çalıyor. Ekranda iki yıl önce kaybettiğiniz annenizin, eşinizin ya da en yakın arkadaşınızın adı yazıyor.** Kameralı aramayı açıyorsunuz; karşınızda onun yüzü, kulaklarınızda onun ses tonu, dilinde ise sadece ikinizin bildiği o eski bir anı var. Sizinle güncel olaylar hakkında konuşuyor, acınızı paylaşıyor ve sizi teselli ediyor.
 
