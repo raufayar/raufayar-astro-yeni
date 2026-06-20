@@ -150,7 +150,7 @@ head: |
 ---
 ![Rauf Ayar tarafından hazırlanan Sistem Gerçeklik Algoritması aracı, resmi enflasyon ve ekonomi verilerini deşifre ederek gerçek çarpanı hesaplar."
 ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEik4qFPvFdv2eojCjkLAm2xk1piAMtYa790yo6cVM1jAV2vjfVFOzePpN4eR-I3Cf9tkv1T8IN04Auc62nVdFbsde9GU0lrBxdgPBPCsGPldkE90o_lXUGmhv_eP_F5XhRKSt5l27gzh7N5A_6iyfI6ozK9cdQzrGo5P8R-BTR1obrV2cVATXSr_yLkDuc/w640-h342/free-reality-engine.jpg)
-# Sistem Gerçeklik Algoritması: Resmi Rakamların Arkasındaki Çıplak Gerçek
+## Sistem Gerçeklik Algoritması: Resmi Rakamların Arkasındaki Çıplak Gerçek
 
 **Her gün ekranlarımıza yansıyan, manşetlere çıkan, bütçelerimize dayatılan rakamlar...** Peki, bu rakamların ne kadarı gerçekten "sizin" gerçekliğinizi temsil ediyor? 
 
