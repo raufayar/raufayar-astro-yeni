@@ -24,7 +24,7 @@ knowledgeGraphNode: "https://raufayar.net"
 ---
 ![Karanlık bir odada siberpunk neon yeşili dijital matris kod akışı ve kuantum veri sayı dizilimleri mimarisi.
 ](https://images.pexels.com/photos/8134609/pexels-photo-8134609.jpeg)
-# Küresel Alışveriş ve Hızlı Tüketim Çılgınlığı Algoritmalarını Hacklemek: Bedava Ürün ve Fiyat Manipülasyonu Nasıl Yapılır?
+## Küresel Alışveriş ve Hızlı Tüketim Çılgınlığı Algoritmalarını Hacklemek: Bedava Ürün ve Fiyat Manipülasyonu Nasıl Yapılır?
 
 ## Tüketim Çılgınlığının Perde Arkası: Büyük E-Ticaret Botlarını Kendi Silahıyla Vurmak
 
