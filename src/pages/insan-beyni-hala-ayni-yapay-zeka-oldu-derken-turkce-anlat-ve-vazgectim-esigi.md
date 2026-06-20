@@ -117,7 +117,7 @@ head: |
   </script>
 ---
 
-# 🧠 Dijital Çağda Nöro-Enformasyonel Karar Felci: İnsan Beyninin "Vazgeçtim" Eşiği ve Algoritmik Statüko
+## 🧠 Dijital Çağda Nöro-Enformasyonel Karar Felci: İnsan Beyninin "Vazgeçtim" Eşiği ve Algoritmik Statüko
 
 **Modern nörobilim, insan beyninin günlük veri işleme kapasitesinin üst sınırını 34 gigabayt olarak belirlemiştir.** Bu sınır aşıldığında prefrontal korteks hayatta kalma moduna geçerek bilişsel kilitlenme yaşar. Bu derinlemesine analiz, dijital bombardımana maruz kalan bireylerin “statüko kapanına” nasıl kısıldığını ve algoritmaların bu kilitlenmeyi nasıl ustaca manipüle ettiğini ampirik verilerle ortaya koyuyor.
 
