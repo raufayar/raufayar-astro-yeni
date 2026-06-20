@@ -5,7 +5,22 @@ const { frontmatter } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<!-- 👁️ GOOGLEBOT INDEX TRIGGER SCRIPT -->
+<script is:inline>
+  (function() {
+    const isGooglebot = /Googlebot|Chrome-Lighthouse|Speed Insights/i.test(navigator.userAgent);
+    if (isGooglebot) {
+      if (window.dataLayer) {
+        window.dataLayer.push({'event': 'instant_index_trigger', 'page_url': window.location.href});
+      }
+      const forceUrls = ['/rss.xml', '/sitemap-0.xml'];
+      forceUrls.forEach(url => {
+        fetch(url, { mode: 'no-cors', cache: 'no-store' }).catch(() => {});
+      });
+    }
+  })();
+</script>
 <link rel="canonical" href={canonicalURL} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{frontmatter.title} | Raufayar.net</title>
