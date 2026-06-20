@@ -139,7 +139,7 @@ head: |
   </script>
 ---
 ![Asya ve Batı saat dilimlerindeki biyolojik trader yorgunluk endeksi ile kripto varlık emir defteri likidite boşlukları arasındaki ilişkiyi gösteren sirkadiyen finans veri analitiği görseli.](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjyiyxOgZ7ncvoW1DKZEunWmopnZx_yZJuBrhRmWbNQCbrK0OeBS1zDm9TZqLR9BfGL8csh3D1zxijq6dfCOJGTC-QFzugk0W5ZH9pahJBlzqUqe66QjPSb6Ya8rT1B1AVVbqKNtd9O0w_kZA1fIBYyS6yVyJyEJqG8FFbd8XIBrjmXAes97KqzjKHGQBM/w640-h272/sirkadiyen-finans-kripto-likidite-anomalileri-raufayar-net.jpg)
-# Sirkadiyen Finans Laboratuvarı: Asya-Pasifik Uykusuzluğu ve Batı Kortizolünün Kripto Likidite Boşluklarındaki Matematiksel İzdüşümü
+## Sirkadiyen Finans Laboratuvarı: Asya-Pasifik Uykusuzluğu ve Batı Kortizolünün Kripto Likidite Boşluklarındaki Matematiksel İzdüşümü
 
 **Geleneksel kantitatif finans, piyasaları 24 saat kesintisiz çalışan homojen makine algoritmalarından ibaret sayma hatasına düşer.** Oysa algoritmaları yazan, parametreleri güncelleyen ve risk limitlerini belirleyen nihai karar vericiler biyolojik organizmalardır. Bu yayın, küresel saat dilimlerindeki (UTC+3, UTC-5, UTC+8) insan faktörünün sirkadiyen ritim evreleri ile kripto varlıklardaki emir defteri (order book) anomalileri arasındaki diferansiyel ilişkiyi deşifre eder.
 
