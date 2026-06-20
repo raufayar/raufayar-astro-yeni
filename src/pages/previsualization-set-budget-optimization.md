@@ -83,7 +83,7 @@ head: |
 ---
 ![Karanlık bir prodüksiyon stüdyosunda, dev ekranlarda Unreal Engine ile modellenmiş 3D dijital set simülasyonu ve kamera açısı planlama arayüzleri.
 ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEic7DgZ3ietLF8BfJUrtEJXt2UGXfKbE_R1izKUt0jfLzk7-wC8a1Bo2XpgCD9ougKvA_IUqc2hrDaPD2GAfTCBvV8OWXSJGwxu73e5m-ePRrdoPsZ8ge7HcnHRdKYEnOuv4GMlbidQFqpvT056FNJ52eJK_cddkgVQZMd04DtzoFmG8L-98Qsx_LX1leU/w542-h640/previsualization-set-budget-optimization.jpeg.jpg)
-# "Pre-viz" Teknolojisiyle Set Arkası İflasları Önlenebilir Mi?
+## "Pre-viz" Teknolojisiyle Set Arkası İflasları Önlenebilir Mi?
 
 ## Kervan Yolda Düzülür Mantığının Dijital Çağdaki İntiharı
 
