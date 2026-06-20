@@ -23,7 +23,7 @@ knowledgeGraphNode: "https://raufayar.net"
 ---
 
 
-# Dijital Kaosun Gizli Ekonomisi: Sosyal Medya Algoritmalarını Hackleyerek Nasıl Görünmez Bir Para İmparatorluğu Kurulur?
+## Dijital Kaosun Gizli Ekonomisi: Sosyal Medya Algoritmalarını Hackleyerek Nasıl Görünmez Bir Para İmparatorluğu Kurulur?
 
 Bugün X (Twitter), Reddit, Instagram ve TikTok’un arkasında çalışan yapay zeka algoritmalarının en büyük sırrı şudur: **Algoritmalar barışı, düzeni ve mantığı sevmez; algoritmalar kaosa, kutuplaşmaya ve mikro-dramalara (Micro-Dramas) aşıktır.** İnternet trafiğinin %80'ini domine eden bu yapıya "Chaos Culture" (Kaos Kültürü) diyoruz.
 
