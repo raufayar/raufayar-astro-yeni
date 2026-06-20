@@ -140,7 +140,7 @@ head: |
   }
   </script>
 ---
-# Dijital Dopamin Enflasyonu AkIllI Telefon Yorgunluğu Algoritmik Sömürü
+## Dijital Dopamin Enflasyonu AkIllI Telefon Yorgunluğu Algoritmik Sömürü
 
 **Modern insanın her sabah uyandığı an ilk beş saniye içinde akıllı telefon ekranına uzanması**, basit bir kötü alışkanlık değil; insan evriminin milyonlarca yılda inşa ettiği nöro-biyolojik ödül mekanizması ile silikon vadisinin algoritmaları arasında girilmiş asimetrik bir savaşın mağlubiyet ilanıdır.
 
