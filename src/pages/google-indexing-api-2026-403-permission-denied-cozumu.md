@@ -62,7 +62,7 @@ head: |
   }
   </script>
 ---
-# Google Indexing API 2026: 403 Permission Denied Hatası ve Anlık Çözüm Rehberi
+# Google Indexing API 403 Permission Denied Hatası Çözümü
 
 **2026 itibarıyla Google Indexing API kullanan geliştiricilerin en sık karşılaştığı hata:** `403 Permission Denied` (IAM Permission Denied).
 
