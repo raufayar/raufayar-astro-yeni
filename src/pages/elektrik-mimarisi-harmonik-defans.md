@@ -81,4 +81,9 @@ Büyük ticari yapılarda ve şantiyelerde meydana gelen sistemsel arızaları s
 
 Büyük bina proje elektrikçiliği artık sadece kablo çekmek ve yükleri dağıtmak değildir; modern dünya, gücü tüketen yapay zeka mimarilerinin şebekeye bıraktığı **kirli harmonik izlerini filtreleme ve yönetme** mühendisliğidir.
 
+**Diğer Yazılar:**
+- [Algoritmik Sınır: Yapay Zeka Çağında Emekliliğin Yapı Sökümü ve Görünmez Krizler](https://www.raufayar.net/yapay-zeka-caginda-emekliligin-yapi-sokumu-gorumnez-krizler/)
+- [Sirkadiyen Borç Sarmalı: Bankacılık Algoritmaları ve Asimetrik Faiz Tuzakları](https://www.raufayar.net/sirkadiyen-borc-sarmali-bankacilik-algoritmalari-ve-asimetrik-faiz-tuzaklari/)
+
+
 © 2026 RAUFAYAR.NET — QUANTUM SYSTEMS
