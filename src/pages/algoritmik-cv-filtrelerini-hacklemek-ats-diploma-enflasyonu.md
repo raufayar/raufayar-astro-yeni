@@ -151,7 +151,7 @@ head: |
   </script>
 ---
 ![Koyu lacivert arka plan üzerinde, turkuaz renkli veri akışları ve matris çizgileriyle taranan temiz bir düz metin özgeçmiş (CV) tasarımı. Görselde yapay zeka aday takip sisteminin (ATS) LSI anahtar kelimelerini parse etmesini simgeleyen teknik şemalar, yeşil kabul onayları ve kırmızı eleme çizgileri içeren siber-kurumsal bir infografik düzeni yer alıyor.](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhT3Z_h54awYgygdsWSsw9r01_JQc-b6olTwIejO9SocQ-Pd4fKEeGqn84ZQf-r8St3luyhGL7XN-BzlzUfQNXfeudPK1Rb8T8jm2k-RRoLPZryzXH7qE7SM_7gNWE7m_baWL1WfCIRFY9PXl_DM3IbhtgneY7swrKgY1mShr2LNX-xsjyO9ERN8qPU9ZE/w486-h640/algoritmik-cv-filtrelerini-hacklemek-ats-robot-infografik.jpg)
-# Algoritmik CV Filtrelerini Hacklemek: Yapay Zeka Çağında Diploma Enflasyonu Kapanından Çıkış Formülü
+## Algoritmik CV Filtrelerini Hacklemek: Yapay Zeka Çağında Diploma Enflasyonu Kapanından Çıkış Formülü
 
 Bugün üniversite mezuniyet cüppesini giyen her genç, kendini doğrudan küresel bir yanılsamanın içinde buluyor. Eğitim sistemleri, genç beyinlere "diploma + sertifika = refah" formülünü dikte ederken; Silikon Vadisi’nin işe alım mimarileri bu formülü çoktan çöpe attı. Karşımızdaki acı gerçek, bir istihdam krizinden daha derindir: Bu, Algoritmik bir Kölelik Kıskacıdır. İnsan kaynakları departmanları artık başvuruları okumuyor; onları ATS (Applicant Tracking Systems) adı verilen yapay zeka filtrelerine teslim ediyor. Bu yayın, o görünmez robot duvarlarını yıkmanın ve sistemi kendi silahıyla vurmanın pratik kılavuzudur.
 
