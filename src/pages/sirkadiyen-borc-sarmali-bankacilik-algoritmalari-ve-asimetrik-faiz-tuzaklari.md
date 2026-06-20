@@ -140,7 +140,7 @@ head: |
   }
   </script>
 ---
-# Sirkadiyen Borç Sarmalı: Bankacılık Algoritmaları ve Asimetrik Faiz Tuzaklarının Anatomisi
+## Sirkadiyen Borç Sarmalı: Bankacılık Algoritmaları ve Asimetrik Faiz Tuzaklarının Anatomisi
 
 **Bankaların kredi kartları, KMH ve ihtiyaç kredilerinde kullandığı en büyük finansal illüzyon şudur:** Siz borcunuzu zamana yayılmış sabit bir oranla ödediğinizi sanırken, bankanın algoritmaları parayı sizden **asimetrik** ve **önden yüklemeli** olarak tahsil eder.
 
