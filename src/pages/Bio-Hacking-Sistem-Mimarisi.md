@@ -1,9 +1,5 @@
 ---
 layout: /MarkdownLayout.astro
-<meta http-equiv="refresh" content="86400; url=https://www.raufayar.net/sitemap-index.xml">
-<meta name="revisit-after" content="1 days">
-<link rel="canonical" href="https://www.raufayar.net/sitemap-index.xml" />
-
 title: "Biyolojik Sistem Mimarisinde Sürdürülebilir Optimizasyon: Bio-Hacking Manifesto"
 pubDate: "2026-06-15"
 description: "İnsan vücudunu bir sistem mimarisi olarak ele alıp, biyolojik verimliliği ve sistem ömrünü maksimize etme stratejileri."
