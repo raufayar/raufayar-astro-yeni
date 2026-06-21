@@ -1,0 +1,33 @@
+name: Google Indexing Force
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Force Indexing
+        env:
+          GOOGLE_JSON: ${{ secrets.GOOGLE_INDEXING_KEY }}
+        run: |
+          echo "$GOOGLE_JSON" > sa.json
+          
+          # Erişim token'ı al
+          TOKEN=$(npx google-auth-library-token sa.json)
+          
+          # Son yazıyı bul (RSS'ten)
+          SITE_URL="https://www.raufayar.net"
+          LATEST_POST=$(curl -s "$SITE_URL/rss.xml" | grep -oP '<link>https?://[^<]+' | head -n 1 | sed 's/<link>//')
+          if [[ -z "$LATEST_POST" ]]; then LATEST_POST="$SITE_URL"; fi
+
+          # Google'a veriyi enjekte et
+          curl -i -X POST \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $TOKEN" \
+            -d "{ \"url\": \"$LATEST_POST\", \"type\": \"URL_UPDATED\" }" \
+            "https://indexing.googleapis.com/v3/urlNotifications:publish"
