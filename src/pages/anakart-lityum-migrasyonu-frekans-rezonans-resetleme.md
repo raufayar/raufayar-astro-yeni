@@ -203,5 +203,5 @@ C: Tamamen donanımınızın kendi mekanizmalarını kullanan bir kalibrasyon te
 - Üretici firmware davranış analizleri (resmi olmayan)  
 - Gerçek cihaz testleri (2025-2026)
 **İlgili Diğer Yazılar**  
-- [iPhone Performans Optimizasyonu: Gizli Ayarlar ve Tweak’ler](/iphone-performans-optimizasyonu)  
-- [Snapdragon vs Apple Silicon: Gerçek Performans Karşılaştırması](/snapdragon-apple-silicon-karsilastirma)
+- [Dijital Dopamin Enflasyonu: Algoritmalar Beynimizin Ödül Mekanizmasını Nasıl Devalüe Etti?](https://www.raufayar.net/dijital-dopamin-enflasyonu-akilli-telefon-yorgunlugu-algoritmik-somuru/)  
+- [iPhone 17 Pro Max Kronik Sorunları: Forumlarda Olmayan Gizli Çözümler (2026)](https://www.raufayar.net/iphone-17-pro-max-kronik-sorunlar-gizli-cozumler-2026/)
