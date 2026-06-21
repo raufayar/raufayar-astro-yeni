@@ -1,87 +1,160 @@
-name: 🚀 Deploy to GitHub Pages + Ultra SEO & IndexNow
+name: Deploy to GitHub Pages
+
+
+
+# Trigger the workflow every time you push to the `main` branch
+
+# Using a different branch name? Replace `main` with your branch’s name
 
 on:
+
   push:
+
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
+
   workflow_dispatch:
 
+
+
+# Allow this job to clone the repo and create a page deployment
+
 permissions:
+
   contents: read
+
   pages: write
+
   id-token: write
 
+
+
+# Allow one concurrent deployment
+
 concurrency:
-  group: "pages-${{ github.ref }}"
+
+  group: "pages"
+
   cancel-in-progress: true
 
+
+
 jobs:
+
   build:
+
     runs-on: ubuntu-latest
+
     steps:
-      - name: 🛠 Checkout
+
+      - name: Checkout your repository using git
+
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: 📦 Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
 
-      - name: ⚙️ Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: 'pnpm'
 
-      - name: 📥 Install Dependencies
-        run: pnpm install --frozen-lockfile
+      - name: Install, build, and upload your site output
 
-      - name: 🏗️ Build Astro
-        run: pnpm run build
+        uses: withastro/action@v5
 
-      - name: 📦 Upload Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: github-pages
-          path: dist
-          retention-days: 7
+        # with:
+
+            # path: . # The root location of your Astro project inside the repository. (optional)
+
+            # node-version: 22 # The specific version of Node that should be used to build your site. Defaults to 22. (optional)
+
+            # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+
+            # build-cmd: pnpm run build # The command to run to build your site. Runs the package build script/task by default. (optional)
+
+
 
   deploy:
+
     needs: build
-    if: github.ref == 'refs/heads/main'
+
     runs-on: ubuntu-latest
+
     environment:
+
       name: github-pages
+
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: ⬇️ Download Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: github-pages
-          path: dist
 
-      - name: 🚀 Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+
         id: deployment
+
         uses: actions/deploy-pages@v4
 
-      - name: 🔄 IndexNow Ultra Ping
-        env:
-          SITE_URL: "https://raufayar.net"
-          INDEXNOW_KEY: "raufnow12345"
-        run: |
-          echo "🚀 IndexNow Ping Başlıyor..."
 
-          LATEST_POST=$(curl -s "$SITE_URL/rss.xml" | grep -oP '<link>https?://[^<]+' | head -n 1 | sed 's/<link>//' || echo "$SITE_URL")
+
+      - name: Send IndexNow Ping - Latest Post
+
+        if: success()
+
+        run: |
+
+          echo "🚀 IndexNow Ping - En son yazı gönderiliyor..."
+
+
+
+          SITE_URL="https://raufayar.net"
+
+          
+
+          # RSS'ten en son yazının linkini al (en güvenilir yöntem)
+
+          LATEST_POST=$(curl -s "$SITE_URL/rss.xml" | \
+
+                        grep -oP '<link>https?://[^<]+' | \
+
+                        head -n 1 | \
+
+                        sed 's/<link>//')
+
+
+
+          if [[ -z "$LATEST_POST" || "$LATEST_POST" == "https://raufayar.net/" ]]; then
+
+            echo "⚠️ RSS'ten link alınamadı, ana sayfa kullanılıyor."
+
+            LATEST_POST="$SITE_URL"
+
+          fi
+
+
+
           echo "📄 En son yazı: $LATEST_POST"
 
-          curl -s "https://www.bing.com/indexnow?url=$LATEST_POST&key=$INDEXNOW_KEY" && echo "✅ Bing OK" || echo "❌ Bing Error"
-          curl -s "https://yandex.com/indexnow?url=$LATEST_POST&key=$INDEXNOW_KEY" && echo "✅ Yandex OK" || echo "❌ Yandex Error"
-          curl -s "https://api.indexnow.org/indexnow?url=$LATEST_POST&key=$INDEXNOW_KEY" && echo "✅ IndexNow.org OK" || echo "❌ IndexNow.org Error"
 
-          curl -s "https://www.google.com/ping?sitemap=$SITE_URL/sitemap-index.xml" && echo "✅ Google OK"
 
-          echo "🎯 Tüm ping'ler tamamlandı!"
+          # Bing IndexNow
+
+          curl -s "https://www.bing.com/indexnow?url=$LATEST_POST&key=raufnow12345" && \
+
+            echo "✅ Bing'e gönderildi" || echo "❌ Bing hatası"
+
+
+
+          # Yandex IndexNow
+
+          curl -s "https://yandex.com/indexnow?url=$LATEST_POST&key=raufnow12345" && \
+
+            echo "✅ Yandex'e gönderildi" || echo "❌ Yandex hatası"
+
+
+
+          # Ekstra olarak ana sayfa ve RSS de pinglensin
+
+          curl -s "https://www.bing.com/indexnow?url=$SITE_URL&key=raufnow12345" > /dev/null
+
+          curl -s "https://www.bing.com/indexnow?url=$SITE_URL/rss.xml&key=raufnow12345" > /dev/null
+
+
+
+          echo "🎯 IndexNow işlemleri tamamlandı. En son yazı pinglendi." 
+
