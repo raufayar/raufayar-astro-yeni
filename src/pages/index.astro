@@ -190,15 +190,14 @@ const siteName = "RAUFAYAR.NET";
 
 
 
-<div class="google-search-wrapper" style="max-width: 100%; margin: 2rem auto; padding: 0 1rem;">
-  <!-- Google Programlanabilir Arama Motoru Scripti (Astro Uyumlu) -->
-  <script is:inline async src="https://cse.google.com/cse.js?cx=67c2f310574614f53"></script>
-  
-  <!-- Arama kutusunun görüneceği alan -->
-  <div class="gcse-search"></div>
+
+<div class="search-aligner" style="display: flex; align-items: center; gap: 15px; width: 100%; max-width: 650px; margin: 1rem 0;">
+  <!-- Arama kutusunun genişliğini ve butonun sağında kalmasını sağlayan kapsayıcı -->
+  <div style="flex-grow: 1;">
+    <script is:inline async src="https://google.com"></script>
+    <div class="gcse-search"></div>
+  </div>
 </div>
-
-
 
 
 
