@@ -1,80 +1,124 @@
-name: Deploy to GitHub Pages
+name: 🚀 Deploy to GitHub Pages + Ultra SEO & IndexNow
 
-# Trigger the workflow every time you push to the `main` branch
-# Using a different branch name? Replace `main` with your branch’s name
 on:
   push:
     branches: [ main ]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
   pages: write
   id-token: write
+  checks: write
+  deployments: write
 
-# Allow one concurrent deployment
 concurrency:
-  group: "pages"
+  group: "pages-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
+      - name: 🛠 Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Install, build, and upload your site output
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: 📥 Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: 🏗️ Build Astro Site
         uses: withastro/action@v5
-        # with:
-            # path: . # The root location of your Astro project inside the repository. (optional)
-            # node-version: 22 # The specific version of Node that should be used to build your site. Defaults to 22. (optional)
-            # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
-            # build-cmd: pnpm run build # The command to run to build your site. Runs the package build script/task by default. (optional)
+        with:
+          path: .
+          node-version: 22
+          package-manager: pnpm
+
+      - name: 📊 Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: astro-build
+          path: dist
+          retention-days: 7
 
   deploy:
     needs: build
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - name: Deploy to GitHub Pages
+      - name: ⬇️ Download Build
+        uses: actions/download-artifact@v4
+        with:
+          name: astro-build
+          path: dist
+
+      - name: 🚀 Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Send IndexNow Ping - Latest Post
-        if: success()
+      - name: 🔄 IndexNow Ultra Ping (raufnow12345)
+        env:
+          SITE_URL: "https://raufayar.net"
+          INDEXNOW_KEY: "raufnow12345"
         run: |
-          echo "🚀 IndexNow Ping - En son yazı gönderiliyor..."
+          echo "🚀 IndexNow Ultra Ping Başlıyor..."
 
-          SITE_URL="https://raufayar.net"
-          
-          # RSS'ten en son yazının linkini al (en güvenilir yöntem)
+          # En son yazıyı RSS'ten al
           LATEST_POST=$(curl -s "$SITE_URL/rss.xml" | \
-                        grep -oP '<link>https?://[^<]+' | \
-                        head -n 1 | \
-                        sed 's/<link>//')
-
-          if [[ -z "$LATEST_POST" || "$LATEST_POST" == "https://raufayar.net/" ]]; then
-            echo "⚠️ RSS'ten link alınamadı, ana sayfa kullanılıyor."
-            LATEST_POST="$SITE_URL"
-          fi
+            grep -oP '<link>https?://[^<]+' | head -n 1 | sed 's/<link>//' || echo "$SITE_URL")
 
           echo "📄 En son yazı: $LATEST_POST"
 
-          # Bing IndexNow
-          curl -s "https://www.bing.com/indexnow?url=$LATEST_POST&key=raufnow12345" && \
-            echo "✅ Bing'e gönderildi" || echo "❌ Bing hatası"
+          # === IndexNow Ping'leri ===
+          # Bing
+          curl -s "https://www.bing.com/indexnow?url=$LATEST_POST&key=$INDEXNOW_KEY" && \
+            echo "✅ Bing → En son yazı gönderildi" || echo "❌ Bing hatası"
 
-          # Yandex IndexNow
-          curl -s "https://yandex.com/indexnow?url=$LATEST_POST&key=raufnow12345" && \
-            echo "✅ Yandex'e gönderildi" || echo "❌ Yandex hatası"
+          # Yandex
+          curl -s "https://yandex.com/indexnow?url=$LATEST_POST&key=$INDEXNOW_KEY" && \
+            echo "✅ Yandex → En son yazı gönderildi" || echo "❌ Yandex hatası"
 
-          # Ekstra olarak ana sayfa ve RSS de pinglensin
-          curl -s "https://www.bing.com/indexnow?url=$SITE_URL&key=raufnow12345" > /dev/null
-          curl -s "https://www.bing.com/indexnow?url=$SITE_URL/rss.xml&key=raufnow12345" > /dev/null
+          # IndexNow.org (Global)
+          curl -s "https://api.indexnow.org/indexnow?url=$LATEST_POST&key=$INDEXNOW_KEY" && \
+            echo "✅ IndexNow.org → Gönderildi" || echo "❌ IndexNow.org hatası"
 
-          echo "🎯 IndexNow işlemleri tamamlandı. En son yazı pinglendi."
+          # Google Sitemap Ping
+          curl -s "https://www.google.com/ping?sitemap=$SITE_URL/sitemap-index.xml" && \
+            echo "✅ Google sitemap ping gönderildi"
+
+          # Ekstra önemli sayfalar
+          echo "🔄 Ana sayfa ve RSS pingleniyor..."
+          curl -s "https://www.bing.com/indexnow?url=$SITE_URL&key=$INDEXNOW_KEY" > /dev/null
+          curl -s "https://www.bing.com/indexnow?url=$SITE_URL/rss.xml&key=$INDEXNOW_KEY" > /dev/null
+          curl -s "https://www.bing.com/indexnow?url=$SITE_URL/sitemap-index.xml&key=$INDEXNOW_KEY" > /dev/null
+
+          echo "🎯 Tüm IndexNow işlemleri tamamlandı!"
+
+      - name: 📢 Discord Bildirimi (İsteğe Bağlı)
+        if: always()
+        uses: Ilshidur/action-discord@master
+        with:
+          discord_webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          message: |
+            **🚀 Deployment Tamamlandı**
+            Site: https://raufayar.net
+            Commit: ${{ github.sha }}
+            Durum: ${{ job.status }}
