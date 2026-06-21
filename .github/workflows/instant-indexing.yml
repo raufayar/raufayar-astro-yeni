@@ -4,36 +4,32 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: # İstediğiniz zaman GitHub panelinden elle tetiklemek için
+  workflow_dispatch:
 
 jobs:
   instant-index:
     runs-on: ubuntu-latest
     steps:
-      # 1. Adım: Kod tabanını ve sitemapi kontrol et
       - name: Kodu GitHub'dan Çek
         uses: actions/checkout@v4
 
-      # 2. Adım: Node.js Ortamını Hazırla
       - name: Node.js Kurulumu
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'npm'
 
-      # 3. Adım: BING, YANDEX ve SEARXNG için IndexNow Protokolünü Tetikle
-      - name: IndexNow Anlık Bildirim API
+      - name: Bağımlılıkları ve Çekirdek Kütüphaneyi Kur
+        run: npm install google-indexing-script
+
+      - name: BING ve YANDEX İçin IndexNow Protokolünü Ateşle
         uses: marketplace/actions/indexnow-action@v3
         with:
           sitemap-location: 'https://raufayar.net'
           key: ${{ secrets.INDEXNOW_KEY }}
           key-location: 'https://raufayar.net{{ secrets.INDEXNOW_KEY }}.txt'
 
-      # 4. Adım: GOOGLE INDEXING API Motorunu Ateşle (Sessiz ve Güvenli Mod)
-      - name: Google Indexing API - Force Crawl
+      - name: GOOGLE INDEXING API Motorunu Çalıştır
         run: |
-          echo "Google Service Account anahtarı sisteme yükleniyor..."
           echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}' > service_account.json
-          
-          # CLI aracının etkileşimli ekran açıp takılmasını engellemek için npx --yes komutu zorunlu kılındı.
-          # Sitenizin hatasız çalışan canlı RSS linkini doğrudan besliyoruz
-          npx --yes google-indexing-script --credentials ./service_account.json --sitemap https://raufayar.net
+          node indexer.js
