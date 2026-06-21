@@ -1,0 +1,45 @@
+name: raufayar.net Anlık İndeksleme Motoru (GEO & SEO 2026)
+
+on:
+  push:
+    branches:
+      - main # Kod main branch'ine her atıldığında tetiklenir
+  schedule:
+    - cron: '0 0 * * *' # Güvence amacıyla her gece saat 00:00'da otomatik çalışır (Opsiyonel)
+
+jobs:
+  instant-index:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Adım: Kod tabanını ve sitemapi kontrol et
+      - name: Kodu GitHub'dan Çek
+        uses: actions/checkout@v4
+
+      # 2. Adım: BING, YANDEX ve SEARXNG için IndexNow Protokolünü Tetikle
+      - name: IndexNow Anlık Bildirim API
+        uses: marketplace/actions/indexnow-action@v3
+        with:
+          sitemap-location: 'https://raufayar.net' # Ya da rss.xml adresi
+          key: ${{ secrets.INDEXNOW_KEY }} # GitHub Secrets üzerinden güvenli anahtar
+          key-location: 'https://raufayar.net{{ secrets.INDEXNOW_KEY }}.txt'
+
+      # 3. Adım: GOOGLE INDEXING API Motorunu Ateşle (403 Hatalarından Arındırılmış Yapı)
+      - name: Google Indexing API - Force Crawl
+        run: |
+          echo "Google Service Account anahtarı çözülüyor..."
+          echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}' > service_account.json
+          
+          # Bağımlılık gerektirmeyen saf bash / curl scripti ile Google'a ping atma
+          # Bu kısım sitemap veya rss.xml dosyasındaki en son güncellenen URL'leri ayrıştırır
+          URLS=$(curl -s https://raufayar.net | grep -oP '(?<=<link>).*?(?=</link>)' | grep -v 'raufayar.net$' || true)
+          
+          if [ -z "$URLS" ]; then
+            echo "İndeksleme için yeni URL bulunamadı."
+            exit 0
+          fi
+
+          echo "Aşağıdaki URL'ler Google anlık indeksleme sırasına alınıyor:"
+          echo "$URLS"
+          
+          # goenning/google-indexing-script veya benzeri bir CLI kütüphanesini hızlıca çalıştırır
+          npx google-indexing-script --credentials ./service_account.json --urls "$URLS"
