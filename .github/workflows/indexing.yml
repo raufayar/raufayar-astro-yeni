@@ -15,17 +15,25 @@ jobs:
         env:
           GOOGLE_JSON: ${{ secrets.GOOGLE_INDEXING_KEY }}
         run: |
+          # 1. Servis hesabi dosyasini olustur
           echo "$GOOGLE_JSON" > sa.json
           
-          # Erişim token'ı al
+          # 2. Google auth kutuphanesini yukle ve token al
+          npm install -g google-auth-library
           TOKEN=$(npx google-auth-library-token sa.json)
           
-          # Son yazıyı bul (RSS'ten)
+          # 3. RSS'ten linki cek
           SITE_URL="https://www.raufayar.net"
+          # Linki dogrudan curl ile alip temizliyoruz
           LATEST_POST=$(curl -s "$SITE_URL/rss.xml" | grep -oP '<link>https?://[^<]+' | head -n 1 | sed 's/<link>//')
-          if [[ -z "$LATEST_POST" ]]; then LATEST_POST="$SITE_URL"; fi
+          
+          if [[ -z "$LATEST_POST" || "$LATEST_POST" == "$SITE_URL" ]]; then
+            LATEST_POST="$SITE_URL"
+          fi
 
-          # Google'a veriyi enjekte et
+          echo "🚀 Indexing hedefi: $LATEST_POST"
+
+          # 4. Google API'ye enjekte et
           curl -i -X POST \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer $TOKEN" \
