@@ -200,5 +200,5 @@ Evet. Şarj optimizasyonunu %80 sınırına alın.
 **İlgili Diğer Yazılar**  
 - [Sirkadiyen Borç Sarmalı](https://raufayar.net/sirkadiyen-borc-sarmali-bankacilik-algoritmalari-ve-asimetrik-faiz-tuzaklari)  
 - [Dijital Dopamin Enflasyonu](https://raufayar.net/dijital-dopamin-enflasyonu-akilli-telefon-yorgunlugu-algoritmik-somuru)
-
+- [Bloodborne PS5 Mod: 4K 120Hz VRR ile Geriye Dönük Uyumluluk Devrimi](https://www.raufayar.net/bloodborne-ps5-mod-4k-120hz-vrr/)
 *Bu rehber 2026 Haziran itibarıyla test edilmiş kullanıcı deneyimleri temel alınarak hazırlanmıştır.*
