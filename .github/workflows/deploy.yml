@@ -154,9 +154,4 @@ jobs:
 
 
           echo "🎯 IndexNow işlemleri tamamlandı. En son yazı pinglendi." 
-# Ping Google
-        if: success()
-        run: |
-          echo "🚀 Google'a indeksleme sinyali gönderiliyor..."
-          curl -s "https://www.google.com/ping?sitemap=https://www.raufayar.net/sitemap-index.xml" > /dev/null
-          echo "✅ Google pinglendi."
+
