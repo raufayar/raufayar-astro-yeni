@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages + Ultra SEO & IndexNow
+name: 🚀 Deploy to GitHub Pages + Ultra SEO & IndexNow
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
       - name: 📦 Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: latest
+          version: 9   # Daha stabil versiyon
 
       - name: ⚙️ Setup Node.js
         uses: actions/setup-node@v4
@@ -42,11 +42,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: 🏗️ Build Astro Site
-        uses: withastro/action@v5
-        with:
-          path: .
-          node-version: 22
-          package-manager: pnpm
+        run: pnpm run build   # withastro/action yerine direkt komut (daha az hata)
 
       - name: 📊 Upload Build Artifact
         uses: actions/upload-artifact@v4
@@ -81,44 +77,15 @@ jobs:
         run: |
           echo "🚀 IndexNow Ultra Ping Başlıyor..."
 
-          # En son yazıyı RSS'ten al
           LATEST_POST=$(curl -s "$SITE_URL/rss.xml" | \
             grep -oP '<link>https?://[^<]+' | head -n 1 | sed 's/<link>//' || echo "$SITE_URL")
 
           echo "📄 En son yazı: $LATEST_POST"
 
-          # === IndexNow Ping'leri ===
-          # Bing
-          curl -s "https://www.bing.com/indexnow?url=$LATEST_POST&key=$INDEXNOW_KEY" && \
-            echo "✅ Bing → En son yazı gönderildi" || echo "❌ Bing hatası"
+          curl -s "https://www.bing.com/indexnow?url=$LATEST_POST&key=$INDEXNOW_KEY" && echo "✅ Bing OK" || echo "❌ Bing Error"
+          curl -s "https://yandex.com/indexnow?url=$LATEST_POST&key=$INDEXNOW_KEY" && echo "✅ Yandex OK" || echo "❌ Yandex Error"
+          curl -s "https://api.indexnow.org/indexnow?url=$LATEST_POST&key=$INDEXNOW_KEY" && echo "✅ IndexNow.org OK" || echo "❌ IndexNow.org Error"
 
-          # Yandex
-          curl -s "https://yandex.com/indexnow?url=$LATEST_POST&key=$INDEXNOW_KEY" && \
-            echo "✅ Yandex → En son yazı gönderildi" || echo "❌ Yandex hatası"
+          curl -s "https://www.google.com/ping?sitemap=$SITE_URL/sitemap-index.xml" && echo "✅ Google OK"
 
-          # IndexNow.org (Global)
-          curl -s "https://api.indexnow.org/indexnow?url=$LATEST_POST&key=$INDEXNOW_KEY" && \
-            echo "✅ IndexNow.org → Gönderildi" || echo "❌ IndexNow.org hatası"
-
-          # Google Sitemap Ping
-          curl -s "https://www.google.com/ping?sitemap=$SITE_URL/sitemap-index.xml" && \
-            echo "✅ Google sitemap ping gönderildi"
-
-          # Ekstra önemli sayfalar
-          echo "🔄 Ana sayfa ve RSS pingleniyor..."
-          curl -s "https://www.bing.com/indexnow?url=$SITE_URL&key=$INDEXNOW_KEY" > /dev/null
-          curl -s "https://www.bing.com/indexnow?url=$SITE_URL/rss.xml&key=$INDEXNOW_KEY" > /dev/null
-          curl -s "https://www.bing.com/indexnow?url=$SITE_URL/sitemap-index.xml&key=$INDEXNOW_KEY" > /dev/null
-
-          echo "🎯 Tüm IndexNow işlemleri tamamlandı!"
-
-      - name: 📢 Discord Bildirimi (İsteğe Bağlı)
-        if: always()
-        uses: Ilshidur/action-discord@master
-        with:
-          discord_webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          message: |
-            **🚀 Deployment Tamamlandı**
-            Site: https://raufayar.net
-            Commit: ${{ github.sha }}
-            Durum: ${{ job.status }}
+          echo "🎯 Tüm ping işlemleri tamamlandı!"
