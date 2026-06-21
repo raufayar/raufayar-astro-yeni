@@ -52,8 +52,3 @@ print(jwt.encode(payload, sa["private_key"], algorithm="RS256"))
             -H "Authorization: Bearer $ACCESS_TOKEN" \
             -d "{ \"url\": \"$LATEST_POST\", \"type\": \"URL_UPDATED\" }" \
             "https://indexing.googleapis.com/v3/urlNotifications:publish"
-
-
-
-
-            
