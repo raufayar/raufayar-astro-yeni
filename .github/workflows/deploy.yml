@@ -1,172 +1,25 @@
-name: Deploy to GitHub Pages
-
-
-
-# Trigger the workflow every time you push to the `main` branch
-
-# Using a different branch name? Replace `main` with your branch’s name
-
-on:
-
-  push:
-
-    branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
-
-  workflow_dispatch:
-
-
-
-# Allow this job to clone the repo and create a page deployment
-
-permissions:
-
-  contents: read
-
-  pages: write
-
-  id-token: write
-
-
-
-# Allow one concurrent deployment
-
-concurrency:
-
-  group: "pages"
-
-  cancel-in-progress: true
-
-
-
-jobs:
-
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-
-      - name: Checkout your repository using git
-
-        uses: actions/checkout@v4
-
-
-
-      - name: Install, build, and upload your site output
-
-        uses: withastro/action@v5
-
-        # with:
-
-            # path: . # The root location of your Astro project inside the repository. (optional)
-
-            # node-version: 22 # The specific version of Node that should be used to build your site. Defaults to 22. (optional)
-
-            # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
-
-            # build-cmd: pnpm run build # The command to run to build your site. Runs the package build script/task by default. (optional)
-
-
-
-  deploy:
-
-    needs: build
-
-    runs-on: ubuntu-latest
-
-    environment:
-
-      name: github-pages
-
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-
-      - name: Deploy to GitHub Pages
-
-        id: deployment
-
-        uses: actions/deploy-pages@v4
-
-
-
-      - name: Send IndexNow Ping - Latest Post
-
+- name: Send Indexing Pings (Google, Bing, Yandex)
         if: success()
-
         run: |
-
-          echo "🚀 IndexNow Ping - En son yazı gönderiliyor..."
-
-
-
-          SITE_URL="https://raufayar.net"
-
+          echo "🚀 Quantum Indexing Sync Started..."
           
+          # Degiskenler
+          SITE_URL="https://www.raufayar.net"
+          KEY="raufnow12345"
+          
+          # RSS'ten son yaziyi al
+          LATEST_POST=$(curl -s "$SITE_URL/rss.xml" | grep -oP '<link>https?://[^<]+' | head -n 1 | sed 's/<link>//')
+          if [[ -z "$LATEST_POST" ]]; then LATEST_POST="$SITE_URL"; fi
+          echo "📄 Hedeflenen URL: $LATEST_POST"
 
-          # RSS'ten en son yazının linkini al (en güvenilir yöntem)
+          # 1. BING & YANDEX (IndexNow - Push Yontemi)
+          curl -s "https://www.bing.com/indexnow?url=$LATEST_POST&key=$KEY"
+          curl -s "https://yandex.com/indexnow?url=$LATEST_POST&key=$KEY"
+          
+          # 2. GOOGLE (Sitemap Ping - Zorunlu)
+          # Hata vermemesi icin ciktiyi null'a yonlendiriyoruz ve komut basarisiz olsa bile devam ettiriyoruz
+          curl -s -o /dev/null -w "%{http_code}" "https://www.google.com/ping?sitemap=$SITE_URL/sitemap-index.xml" || true
+          
+          echo "✅ Indexing Sync Tamamlandi."
 
-          LATEST_POST=$(curl -s "$SITE_URL/rss.xml" | \
-
-                        grep -oP '<link>https?://[^<]+' | \
-
-                        head -n 1 | \
-
-                        sed 's/<link>//')
-
-
-
-          if [[ -z "$LATEST_POST" || "$LATEST_POST" == "https://raufayar.net/" ]]; then
-
-            echo "⚠️ RSS'ten link alınamadı, ana sayfa kullanılıyor."
-
-            LATEST_POST="$SITE_URL"
-
-          fi
-
-
-
-          echo "📄 En son yazı: $LATEST_POST"
-
-
-
-          # Bing IndexNow
-
-          curl -s "https://www.bing.com/indexnow?url=$LATEST_POST&key=raufnow12345" && \
-
-            echo "✅ Bing'e gönderildi" || echo "❌ Bing hatası"
-
-- name: Ping Google
-
-        if: success()
-
-        run: |
-
-          echo "🚀 Google'a indeksleme sinyali gönderiliyor..."
-
-          # Sitemap URL'ini encode ediyoruz
-
-          SITEMAP_URL="https://www.raufayar.net/sitemap-index.xml"     
-          curl -I "https://www.google.com/ping?sitemap=$SITEMAP_URL"
-
-          echo "✅ Google ping işlemi tetiklendi."
-
-
-          # Yandex IndexNow
-
-          curl -s "https://yandex.com/indexnow?url=$LATEST_POST&key=raufnow12345" && \
-
-            echo "✅ Yandex'e gönderildi" || echo "❌ Yandex hatası"
-
-          # Ekstra olarak ana sayfa ve RSS de pinglensin
-
-          curl -s "https://www.bing.com/indexnow?url=$SITE_URL&key=raufnow12345" > /dev/null
-
-          curl -s "https://www.bing.com/indexnow?url=$SITE_URL/rss.xml&key=raufnow12345" > /dev/null
-
-
-
-          echo "🎯 IndexNow işlemleri tamamlandı. En son yazı pinglendi." 
 
