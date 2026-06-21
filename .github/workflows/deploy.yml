@@ -146,7 +146,12 @@ jobs:
 
             echo "✅ Yandex'e gönderildi" || echo "❌ Yandex hatası"
 
-
+- name: Ping Google
+        if: success()
+        run: |
+          echo "🚀 Google'a indeksleme sinyali gönderiliyor..."
+          curl -s "https://www.google.com/ping?sitemap=https://www.raufayar.net/sitemap-index.xml"
+          echo "✅ Google pinglendi."
 
           # Ekstra olarak ana sayfa ve RSS de pinglensin
 
