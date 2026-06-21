@@ -138,15 +138,20 @@ jobs:
 
             echo "✅ Bing'e gönderildi" || echo "❌ Bing hatası"
 
-
 - name: Ping Google
-        if: success()
-        run: |
-          echo "🚀 Google'a indeksleme sinyali gönderiliyor..."
-          # Çıktıyı gizle ve hata durumunda script'in patlamasını önle (|| true)
-          curl -s -o /dev/null -w "%{http_code}" "https://www.google.com/ping?sitemap=https://www.raufayar.net/sitemap-index.xml" || true
-          echo "✅ Google ping işlemi tamamlandı."
 
+        if: success()
+
+        run: |
+
+          echo "🚀 Google'a indeksleme sinyali gönderiliyor..."
+
+          # Sitemap URL'ini encode ediyoruz
+
+          SITEMAP_URL="https://www.raufayar.net/sitemap-index.xml"     
+          curl -I "https://www.google.com/ping?sitemap=$SITEMAP_URL"
+
+          echo "✅ Google ping işlemi tetiklendi."
 
 
           # Yandex IndexNow
