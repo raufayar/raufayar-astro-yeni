@@ -1,3 +1,5 @@
+
+
 import rss from '@astrojs/rss';
 
 export async function GET(context) {
@@ -22,6 +24,10 @@ export async function GET(context) {
     title: 'Rauf Ayar',
     description: 'Sistem Gerçeklik Algoritması ve Güncel İçerikler',
     site: context.site || 'https://www.raufayar.net',
+    // HATAYI ÇÖZEN EN KRİTİK EKLEME (İSİM ALANI TANIMLAMASI):
+    xmlns: {
+      atom: "http://w3.org",
+    },
     items: sortedPosts.map((post) => {
       const cleanLink = post.frontmatter.canonical
         .replace('https://raufayar.net', '')
@@ -34,7 +40,15 @@ export async function GET(context) {
         link: cleanLink.endsWith('/') ? cleanLink : `${cleanLink}/`,
       };
     }),
-    // GÜNCEL VE TEK BİRLEŞTİRİLMİŞ CUSTOM DATA:
-    customData: `<language>tr-TR</language><atom:link href="https://www.raufayar.net/rss.xml" rel="self" type="application/rss+xml"/><link rel="hub" href="https://pubsubhubbub.appspot.com/"/>`,
+    // GOOGLE PUBSUBHUBBUB VE ATOM STANDARTLARINA TAM UYUMLU GEÇERLİ VERİ:
+    customData: `<language>tr-TR</language><atom:link href="https://www.raufayar.net/rss.xml" rel="self" type="application/rss+xml"/><atom:link rel="hub" href="https://pubsubhubbub.appspot.com/"/>`,
   });
 }
+
+
+
+
+
+
+
+
