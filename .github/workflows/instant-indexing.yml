@@ -3,9 +3,8 @@ name: raufayar.net Anlık İndeksleme Motoru (GEO & SEO 2026)
 on:
   push:
     branches:
-      - main # Kod main branch'ine her atıldığında tetiklenir
-  schedule:
-    - cron: '0 4 * * *' # Güvence amacıyla her sabaha karşı 04:00'te otomatik çalışır
+      - main
+  workflow_dispatch: # İstediğiniz zaman GitHub panelinden elle tetiklemek için
 
 jobs:
   instant-index:
@@ -25,16 +24,16 @@ jobs:
       - name: IndexNow Anlık Bildirim API
         uses: marketplace/actions/indexnow-action@v3
         with:
-          sitemap-location: 'https://raufayar.net' # Hatasız RSS dosyanız
+          sitemap-location: 'https://raufayar.net'
           key: ${{ secrets.INDEXNOW_KEY }}
           key-location: 'https://raufayar.net{{ secrets.INDEXNOW_KEY }}.txt'
 
-      # 4. Adım: GOOGLE INDEXING API Motorunu Ateşle (403 Hatalarından Arındırılmış Yapı)
+      # 4. Adım: GOOGLE INDEXING API Motorunu Ateşle (Sessiz ve Güvenli Mod)
       - name: Google Indexing API - Force Crawl
         run: |
           echo "Google Service Account anahtarı sisteme yükleniyor..."
           echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}' > service_account.json
           
-          # HATA ÇÖZÜMÜ: goenning paketi doğrudan yerel veya uzak sitemap/rss linkini parametre alır
+          # CLI aracının etkileşimli ekran açıp takılmasını engellemek için npx --yes komutu zorunlu kılındı.
           # Sitenizin hatasız çalışan canlı RSS linkini doğrudan besliyoruz
-          npx google-indexing-script --credentials ./service_account.json --sitemap https://raufayar.net
+          npx --yes google-indexing-script --credentials ./service_account.json --sitemap https://raufayar.net
