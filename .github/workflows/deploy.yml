@@ -139,19 +139,21 @@ jobs:
             echo "✅ Bing'e gönderildi" || echo "❌ Bing hatası"
 
 
+- name: Ping Google
+        if: success()
+        run: |
+          echo "🚀 Google'a indeksleme sinyali gönderiliyor..."
+          # Çıktıyı gizle ve hata durumunda script'in patlamasını önle (|| true)
+          curl -s -o /dev/null -w "%{http_code}" "https://www.google.com/ping?sitemap=https://www.raufayar.net/sitemap-index.xml" || true
+          echo "✅ Google ping işlemi tamamlandı."
+
+
 
           # Yandex IndexNow
 
           curl -s "https://yandex.com/indexnow?url=$LATEST_POST&key=raufnow12345" && \
 
             echo "✅ Yandex'e gönderildi" || echo "❌ Yandex hatası"
-
-- name: Ping Google
-        if: success()
-        run: |
-          echo "🚀 Google'a indeksleme sinyali gönderiliyor..."
-          curl -s "https://www.google.com/ping?sitemap=https://www.raufayar.net/sitemap-index.xml"
-          echo "✅ Google pinglendi."
 
           # Ekstra olarak ana sayfa ve RSS de pinglensin
 
