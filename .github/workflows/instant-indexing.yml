@@ -11,6 +11,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # HATA ÖNLEYİCİ: Python için JWT imzalama kütüphanelerini kurar
+      - name: Python Bağımlılıklarını Kur
+        run: pip install pyjwt cryptography
+
+       Tarayıcı / Bot Doğrulama Adımı
       - name: Force Indexing
         env:
           GOOGLE_JSON: ${{ secrets.GOOGLE_INDEXING_KEY }}
@@ -19,7 +24,6 @@ jobs:
           echo "$GOOGLE_JSON" > sa.json
           
           # 2. Token alma işlemini basit bir şekilde yap (API çağrısı)
-          # Servis hesabı JSON'undan token üretmek için doğrudan REST API kullanıyoruz
           ACCESS_TOKEN=$(curl -s -X POST https://oauth2.googleapis.com/token -d "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&assertion=$(python3 -c '
 import jwt, time, json
 with open("sa.json") as f: sa = json.load(f)
@@ -34,14 +38,22 @@ payload = {
 print(jwt.encode(payload, sa["private_key"], algorithm="RS256"))
 ')" | jq -r .access_token)
 
-          # 3. Son yazıyı al
+          # 3. RSS dosyasından sadece ilk gerçek MAKALENİN linkini ayıklar (Ana sayfa linkini eler)
           SITE_URL="https://www.raufayar.net"
-          LATEST_POST=$(curl -s "$SITE_URL/rss.xml" | grep -oP '<link>https?://[^<]+' | head -n 1 | sed 's/<link>//')
+          LATEST_POST=$(curl -s "$SITE_URL/rss.xml" | grep -oP '(?<=<link>).*?(?=</link>)' | grep -v 'rss.xml' | grep -E 'https?://' | head -n 1 || true)
+          
           if [[ -z "$LATEST_POST" ]]; then LATEST_POST="$SITE_URL"; fi
 
-          # 4. Google'a gönder
+          echo "Google Kuyruğuna Gönderilen Güncel Yazı: $LATEST_POST"
+
+          # 4. Google'a Gönder
           curl -i -X POST \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer $ACCESS_TOKEN" \
             -d "{ \"url\": \"$LATEST_POST\", \"type\": \"URL_UPDATED\" }" \
             "https://indexing.googleapis.com/v3/urlNotifications:publish"
+
+
+
+
+            
