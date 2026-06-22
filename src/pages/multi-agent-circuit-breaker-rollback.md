@@ -167,6 +167,122 @@ Bu yapı:
 - Sistemi son başarılı checkpoint’e geri sarar (Rollback)
 - Gereksiz API çağrılarını önleyerek maliyeti korur
 
+
+import time
+import logging
+from typing import Callable, Any, Dict, List
+
+# Üretim seviyesi loglama ayarları
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger("GlobalAIOrchestrator")
+
+class CircuitBreakerOpenException(Exception):
+    """Circuit Breaker AÇIK (Sistem korumada) olduğunda fırlatılan özel hata."""
+    pass
+
+class MultiAgentCircuitBreaker:
+    def __init__(self, failure_threshold: int = 3, recovery_timeout: float = 10.0):
+        self.failure_threshold = failure_threshold  # Kaç hatadan sonra devre kesilecek?
+        self.recovery_timeout = recovery_timeout    # Devrenin açık kalma süresi (saniye)
+        self.failure_count = 0
+        self.state = "CLOSED"  # CLOSED (Normal), OPEN (Hatalı/Korumada), HALF-OPEN (Test)
+        self.last_state_change = time.time()
+        self.state_history: List[Dict[str, Any]] = [] # Rollback için geçmiş durum havuzu
+
+    def save_state(self, agent_name: str, payload: Dict[str, Any]):
+        """Ajanların kararlı durumlarını (State) rollback için hafızaya kaydeder."""
+        self.state_history.append({
+            "timestamp": time.time(),
+            "agent_name": agent_name,
+            "payload": payload.copy()
+        })
+        logger.info(f"[State Checkpoint] '{agent_name}' için son başarılı durum hafızaya alındı.")
+
+    def rollback(self) -> Dict[str, Any]:
+        """Sistem çöktüğünde bir önceki en kararlı ajanın durumuna geri döner."""
+        if len(self.state_history) < 2:
+            logger.warning("[Rollback Başarısız] Geri dönülecek geçmiş veri yok! Başlangıç noktasına dönülüyor.")
+            return {}
+        
+        # Son hata veren/patlayan durumu temizle, bir önceki doğrulanmış başarılı durumu al
+        self.state_history.pop() 
+        last_stable = self.state_history[-1]
+        logger.error(f"[ROLLBACK TETİKLENDİ] Otomatik olarak '{last_stable['agent_name']}' durumuna geri çekiliyor!")
+        return last_stable["payload"]
+
+    def __call__(self, agent_func: Callable, agent_name: str, payload: Dict[str, Any], *args, **kwargs):
+        current_time = time.time()
+
+        # 1. Devre OPEN (Açık) ise ve recovery süresi dolmadıysa LLM'e istek atmayı engelle
+        if self.state == "OPEN":
+            if current_time - self.last_state_change > self.recovery_timeout:
+                self.state = "HALF-OPEN"
+                logger.warning(f"[{self.state}] Devre test moduna alındı. Sınırlı istek trafiğine izin veriliyor...")
+            else:
+                logger.error(f"[{self.state}] Kritik Hata Limiti Aşıldı! LLM isteği engellendi. Sistem koruma modunda.")
+                raise CircuitBreakerOpenException(f"'{agent_name}' çağrısı reddedildi. Devre şu an OPEN konumunda.")
+
+        try:
+            # Mevcut durumu yedekle (İşlem başarılı olursa zincirde kalıcı olacak)
+            self.save_state(agent_name, payload)
+            
+            # Ajanı tetikle (Gerçek LLM API çağrısı veya agent logic burada çalışır)
+            result = agent_func(payload, *args, **kwargs)
+            
+            # Başarılı ise hata sayacını sıfırla ve devreyi kapat
+            if self.state in ["OPEN", "HALF-OPEN"]:
+                logger.info(f"[CLOSED] Sistem tamamen iyileşti. Devre kapatıldı, trafik normale döndü.")
+            self.failure_count = 0
+            self.state = "CLOSED"
+            return result
+
+        except Exception as e:
+            self.failure_count += 1
+            logger.error(f"[AJAN HATASI] '{agent_name}' başarısız oldu! Sayaç: {self.failure_count}/{self.failure_threshold}. Hata: {e}")
+
+            # Eşik değeri aşıldıysa devreyi AÇ ve trafiği kilitle
+            if self.failure_count >= self.failure_threshold:
+                self.state = "OPEN"
+                self.last_state_change = time.time()
+                logger.critical(f"[OPEN] ARDIL ÇÖKME TESPİT EDİLDİ! Devre AÇIK konumuna getirildi. LLM çağrıları durduruldu.")
+            
+            # Otomatik Rollback mekanizmasını çalıştır ve güvenli durumu geri döndür
+            safe_payload = self.rollback()
+            return {"status": "fallback_activated", "safe_data": safe_payload, "error": str(e)}
+
+# --- SIMÜLASYON VE TEST SENARYOSU ---
+
+def mock_llm_agent(payload: Dict[str, Any], should_fail: bool = False):
+    """Gerçek bir LLM/API çağrısını simüle eden fonksiyon."""
+    if should_fail:
+        raise RuntimeError("OpenAI API 429: Rate Limit Exceeded!")
+    payload["step"] += 1
+    return {"status": "success", "data": payload}
+
+# Devre kesiciyi yapılandırıyoruz: 2 hatada devreyi aç, 4 saniye boyunca istekleri blokla
+circuit_breaker = MultiAgentCircuitBreaker(failure_threshold=2, recovery_timeout=4)
+app_state = {"step": 0, "context": "Global_Veri_Kumesi"}
+
+print("\n=== FAZ 1: Kararlı Çalışma Akışı ===")
+app_state = circuit_breaker(mock_llm_agent, "Veri_Yazar_Ajani", app_state, should_fail=False)["data"]
+app_state = circuit_breaker(mock_llm_agent, "Semantik_Editor_Ajani", app_state, should_fail=False)["data"]
+
+print("\n=== FAZ 2: İlk Hata ve Otomatik Rollback Aktivasyonu ===")
+# Üçüncü ajan çöküyor; sistem bir önceki kararlı adıma (Semantik_Editor_Ajani) geri sarıyor
+response = circuit_breaker(mock_llm_agent, "Gorsek_Analiz_Ajani", app_state, should_fail=True)
+
+print("\n=== FAZ 3: Eşik Aşımı ve Devrenin Tamamen Açılması (Koruma) ===")
+# İkinci hata geliyor, eşik aşılıyor, devre OPEN oluyor ve sonraki istekler API'ye gitmeden bloklanıyor
+response2 = circuit_breaker(mock_llm_agent, "Gorsek_Analiz_Ajani", app_state, should_fail=True)
+try:
+    response3 = circuit_breaker(mock_llm_agent, "Gorsek_Analiz_Ajani", app_state, should_fail=True)
+except CircuitBreakerOpenException as ex:
+    print(f"\n[YAKALANAN GÜVENLİK İSTİSNASI]: {ex}")
+
+
+
+
+
 ## 3. DERİNLEMESİNE BAKIŞ: Kök Nedenler (Root Causes)
 
 Çoklu ajan orkestrasyonlarında yaşanan tıkanıklıkların temel nedenleri:
