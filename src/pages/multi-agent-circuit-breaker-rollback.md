@@ -148,6 +148,8 @@ head: |
   }
   </script>
 ---
+![Çoklu yapay zeka ajanları mimarisinde zincirleme çökmeyi önleyen neon kırmızı devre kesici mekanizmasının 3D soyut şematik şeması.
+](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRZ2wsr2IR8UcMS_duGJlb5LqiOoCCdK4cC5tonVqTclPx15gJgMeSC8-YnCl8IzMOmgsQyXilIWJkA6llsSdYfLR1WVeHF2oRn6X4-QeqHW9mPOuQY-JkQE7D47GyhqzLoAaICC2VkfAd-eijaKDypEcoHCYjY-9r5WjnJmpW3L6uam6EafWV4pS-Ci8/w640-h307/multi-agent-ai-circuit-breaker-schematic.jpg)
 ## Üretim Ortamındaki Çoklu Yapay Zeka Ajanları (Multi-Agent) İçin Circuit Breaker ve Rollback Mekanizması Nasıl Kurulur?
 
 **Stack Overflow’daki “RateLimitError” ve “MaxTokensError” hatalarını aldınız ve dokümantasyondaki basit retry çözümleri işe yaramadı mı?** LangChain, CrewAI veya AutoGen ile multi-agent sistemlerinizi production’a aldığınızda zincirleme çökmeler, bütçe erimesi ve sistem kilitlenmeleriyle karşılaşıyorsanız yalnız değilsiniz. Bu makalede, LLM’lerin deterministik olmayan doğasıyla birleşen cascading failure sorununa karşı production-ready **Circuit Breaker** ve **Rollback** mekanizmasını derinlemesine ele alıyoruz.
@@ -166,7 +168,8 @@ Bu yapı:
 - Hata eşiğini aştığında akışı keser (OPEN state)
 - Sistemi son başarılı checkpoint’e geri sarar (Rollback)
 - Gereksiz API çağrılarını önleyerek maliyeti korur
-
+![Hatalı veri üreten yapay zeka ajanının akışını kesen holografik koruma kalkanı ve sistemi son başarılı adıma döndüren rollback görseli.
+](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLBRiKqsVESEFuVW3VRUJzKlTbRyBXtoTbfl2nOu4lhmNccaPacXajS5sUCWASlLO_EoSiaeSBnekl6SOYdsFUQoIhIzZaPp4Zy-14GvHBSb5G4EllkfVRp8xxv1f3rCm7lq-PnqzaH2e6Lv20AAhRQmWt4-7U548raccvA5c6e_mb53_qLbpz4y6lZkI/w640-h314/ai-agents-orchestration-rollback-shield.jpg)
 
 import time
 import logging
@@ -280,7 +283,8 @@ except CircuitBreakerOpenException as ex:
     print(f"\n[YAKALANAN GÜVENLİK İSTİSNASI]: {ex}")
 
 
-
+![Mikroçip mimarisi üzerinde veriyi güvenli geri sarma vektörlerini ve dijital otoban bariyerini gösteren minimalist elektrik mavisi teknoloji görseli.
+](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6iYZVH4i19Gxik5-rA1Abk98657S6CTwEJHw7Zb0XeNSkjPdtJy6QnCu9wOKkM4_gyFTaidc7qesetftZNBvNoT2prDg5QMzs9wQAh5PuV8vEtdATOS2TI9eOEYmwhyNanPffY90LIyFfxDnefAgTNcfDF2eF9dp2JOMKnWY6fP7Bn-Yd6Ayvg-WMaD0/w640-h305/minimalist-microchip-data-rollback-vector.jpg)
 
 
 ## 3. DERİNLEMESİNE BAKIŞ: Kök Nedenler (Root Causes)
