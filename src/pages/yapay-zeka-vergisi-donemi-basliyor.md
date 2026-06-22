@@ -215,6 +215,13 @@ Tamamen muafiyet olmasa da, kurumsal hesap açıp geçerli bir KDV/Tax ID tanım
 **Gelecekte yapay zeka üretimlerine ek bir vergi gelecek mi?**  
 Evet. Avrupa Birliği ve küresel mali otoriteler, yapay zeka tarafından tamamen otonom olarak üretilen ve ticari gelir elde eden yazılım/tasarım ürünleri için özel bir “AI Telif ve Dijital Katma Değer Vergisi” üzerinde çalışmaktadır.
 
+
+# 📡 [Kolektif Savunma] ChatGPT ve Midjourney Ekstrenizi Kontrol Ettiniz mi? | AI Tax Finansal Defans Hattı
+
+Sessiz sedasız yürürlüğe giren yeni **Dijital Hizmet Vergisi (DHV)** ve küresel **AI Tax** düzenlemeleri yüzünden, bireysel kredi kartı ekstrelerimizdeki OpenAI, Anthropic ve Adobe harcamaları sinsi bir şekilde şişmeye başladı. 
+
+Yapay zeka araçlarının faturasını yasal yollardan optimize etmek, şirket gideri göstermek ve **KDV2 riskinden** korunmak için ana sitede dev bir rehber ve mikro-hesaplayıcı araç yayınladık:
+🔗 **[Yapay Zeka Vergisi Rehberi ve Hesaplama Aracı](https://voidpass.blogspot.com/2026/06/gizli-ai-tax-chatgpt-zammi-yasal-kurtulma-yollari.html)**
 ---
 
 **Kaynakça / Referanslar**  
