@@ -332,3 +332,5 @@ Kurumsal projelerde Redis veya PostgreSQL gibi harici state store’lar tercih e
 *İlgili Diğer Yazılar:*  
 - [Bloodborne PS5 Mod: 4K 120Hz VRR ile Geriye Dönük Uyumluluk Devrimi](https://www.raufayar.net/bloodborne-ps5-mod-4k-120hz-vrr/)  
 - [Google Indexing API 2026: 403 Permission Denied Hatası ve Anlık Çözüm Rehberi](https://www.raufayar.net/google-indexing-api-2026-403-permission-denied-cozumu/)
+- [Solopreneurship Rehberi: Tek Kişilik Dev Şirketler 2026](https://www.raufayar.net/solopreneurship-tek-kisilik-dev-sirketler/)  
+- [Yapay Zeka Vergisi Dönemi Başlıyor: ChatGPT ve Midjourney'e Gizli Zam](https://www.raufayar.net/yapay-zeka-vergisi-donemi-basliyor/)
