@@ -156,10 +156,6 @@ head: |
 # 📡 [Kolektif Savunma] ChatGPT ve Midjourney Ekstrenizi Kontrol Ettiniz mi? | AI Tax Finansal Defans Hattı
 
 Sessiz sedasız yürürlüğe giren yeni **Dijital Hizmet Vergisi (DHV)** ve küresel **AI Tax** düzenlemeleri yüzünden, bireysel kredi kartı ekstrelerimizdeki OpenAI, Anthropic ve Adobe harcamaları sinsi bir şekilde şişmeye başladı. 
-
-Yapay zeka araçlarının faturasını yasal yollardan optimize etmek, şirket gideri göstermek ve **KDV2 riskinden** korunmak için ana sitede dev bir rehber ve mikro-hesaplayıcı araç yayınladık:
-🔗 **[Yapay Zeka Vergisi Rehberi ve Hesaplama Aracı](https://raufayar.net)**
-
 ### 💬 Bu Başlık Altında Birbirimize Yol Gösteriyoruz:
 Yapay zeka ajanı bütçelerinizi ve SaaS giderlerinizi nasıl yönetiyorsunuz? Aşağıdaki 3 sorunun cevabıyla yorumlarda buluşalım, açık web topluluğu olarak finansal defansımızı kuralım:
 
@@ -168,7 +164,7 @@ Yapay zeka ajanı bütçelerinizi ve SaaS giderlerinizi nasıl yönetiyorsunuz? 
 3. **Yaşadığınız En Büyük Sorun Ne?** (Örn: OpenAI faturasına bir türlü Türkiye Vergi Numarasını kabul ettirememe)
 
 👇 **GitHub hesabınızla giriş yapın ve aşağıdaki tartışmaya katılarak tecrübenizi bırakın!**
-
+🔗 **[RAUFAYAR.NET 🌐 Global Open-Web Forum](https://raufayar.net)**
 
 
 ## Dijital Ekosistemin Gizli Maliyeti: SaaS ve Yapay Zeka Vergisi Nedir? {#dijital-ekosistemin-gizli-maliyeti}
