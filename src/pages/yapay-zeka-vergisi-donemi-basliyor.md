@@ -209,7 +209,7 @@ Evet. Avrupa Birliği ve küresel mali otoriteler, yapay zeka tarafından tamame
 - OpenAI, Midjourney ve Adobe Terms of Service güncellemeleri
 
 **İlgili Diğer Yazılar**  
-- [Multi-Agent AI Sistemleri ve Circuit Breaker Mekanizmaları](/multi-agent-ai-circuit-breaker)  
-- [Solopreneur’lar İçin 2026 Teknoloji Maliyet Optimizasyonu](/solopreneur-teknoloji-maliyetleri)
+- [Multi-Agent AI Sistemleri ve Circuit Breaker Mekanizmaları](https://www.raufayar.net/multi-agent-circuit-breaker-rollback/)  
+- [Solopreneur’lar İçin 2026 Teknoloji Maliyet Optimizasyonu](https://www.raufayar.net/solopreneurship-tek-kisilik-dev-sirketler/)
 
 *Bu içerik maksimum SEO, E-E-A-T ve yasal farkındalık odaklı hazırlanmıştır. Vergi konularda her zaman yetkin bir mali müşavirden destek alın.*
