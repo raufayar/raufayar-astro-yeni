@@ -210,5 +210,5 @@ LangChain, CrewAI, AutoGen ve LangGraph ile entegre edilebilir.
 Kurumsal projelerde Redis veya PostgreSQL gibi harici state store’lar tercih edilmelidir.
 
 *İlgili Diğer Yazılar:*  
-- [LangChain Production Best Practices](/langchain-production)  
-- [CrewAI ile Multi-Agent Sistemler](/crewai-multi-agent)
+- [Bloodborne PS5 Mod: 4K 120Hz VRR ile Geriye Dönük Uyumluluk Devrimi](https://www.raufayar.net/bloodborne-ps5-mod-4k-120hz-vrr/)  
+- [Google Indexing API 2026: 403 Permission Denied Hatası ve Anlık Çözüm Rehberi](https://www.raufayar.net/google-indexing-api-2026-403-permission-denied-cozumu/)
