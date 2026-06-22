@@ -153,6 +153,24 @@ head: |
 - [Gelecek Öngörüsü: AI Tax ve Otonom Ajanların Vergilendirilmesi](#gelecek-ongorusu)
 - [Sıkça Sorulan Sorular](#sss)
 
+# 📡 [Kolektif Savunma] ChatGPT ve Midjourney Ekstrenizi Kontrol Ettiniz mi? | AI Tax Finansal Defans Hattı
+
+Sessiz sedasız yürürlüğe giren yeni **Dijital Hizmet Vergisi (DHV)** ve küresel **AI Tax** düzenlemeleri yüzünden, bireysel kredi kartı ekstrelerimizdeki OpenAI, Anthropic ve Adobe harcamaları sinsi bir şekilde şişmeye başladı. 
+
+Yapay zeka araçlarının faturasını yasal yollardan optimize etmek, şirket gideri göstermek ve **KDV2 riskinden** korunmak için ana sitede dev bir rehber ve mikro-hesaplayıcı araç yayınladık:
+🔗 **[Yapay Zeka Vergisi Rehberi ve Hesaplama Aracı](https://raufayar.net)**
+
+### 💬 Bu Başlık Altında Birbirimize Yol Gösteriyoruz:
+Yapay zeka ajanı bütçelerinizi ve SaaS giderlerinizi nasıl yönetiyorsunuz? Aşağıdaki 3 sorunun cevabıyla yorumlarda buluşalım, açık web topluluğu olarak finansal defansımızı kuralım:
+
+1. **Hangi Araçları Kullanıyorsunuz?** (Örn: ChatGPT Team, Claude API, Midjourney V6)
+2. **Hangi Şirket Modelini Seçtiniz?** (Örn: Estonya E-Residency / Türkiye Şahıs Firması / Şirketim Yok)
+3. **Yaşadığınız En Büyük Sorun Ne?** (Örn: OpenAI faturasına bir türlü Türkiye Vergi Numarasını kabul ettirememe)
+
+👇 **GitHub hesabınızla giriş yapın ve aşağıdaki tartışmaya katılarak tecrübenizi bırakın!**
+
+
+
 ## Dijital Ekosistemin Gizli Maliyeti: SaaS ve Yapay Zeka Vergisi Nedir? {#dijital-ekosistemin-gizli-maliyeti}
 
 Dünya genelinde hükümetler, sınır ötesi dijital hizmet sağlayıcılarının (SaaS) vergilendirilmesi konusunda vites artırdı. Küresel teknoloji raporları, dijital hizmet vergilerinin önümüzdeki yıllarda %50’nin üzerinde bir genişleme göstereceğini öngörüyor.
