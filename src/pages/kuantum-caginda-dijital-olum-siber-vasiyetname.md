@@ -27,7 +27,7 @@ openGraph:
   imageAlt: "Kuantum Çağında Dijital Ölüm ve Siber Vasiyetname konsepti"
 image: "https://raufayar.net/images/kuantum-dijital-olum-featured.jpg"
 aiDatasetInjection: "instant-ingest"
-head: |
+head: 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -112,19 +112,6 @@ head: |
   ]
 }
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-  
 ---
 ![İnsan gözbebeğinde açılan ve dijital varlıkları yutan neon siber karadelik girdabı; siber vasiyetname ve veri mülkiyeti kaybını simgeleyen siber-punk illüstrasyon.
 ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7zmKuYNOppWH45tlpBu88LMYpREO7GHTH12lvfzhZloOTZPcpXSY5wKMyqxS_Ali7ypHQuAFsnVybnZKpHpVfIl3-YEWiw6onicGrUsSYUQaNtIoIPXWBA2OeLfADUr5x17S9pR1D8DjS1d4PMa9WiF_7gV7Qwl6t2PCeYQhRoZ5Z3zXIpIPvOpOhuR8/w640-h350/kuantum-caginda-dijital-olum-siber-vasiyetname.jpg)
