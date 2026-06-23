@@ -166,8 +166,8 @@ Herhangi bir yazılıma veya harici ekibe ihtiyaç duymadan, kullanıcıların d
 
 ### Sistem Nasıl Ekipsiz Çalışır? (Kullanıcı Taktikleri)
 
-# RAUFAYAR.NET / CENTRALIZED-DETACHED DIGITAL WILL PROTOCOL [v1.0]
-# GÜVENLİK PROTOKOLÜ: ASİMETRİK ŞİF RELEME (PGP) VE DEAD MAN'S SWITCH
+## RAUFAYAR.NET / CENTRALIZED-DETACHED DIGITAL WILL PROTOCOL [v1.0]
+### GÜVENLİK PROTOKOLÜ: ASİMETRİK ŞİFRELEME (PGP) VE DEAD MAN'S SWITCH
 
 [BÖLÜM 1: DİJİTAL VARLIK ENVANTERİ]
 - Kripto Varlıklar: [Cüzdan Tipi: Ledger/Metamask] - (Seed phrase fiziksel lokasyonda saklanıyor)
@@ -214,5 +214,8 @@ Her yıl yüz binlerce kripto yatırımcısı ve dijital girişimci hayatını k
 - IEEE Security & Privacy - Cryptographic Solutions for Digital Asset Inheritance (2025)
 - Harvard Law Review - Property Rights in the Digital Afterlife and Cloud Monopolies (2024)
 - raufayar.net - Dijital Kölelik ve Mikro-Biyometrik Veri Hasadı Analiz Raporu
-
+**İlgili Diğer Yazılar**  
+- [Dijital Kölelik ve Mobil Göz Takibi: Akıllı Telefonlar Bizi Nasıl İzliyor?](https://www.raufayar.net/dijital-kolelik-ve-mobil-goz-takibi/)  
+- [Harmonik Çağında Saha Defansı: Büyük Bina Projelerinde Nötr Taşması ve Rezonans Çözümleri](https://www.raufayar.net/elektrik-mimarisi-harmonik-defans/)
+- [İnternetteki Hayalet Tuzaklar: Siber Dolandırıcılık ve Dijital Savunma](https://www.raufayar.net/internetteki-hayalet-tuzaklar-siber-dolandiricilik/)
 *Bu şablon maksimum SEO, E-E-A-T, Schema.org zenginliği ve tek başınıza internet trafiğini domine etmeniz için optimize edilmiştir. © 2026 RAUFAYAR.NET — QUANTUM SYSTEMS*
