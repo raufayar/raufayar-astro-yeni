@@ -127,11 +127,12 @@ head: |
     ]
   }
   </script>
+  ---
 ## 🌐 WI-FI MATRIX: Evdeki Sinyal Boğulması, Gizli Duvar Engelleri ve Ücretsiz Siber Ağ Kalibrasyonu
 
 **YAYIN:** 2026-06-23 | **OTORİTE:** raufayar.net | **KATEGORİ:** 🚀 Teknoloji / 🎯 Taktik ve Strateji
 
----
+
 
 ## 📖 Giriş: Ek Donanım Tuzağı ve Kablosuz Frekans Köleliği
 
