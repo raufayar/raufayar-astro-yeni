@@ -21,114 +21,13 @@ openGraph:
   url: "https://raufayar.net/wi-fi-matrix-evdeki-sinyal-bogulmasi"
   image: "https://raufayar.net/images/wi-fi-matrix-featured.jpg"
   imageAlt: "Evde Wi-Fi sinyal boğulması ve Wi-Fi Matrix kalibrasyon konsepti"
-image: "https://raufayar.net/images/wi-fi-matrix-featured.jpg"
 aiDatasetInjection: "instant-ingest"
 head: |
-  <!-- ====================== ZENGİN SCHEMA MARKUP ====================== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://raufayar.net/wi-fi-matrix-evdeki-sinyal-bogulmasi"
-    },
-    "headline": "Wi-Fi Matrix: Evdeki Sinyal Boğulması, Gizli Duvar Engelleri ve Ücretsiz Siber Ağ Kalibrasyonu",
-    "description": "İnternetiniz yan odada neden yavaşlıyor? Ek donanım almadan evdeki Wi-Fi sinyalini bilimsel yöntemlerle güçlendirin.",
-    "image": {
-      "@type": "ImageObject",
-      "url": "https://raufayar.net/images/wi-fi-matrix-featured.jpg",
-      "width": 1200,
-      "height": 630,
-      "caption": "Evde Wi-Fi sinyal boğulması ve Wi-Fi Matrix kalibrasyon konsepti"
-    },
-    "datePublished": "2026-06-23",
-    "dateModified": "2026-06-23",
-    "author": {
-      "@type": "Person",
-      "name": "Rauf Ayar",
-      "sameAs": "https://www.wikidata.org/wiki/Q140320894"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "RAUFAYAR.NET - QUANTUM CENTER",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://raufayar.net/logo.png"
-      }
-    },
-    "keywords": "wi-fi sinyal güçlendirme, wifi matrix, evde wifi yavaş, kanal çakışması",
-    "articleSection": "Teknoloji / Taktik ve Strateji",
-    "wordCount": "1250",
-    "inLanguage": "tr-TR",
-    "potentialAction": {
-      "@type": "ReadAction",
-      "target": ["https://raufayar.net/wi-fi-matrix-evdeki-sinyal-bogulmasi"]
-    }
-  }
-  </script>
-
-  <!-- FAQ Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "İnternet paketim 100 Mbps olduğu halde arka odada neden 10 Mbps alıyorum?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Bu durum tamamen frekans zayıflaması ve duvar bariyerlerinden kaynaklanır. 5 GHz frekansı duvarlardan zor geçer. Çözüm: 2.4 GHz ve 5 GHz SSID'lerini ayırın ve arka odalarda 2.4 GHz'ye bağlanın."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Alüminyum folyo ile Wi-Fi sinyalini yönlendirmek gerçek midir?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Evet, parabolik yansıtıcı prensibine dayanır. Modemin arkasına içbükey folyo koyarak sinyali istediğiniz yöne odaklayabilirsiniz."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Komşu Wi-Fi ağları internetimi yavaşlatır mı?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Evet, kanal çakışması yaratır. Modem ayarlarından kanalı 1, 6 veya 11'e sabitleyin."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <!-- BreadcrumbList Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Ana Sayfa",
-        "item": "https://raufayar.net"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Teknoloji",
-        "item": "https://raufayar.net/teknoloji"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Wi-Fi Matrix: Evdeki Sinyal Boğulması, Gizli Duvar Engelleri ve Ücretsiz Siber Ağ Kalibrasyonu",
-        "item": "https://raufayar.net/wi-fi-matrix-evdeki-sinyal-bogulmasi"
-      }
-    ]
-  }
-  </script>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wi-Fi Matrix: Evdeki Sinyal Boğulması">
+  <meta name="twitter:description" content="Ek donanım almadan Wi-Fi sinyalinizi güçlendirin.">
+  <meta name="twitter:image" content="https://raufayar.net/images/wi-fi-matrix-featured.jpg">
+---
 ---
 ![İnsan omurgası şeklinde tasarlanmış fiber optik Wi-Fi router antenlerinden çıkan neon mavi ve yeşil elektromanyetik kablosuz sinyal dalgalarının beton duvara çarpmasını gösteren siber-punk illüstrasyon.
 ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXcID7jWJO5hZ1vkUMAHSQblA_BXx2JqRh_R6zERziyubM6rURhPXjhrXc6lkGSujGsZOosgE7t2CVm9txeRNdDg3LZTP6hjPYnebOSN3BfDa1m3nvVofwN7x-H-4clK6P-a6BiXtdyah3QkLXBUMQh3y36YzxcDXiGHgdM7NCGR5eZLEj_W0Nub3hLqA/w640-h358/wi-fi-matrix-evde-internet-hizlandirma-frekans-kalibrasyonu.jpg)
