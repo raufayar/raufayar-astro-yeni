@@ -7,7 +7,7 @@ description: "Öldüğünüzde kripto paralarınız, sosyal medya hesaplarınız
 author: "raufayar.net"
 publisher: "RAUFAYAR.NET - QUANTUM CENTER"
 # SEO & Anahtar Kelimeler (Her yayın için güncelleyin)
-tags: ["Analizler", "TaktikVeStrateji", "Teknoloji", "Kripto", "SiberGüvenlik", "DijitalMiras"]
+tags: ["TaktikStrateji", "Teknoloji", "Kripto", "SiberGüvenlik", "DijitalMiras"]
 keywords: "dijital vasiyetname, siber vasiyet, decentralized digital will, kripto miras, dijital ölüm, apple google dijital miras, cold wallet seed phrase, merkeziyetsiz miras protokolü"
 semanticEntities: "Dijital Varlıklar, Kripto Paralar, Big Tech, Blockchain, Siber Güvenlik, Miras Hukuku, Decentralized Digital Will"
 # Schema & İçerik Tipi
