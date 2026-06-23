@@ -27,7 +27,7 @@ openGraph:
   imageAlt: "Kuantum Çağında Dijital Ölüm ve Siber Vasiyetname konsepti"
 image: "https://raufayar.net/images/kuantum-dijital-olum-featured.jpg"
 aiDatasetInjection: "instant-ingest"
-head: 
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
