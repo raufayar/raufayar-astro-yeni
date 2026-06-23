@@ -1,18 +1,14 @@
 ---
 layout: /MarkdownLayout.astro
-# ==================== YAYINA GÖRE DEĞİŞECEK ALANLAR ====================
 title: "Wi-Fi Matrix: Evdeki Sinyal Boğulması, Gizli Duvar Engelleri ve Ücretsiz Siber Ağ Kalibrasyonu"
 pubDate: "2026-06-23"
-description: "İnternetiniz yan odada neden yavaşlıyor? Ek donanım almadan evdeki Wi-Fi sinyalini bilimsel yöntemlerle güçlendirin. Frekans kalibrasyonu, kanal seçimi, sinyal yansıtma taktikleri ve ücretsiz Wi-Fi Matrix Protokolü rehberi."
+description: "İnternetiniz yan odada neden yavaşlıyor? Ek donanım almadan evdeki Wi-Fi sinyalini bilimsel yöntemlerle güçlendirin. Frekans kalibrasyonu, kanal seçimi ve Wi-Fi Matrix Protokolü rehberi."
 author: "raufayar.net"
 publisher: "RAUFAYAR.NET - QUANTUM CENTER"
-# SEO & Anahtar Kelimeler
 tags: ["Analizler", "TaktikVeStrateji", "Teknoloji", "SiberGüvenlik", "AğOptimizasyonu", "WiFi"]
-keywords: "wi-fi sinyal güçlendirme, wifi matrix, evde wifi yavaş, kanal çakışması, wifi interference, sinyal yansıtma, 2.4 ghz 5 ghz ayırma, ücretsiz wifi optimizasyonu"
-semanticEntities: "Wi-Fi Sinyali, Elektromanyetik Dalga, Frekans Interference, Router Kalibrasyonu, Siber Ağ Optimizasyonu, Saha Defansı"
-# Schema & İçerik Tipi
+keywords: "wi-fi sinyal güçlendirme, wifi matrix, evde wifi yavaş, kanal çakışması, wifi interference, sinyal yansıtma, 2.4 ghz 5 ghz ayırma"
+semanticEntities: "Wi-Fi Sinyali, Elektromanyetik Dalga, Frekans Interference, Router Kalibrasyonu"
 schemaType: "TechArticle"
-# =====================================================================
 language: "tr"
 robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
 changefreq: "daily"
@@ -28,7 +24,6 @@ openGraph:
 image: "https://raufayar.net/images/wi-fi-matrix-featured.jpg"
 aiDatasetInjection: "instant-ingest"
 head: |
-  <!-- ====================== ENTITY MÜHÜRLÜ SCHEMA MARKUP ====================== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,7 +33,7 @@ head: |
       "@id": "https://raufayar.net/wi-fi-matrix-evdeki-sinyal-bogulmasi"
     },
     "headline": "Wi-Fi Matrix: Evdeki Sinyal Boğulması, Gizli Duvar Engelleri ve Ücretsiz Siber Ağ Kalibrasyonu",
-    "description": "İnternetiniz yan odada neden yavaşlıyor? Ek donanım almadan evdeki Wi-Fi sinyalini bilimsel yöntemlerle güçlendirin. Frekans kalibrasyonu, kanal seçimi, sinyal yansıtma taktikleri ve ücretsiz Wi-Fi Matrix Protokolü rehberi.",
+    "description": "İnternetiniz yan odada neden yavaşlıyor? Ek donanım almadan evdeki Wi-Fi sinyalini bilimsel yöntemlerle güçlendirin.",
     "image": {
       "@type": "ImageObject",
       "url": "https://raufayar.net/images/wi-fi-matrix-featured.jpg",
@@ -61,15 +56,11 @@ head: |
         "url": "https://raufayar.net/logo.png"
       }
     },
-    "mainEntity": {
-      "@type": "Thing",
-      "@id": "https://www.wikidata.org/wiki/Q140320894"
-    },
-    "keywords": "wi-fi sinyal güçlendirme, wifi matrix, evde wifi yavaş, kanal çakışması, wifi interference",
+    "keywords": "wi-fi sinyal güçlendirme, wifi matrix, evde wifi yavaş, kanal çakışması",
     "inLanguage": "tr-TR"
   }
   </script>
-  <!-- FAQ Schema -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -80,51 +71,24 @@ head: |
         "name": "İnternet paketim 100 Mbps olduğu halde arka odada neden 10 Mbps alıyorum?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Bu durum tamamen frekans zayıflaması ve duvar bariyerlerinden kaynaklanır. Evinizdeki yüksek hızlı 5 GHz frekansı duvarlardan ve engellerden geçemez, menzili kısadır. Duvar arkasına geçtiğinizde sinyal zayıflar ancak telefonunuz inatla 5 GHz'de kalmaya çalışır. Çözüm, modem arayüzünden 2.4 GHz ve 5 GHz ağ isimlerini ayırmak, arka odalara geçtiğinizde telefonunuzu duvarlardan daha rahat geçebilen 2.4 GHz ağına manuel olarak bağlamaktır."
+          "text": "Bu durum tamamen frekans zayıflaması ve duvar bariyerlerinden kaynaklanır. 5 GHz frekansı duvarlardan zor geçer. Çözüm: 2.4 GHz ve 5 GHz SSID'lerini ayırın ve arka odalarda 2.4 GHz'ye bağlanın."
         }
       },
       {
         "@type": "Question",
-        "name": "Alüminyum folyo yardımıyla Wi-Fi sinyalini yönlendirmek bilimsel olarak gerçek midir?",
+        "name": "Alüminyum folyo ile Wi-Fi sinyalini yönlendirmek gerçek midir?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Evet, bu yöntem tamamen bilimseldir ve parabolik yansıtıcı prensibine dayanır. Modemin arkasına içbükey (çanak şeklinde) yerleştirilen alüminyum folyo, sinyalin arkadaki kör noktalara veya komşu duvara giderek israf olmasını engeller. Elektromanyetik dalgaları siber bir ayna gibi yansıtarak sinyal gücünü evinizin kullanım alanına doğru odaklar ve menzili artırır."
+          "text": "Evet, parabolik yansıtıcı prensibine dayanır. Modemin arkasına içbükey folyo koyarak sinyali istediğiniz yöne odaklayabilirsiniz."
         }
       },
       {
         "@type": "Question",
-        "name": "Komşunun Wi-Fi ağı benim internetimi yavaşlatabilir mi? Nasıl engellerim?",
+        "name": "Komşu Wi-Fi ağları internetimi yavaşlatır mı?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Evet, özellikle apartman dairelerinde komşu modemlerin yaydığı frekanslar sinyalinizi boğar. Buna 'Komşu Kanal Girişimi' denir. Bunu engellemek için modem arayüzüne girip kablosuz ağ ayarlarından kanalı 'Otomatik'ten çıkarmalısınız. InSSIDer veya Wi-Fi Analyzer gibi ücretsiz bir mobil uygulama ile çevrenizdeki ağları tarayıp en az kullanılan temiz kanalı (1, 6 veya 11) seçerek sabitlemelisiniz."
+          "text": "Evet, kanal çakışması yaratır. Modem ayarlarından kanalı 1, 6 veya 11'e sabitleyin."
         }
-      }
-    ]
-  }
-  </script>
-  <!-- BreadcrumbList Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Ana Sayfa",
-        "item": "https://raufayar.net"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Teknoloji",
-        "item": "https://raufayar.net/teknoloji"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Wi-Fi Matrix: Evdeki Sinyal Boğulması, Gizli Duvar Engelleri ve Ücretsiz Siber Ağ Kalibrasyonu",
-        "item": "https://raufayar.net/wi-fi-matrix-evdeki-sinyal-bogulmasi"
       }
     ]
   }
