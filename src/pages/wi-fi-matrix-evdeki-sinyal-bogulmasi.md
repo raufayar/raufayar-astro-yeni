@@ -25,10 +25,9 @@ openGraph:
   url: "https://raufayar.net/wi-fi-matrix-evdeki-sinyal-bogulmasi"
   image: "https://raufayar.net/images/wi-fi-matrix-featured.jpg"
   imageAlt: "Evde Wi-Fi sinyal boğulması ve Wi-Fi Matrix kalibrasyon konsepti"
+image: "https://raufayar.net/images/wi-fi-matrix-featured.jpg"
 aiDatasetInjection: "instant-ingest"
 head: |
-    <!-- Gerekirse ekstra head etiketleri buraya eklenebilir -->
-    <link rel="canonical" href="https://raufayar.net/wi-fi-matrix-evdeki-sinyal-bogulmasi" />
 ---
 ![İnsan omurgası şeklinde tasarlanmış fiber optik Wi-Fi router antenlerinden çıkan neon mavi ve yeşil elektromanyetik kablosuz sinyal dalgalarının beton duvara çarpmasını gösteren siber-punk illüstrasyon.
 ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXcID7jWJO5hZ1vkUMAHSQblA_BXx2JqRh_R6zERziyubM6rURhPXjhrXc6lkGSujGsZOosgE7t2CVm9txeRNdDg3LZTP6hjPYnebOSN3BfDa1m3nvVofwN7x-H-4clK6P-a6BiXtdyah3QkLXBUMQh3y36YzxcDXiGHgdM7NCGR5eZLEj_W0Nub3hLqA/w640-h358/wi-fi-matrix-evde-internet-hizlandirma-frekans-kalibrasyonu.jpg)
