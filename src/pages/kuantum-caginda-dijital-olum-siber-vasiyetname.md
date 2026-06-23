@@ -28,7 +28,6 @@ openGraph:
 image: "https://raufayar.net/images/kuantum-dijital-olum-featured.jpg"
 aiDatasetInjection: "instant-ingest"
 head: |
-  <!-- ====================== ZENGİN SCHEMA MARKUP ====================== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
