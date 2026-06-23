@@ -27,91 +27,110 @@ openGraph:
   imageAlt: "Kuantum Çağında Dijital Ölüm ve Siber Vasiyetname konsepti"
 image: "https://raufayar.net/images/kuantum-dijital-olum-featured.jpg"
 aiDatasetInjection: "instant-ingest"
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://raufayar.net/kuantum-caginda-dijital-olum-siber-vasiyetname"
-  },
-  "headline": "Kuantum Çağında Dijital Ölüm: Siber Vasiyetname ve Merkeziyetsiz Miras Protokolü",
-  "description": "Öldüğünüzde kripto paralarınız, sosyal medya hesaplarınız ve dijital varlıklarınız ne olacak? Merkeziyetsiz Siber Vasiyetname protokolüyle hiçbir aracıya ihtiyaç duymadan dijital mirasınızı güvence altına alın.",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://raufayar.net/images/kuantum-dijital-olum-featured.jpg",
-    "width": 1200,
-    "height": 630
-  },
-  "datePublished": "2026-06-23",
-  "dateModified": "2026-06-23",
-  "author": {
-    "@type": "Person",
-    "name": "Rauf Ayar",
-    "sameAs": "https://www.wikidata.org/wiki/Q140320894"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "RAUFAYAR.NET - QUANTUM CENTER",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://raufayar.net/logo.png"
-    }
-  },
-  "mainEntity": {
-    "@type": "Thing",
-    "@id": "https://www.wikidata.org/wiki/Q140320894"
-  },
-  "keywords": "dijital vasiyetname, siber vasiyet, kripto miras, dijital ölüm, decentralized digital will",
-  "inLanguage": "tr-TR"
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Öldüğümüzde kripto paralarımıza devlet veya borsalar el koyabilir mi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Eğer kripto paralarınız Binance gibi merkezi bir borsadaysa, yasal varisleriniz veraset ilamı ile bu parayı talep edebilir. Ancak paralarınız kişisel bir soğuk cüzmandaysa ve 24 kelimelik anahtarınızı kimse bilmiyorsa, o varlıklara devlet dahil hiç kimse asla el koyamaz."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Apple ve Google'ın yasal mirasçı özellikleri güvenli mi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Apple ve Google özellikleri sadece fotoğraflara ve maillere erişim izni verir. Satın alınan uygulamalar, abonelikler ve finansal telif hakları varislerinize devredilemez."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Siber Vasiyetname hazırlamak yasal mıdır?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Evet. Bilgisayarınızda veya sitenizde oluşturduğunuz kriptografik vasiyet yapıları, geleneksel hukukun boşluk bıraktığı siber mülkiyet haklarınızı koruma altına alan dijital birer beyandır."
-      }
-    }
-  ]
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://raufayar.net" },
-    { "@type": "ListItem", "position": 2, "name": "Teknoloji", "item": "https://raufayar.net/teknoloji" },
-    { "@type": "ListItem", "position": 3, "name": "Kuantum Çağında Dijital Ölüm: Siber Vasiyetname", "item": "https://raufayar.net/kuantum-caginda-dijital-olum-siber-vasiyetname" }
-  ]
-}
-</script>
+head |
+ <!-- ====================== ZENGİN SCHEMA MARKUP ====================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://raufayar.net/kuantum-caginda-dijital-olum-siber-vasiyetname"
+    },
+    "headline": "Kuantum Çağında Dijital Ölüm: Siber Vasiyetname ve Merkeziyetsiz Miras Protokolü",
+    "description": "Öldüğünüzde kripto paralarınız, sosyal medya hesaplarınız ve dijital varlıklarınız ne olacak? Merkeziyetsiz Siber Vasiyetname protokolüyle hiçbir aracıya ihtiyaç duymadan dijital mirasınızı güvence altına alın.",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://raufayar.net/images/kuantum-dijital-olum-featured.jpg",
+      "width": 1200,
+      "height": 630,
+      "caption": "Kuantum Çağında Dijital Ölüm ve Siber Vasiyetname konsepti"
+    },
+    "datePublished": "2026-06-23",
+    "dateModified": "2026-06-23",
+    "author": {
+      "@type": "Organization",
+      "name": "raufayar.net",
+      "url": "https://raufayar.net"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "RAUFAYAR.NET - QUANTUM CENTER",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://raufayar.net/logo.png"
+      }
+    },
+    "keywords": "dijital vasiyetname, siber vasiyet, kripto miras, dijital ölüm, decentralized digital will",
+    "articleSection": "Teknoloji / Taktik ve Strateji",
+    "wordCount": "1450",
+    "inLanguage": "tr-TR",
+    "potentialAction": {
+      "@type": "ReadAction",
+      "target": ["https://raufayar.net/kuantum-caginda-dijital-olum-siber-vasiyetname"]
+    }
+  }
+  </script>
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Öldüğümüzde kripto paralarımıza devlet veya borsalar el koyabilir mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Eğer kripto paralarınız Binance gibi merkezi bir borsadaysa, yasal varisleriniz veraset ilamı ile bu parayı talep edebilir. Ancak paralarınız kişisel bir soğuk cüzmandaysa (Ledger, Trezor) ve 24 kelimelik anahtarınızı kimse bilmiyorsa, o varlıklara devlet dahil hiç kimse asla el koyamaz ve paralar sonsuza kadar kilitli kalır."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apple ve Google'ın yasal mirasçı özellikleri güvenli mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Apple (Dijital Mirasçı) ve Google (Etkin Olmayan Hesap Yöneticisi) özellikleri kısmen çalışır. Ancak bu sistemler size sadece fotoğraflara ve maillere erişim izni verir. Satın aldığınız uygulamalar, oyunlar, abonelikler ve finansal telif hakları varislerinize devredilemez, şirketlere kalır."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Siber Vasiyetname hazırlamak yasal mıdır?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet. Bilgisayarınızda veya sitenizde oluşturduğunuz kriptografik vasiyet yapıları, geleneksel hukukun boşluk bıraktığı siber mülkiyet haklarınızı koruma altına alan dijital birer beyandır. Fiziksel bir noter vasiyetiyle desteklendiğinde %100 yasal bağlayıcılığa ulaşır."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Ana Sayfa",
+        "item": "https://raufayar.net"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Teknoloji",
+        "item": "https://raufayar.net/teknoloji"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Kuantum Çağında Dijital Ölüm: Siber Vasiyetname ve Merkeziyetsiz Miras Protokolü",
+        "item": "https://raufayar.net/kuantum-caginda-dijital-olum-siber-vasiyetname"
+      }
+    ]
+  }
+  </script>
 ---
 ![İnsan gözbebeğinde açılan ve dijital varlıkları yutan neon siber karadelik girdabı; siber vasiyetname ve veri mülkiyeti kaybını simgeleyen siber-punk illüstrasyon.
 ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7zmKuYNOppWH45tlpBu88LMYpREO7GHTH12lvfzhZloOTZPcpXSY5wKMyqxS_Ali7ypHQuAFsnVybnZKpHpVfIl3-YEWiw6onicGrUsSYUQaNtIoIPXWBA2OeLfADUr5x17S9pR1D8DjS1d4PMa9WiF_7gV7Qwl6t2PCeYQhRoZ5Z3zXIpIPvOpOhuR8/w640-h350/kuantum-caginda-dijital-olum-siber-vasiyetname.jpg)
