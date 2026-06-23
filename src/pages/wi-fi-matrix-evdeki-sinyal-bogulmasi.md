@@ -1,3 +1,17 @@
+---
+layout: /MarkdownLayout.astro
+# ==================== YAYINA GÖRE DEĞİŞECEK ALANLAR ====================
+title: "Wi-Fi Matrix: Evdeki Sinyal Boğulması, Gizli Duvar Engelleri ve Ücretsiz Siber Ağ Kalibrasyonu"
+pubDate: "2026-06-23"
+description: "İnternetiniz yan odada neden yavaşlıyor? Ek donanım almadan evdeki Wi-Fi sinyalini bilimsel yöntemlerle güçlendirin. Frekans kalibrasyonu, kanal seçimi, sinyal yansıtma taktikleri ve ücretsiz Wi-Fi Matrix Protokolü rehberi."
+author: "raufayar.net"
+publisher: "RAUFAYAR.NET - QUANTUM CENTER"
+# SEO & Anahtar Kelimeler
+tags: ["Analizler", "TaktikVeStrateji", "Teknoloji", "SiberGüvenlik", "AğOptimizasyonu", "WiFi"]
+keywords: "wi-fi sinyal güçlendirme, wifi matrix, evde wifi yavaş, kanal çakışması, wifi interference, sinyal yansıtma, 2.4 ghz 5 ghz ayırma, ücretsiz wifi optimizasyonu"
+semanticEntities: "Wi-Fi Sinyali, Elektromanyetik Dalga, Frekans Interference, Router Kalibrasyonu, Siber Ağ Optimizasyonu, Saha Defansı"
+# Schema & İçerik Tipi
+schemaType: "TechArticle"
 # =====================================================================
 language: "tr"
 robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
