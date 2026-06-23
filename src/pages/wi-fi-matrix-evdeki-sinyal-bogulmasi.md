@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownLayout.astro
+layout: /MarkdownLayout.astro
 # ==================== YAYINA GÖRE DEĞİŞECEK ALANLAR ====================
 title: "Wi-Fi Matrix: Evdeki Sinyal Boğulması, Gizli Duvar Engelleri ve Ücretsiz Siber Ağ Kalibrasyonu"
 pubDate: "2026-06-23"
