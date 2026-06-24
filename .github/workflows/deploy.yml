@@ -1,42 +1,47 @@
 name: Deploy to GitHub Pages
 
 on:
+  # Ana branch'e push yapıldığında deploy et
   push:
-    branches: [main]
+    branches: [ main, master ]
+  # Manuel olarak workflow tetikleyebilmek için
   workflow_dispatch:
 
+# İzin ayarları
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Tek seferde sadece bir deploy çalışsın
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      # Sunucuyu Node 24 kullanmaya zorluyoruz
-      - name: Setup Node.js v24
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 20
+          cache: 'npm'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm ci
 
-      - name: Build Astro Site
+      - name: Build Astro
         run: npm run build
 
-      - name: Upload Pages Artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist # Astro'nun çıktı klasörü
+          path: ./dist
 
   deploy:
     environment:
