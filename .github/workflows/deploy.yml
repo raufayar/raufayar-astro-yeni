@@ -55,7 +55,6 @@ jobs:
           SITE_URL="https://raufayar.net"
 
           
-
           # RSS'ten en son yazının linkini al (en güvenilir yöntem)
 
           LATEST_POST=$(curl -s "$SITE_URL/rss.xml" | \
