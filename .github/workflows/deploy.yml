@@ -26,11 +26,13 @@ jobs:
         with:
           node-version: 24
 
-      - name: Install Dependencies
-        run: npm ci
+      # Hata veren npm ci yerine zorlamalı kurulum yapıyoruz
+      - name: Install Dependencies (Force)
+        run: npm install --legacy-peer-deps
 
+      # Astro derleme komutunu doğrudan tetikliyoruz
       - name: Build Astro Site
-        run: npm run build
+        run: npx astro build
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
