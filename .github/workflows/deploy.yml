@@ -21,11 +21,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install, build, and upload Astro
-        uses: withastro/action@v3
+      # Sunucuyu Node 24 kullanmaya zorluyoruz
+      - name: Setup Node.js v24
+        uses: actions/setup-node@v4
         with:
-          package-manager: npm@latest # npm kullanımını kesin olarak dikte ettik
-          
+          node-version: 24
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Astro Site
+        run: npm run build
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist # Astro'nun çıktı klasörü
+
   deploy:
     environment:
       name: github-pages
