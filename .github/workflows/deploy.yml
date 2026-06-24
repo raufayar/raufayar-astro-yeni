@@ -1,46 +1,42 @@
-name: Deploy to GitHub Pages
+GitHub Pages
+GitHub Pages is designed to host your personal, organization, or project pages from a GitHub repository.
 
-# Trigger the workflow every time you push to the `main` branch
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
+Your site is live at https://www.raufayar.net/
+Build and deployment
+Source
+Use a suggested workflow, browse all workflows, or create your own.
 
-# Allow this job to clone the repo and create a page deployment
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+GitHub Pages Jekyll
+By GitHub Actions
 
-# Allow one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+GitHub Pages Jekyll logo
+Package a Jekyll site with GitHub Pages dependencies preinstalled.
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v4
+Static HTML
+By GitHub Actions
 
-      - name: Install, build, and upload your site output
-        uses: withastro/action@v5
-        with:
-          node-version: 24
-          # Eğer pnpm veya yarn kullanıyorsan aşağıdaki satırları kendi paket yöneticine göre düzenle
-          # package-manager: npm 
+Static HTML logo
+Deploy static files in a repository without a build.
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+Workflow details will appear here once your site has been deployed. View workflow runs.
+
+Custom domain
+Custom domain
+Custom domains allow you to serve your site from a domain other than raufayar.github.io. Learn more about configuring custom domains.
+
+www.raufayar.net
+ 
+DNS Check in Progress
+
+Enforce HTTPS 
+HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.
+When HTTPS is enforced, your site will only be served over HTTPS. Learn more about securing your GitHub Pages site with HTTPS.
+
+Visibility
+GitHub Enterprise
+With a GitHub Enterprise account, you can restrict access to your GitHub Pages site by publishing it privately. You can use privately published sites to share your internal documentation or knowledge base with members of your enterprise. You can try GitHub Enterprise risk-free for 30 days. Learn more about the visibility of your GitHub Pages site.
+
+
 
       - name: Send IndexNow Ping - Latest Post
 
