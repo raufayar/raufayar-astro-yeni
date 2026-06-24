@@ -1,40 +1,177 @@
-GitHub Pages
-GitHub Pages is designed to host your personal, organization, or project pages from a GitHub repository.
 
-Your site is live at https://www.raufayar.net/
-Build and deployment
-Source
-Use a suggested workflow, browse all workflows, or create your own.
+# Trigger the workflow every time you push to the `main` branch
 
-GitHub Pages Jekyll
-By GitHub Actions
 
-GitHub Pages Jekyll logo
-Package a Jekyll site with GitHub Pages dependencies preinstalled.
 
-Static HTML
-By GitHub Actions
+# Using a different branch name? Replace `main` with your branch’s name
 
-Static HTML logo
-Deploy static files in a repository without a build.
 
-Workflow details will appear here once your site has been deployed. View workflow runs.
 
-Custom domain
-Custom domain
-Custom domains allow you to serve your site from a domain other than raufayar.github.io. Learn more about configuring custom domains.
+on:
 
-www.raufayar.net
- 
-DNS Check in Progress
 
-Enforce HTTPS 
-HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.
-When HTTPS is enforced, your site will only be served over HTTPS. Learn more about securing your GitHub Pages site with HTTPS.
 
-Visibility
-GitHub Enterprise
-With a GitHub Enterprise account, you can restrict access to your GitHub Pages site by publishing it privately. You can use privately published sites to share your internal documentation or knowledge base with members of your enterprise. You can try GitHub Enterprise risk-free for 30 days. Learn more about the visibility of your GitHub Pages site.
+  push:
+
+
+
+    branches: [ main ]
+
+
+
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
+
+
+
+  workflow_dispatch:
+
+
+
+
+
+
+
+# Allow this job to clone the repo and create a page deployment
+
+
+
+permissions:
+
+
+
+  contents: read
+
+
+
+  pages: write
+
+
+
+  id-token: write
+
+
+
+
+
+
+
+# Allow one concurrent deployment
+
+
+
+concurrency:
+
+
+
+  group: "pages"
+
+
+
+  cancel-in-progress: true
+
+
+
+
+
+
+
+jobs:
+
+
+
+  build:
+
+
+
+    runs-on: ubuntu-latest
+
+
+
+    steps:
+
+
+
+      - name: Checkout your repository using git
+
+
+
+        uses: actions/checkout@v4
+
+
+
+
+
+
+
+      - name: Install, build, and upload your site output
+
+
+
+        uses: withastro/action@v5
+
+
+
+        # with:
+
+
+
+            # path: . # The root location of your Astro project inside the repository. (optional)
+
+
+
+            # node-version: 22 # The specific version of Node that should be used to build your site. Defaults to 22. (optional)
+
+
+
+            # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+
+
+
+            # build-cmd: pnpm run build # The command to run to build your site. Runs the package build script/task by default. (optional)
+
+
+
+
+
+
+
+  deploy:
+
+
+
+    needs: build
+
+
+
+    runs-on: ubuntu-latest
+
+
+
+    environment:
+
+
+
+      name: github-pages
+
+
+
+      url: ${{ steps.deployment.outputs.page_url }}
+
+
+
+    steps:
+
+
+
+      - name: Deploy to GitHub Pages
+
+
+
+        id: deployment
+
+
+
+        uses: actions/deploy-pages@v4 
 
 
 
